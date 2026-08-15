@@ -5,7 +5,7 @@
       "settings": {
         "show_title": true,
         "show_breadcrumbs": true,
-        "width": "narrow",
+        "content_width": "narrow",
         "text_alignment": "center",
         "color_scheme": "ivory",
         "padding_top": 56,

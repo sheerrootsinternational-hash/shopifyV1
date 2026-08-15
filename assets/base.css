@@ -24,7 +24,7 @@ body {
   font-family: var(--font-body-family);
   font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);
-  font-size: calc(1.6rem * var(--body-scale));
+  font-size: calc(var(--font-size-base) * var(--body-scale));
   line-height: 1.7;
   letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
@@ -107,9 +107,11 @@ h6,
   font-style: var(--font-heading-style);
   font-weight: var(--font-heading-weight);
   line-height: 1.2;
+  /* Falls back to the section's text colour unless a heading colour is set */
+  color: var(--heading-color, inherit);
   text-transform: var(--heading-transform);
   letter-spacing: var(--heading-tracking);
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 
 .h0 {
@@ -229,14 +231,18 @@ blockquote,
 
 /* Layout ----------------------------------------------------------------- */
 
+/* Content width comes from the section's own --content-max when it sets one,
+   otherwise from the global page width. Horizontal padding is clamped against
+   the viewport so a large merchant value can never cause overflow on a phone. */
 .page-width {
-  max-width: var(--page-width);
+  width: 100%;
+  max-width: var(--content-max, var(--page-width));
   margin-inline: auto;
-  padding-inline: var(--gutter);
+  padding-inline: min(var(--section-padding-inline, var(--gutter)), 8vw);
 }
 
 .page-width--narrow {
-  max-width: var(--page-width-narrow);
+  max-width: var(--content-max, var(--page-width-narrow));
 }
 
 .page-width--flush {
@@ -246,14 +252,27 @@ blockquote,
 
 @media screen and (min-width: 990px) {
   .page-width {
-    padding-inline: var(--gutter-lg);
+    padding-inline: var(--section-padding-inline, var(--gutter-lg));
   }
 }
 
-/* Sections own their vertical rhythm through two settings-driven variables. */
+/* Sections own their vertical rhythm through settings-driven variables.
+   Mobile-first: the base rule uses the mobile values, which fall back to the
+   desktop values when the merchant has not set a separate mobile figure. */
 .section {
-  padding-top: calc(var(--section-padding-top, 6rem) * var(--spacing-scale));
-  padding-bottom: calc(var(--section-padding-bottom, 6rem) * var(--spacing-scale));
+  padding-top: calc(
+    var(--section-padding-top-mobile, var(--section-padding-top, var(--section-gap))) * var(--spacing-scale)
+  );
+  padding-bottom: calc(
+    var(--section-padding-bottom-mobile, var(--section-padding-bottom, var(--section-gap))) * var(--spacing-scale)
+  );
+}
+
+@media screen and (min-width: 750px) {
+  .section {
+    padding-top: calc(var(--section-padding-top, var(--section-gap)) * var(--spacing-scale));
+    padding-bottom: calc(var(--section-padding-bottom, var(--section-gap)) * var(--spacing-scale));
+  }
 }
 
 .main-content {
@@ -262,13 +281,7 @@ blockquote,
 
 .grid {
   display: grid;
-  gap: var(--grid-gap, 2.4rem);
-}
-
-@media screen and (min-width: 750px) {
-  .grid {
-    gap: var(--grid-gap-desktop, 3.2rem);
-  }
+  gap: var(--row-gap, 2.4rem) var(--column-gap, 2.4rem);
 }
 
 /* Text alignment helpers, driven by section settings */
@@ -290,6 +303,41 @@ blockquote,
 
 .align-right .section__actions {
   justify-content: flex-end;
+}
+
+/* Optional mobile-only alignment override. Sections only emit these classes
+   when the merchant chooses a mobile alignment different from desktop. */
+@media screen and (max-width: 749px) {
+  .align-mobile-left {
+    text-align: left;
+  }
+
+  .align-mobile-center {
+    text-align: center;
+  }
+
+  .align-mobile-right {
+    text-align: right;
+  }
+
+  .align-mobile-left .section__actions {
+    justify-content: flex-start;
+  }
+
+  .align-mobile-center .section__actions {
+    justify-content: center;
+  }
+
+  .align-mobile-right .section__actions {
+    justify-content: flex-end;
+  }
+
+  .align-mobile-center > .section__header,
+  .align-mobile-center .rich-text__text,
+  .align-mobile-center .media-text__text,
+  .align-mobile-center .hero__text {
+    margin-inline: auto;
+  }
 }
 
 .section__header {
@@ -317,17 +365,18 @@ blockquote,
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
-  min-height: 4.8rem;
+  min-height: var(--button-height, 4.8rem);
   padding: 1.2rem 3rem;
+  max-width: 100%;
   border: 1px solid var(--btn-bg);
-  border-radius: var(--radius);
+  border-radius: var(--button-radius, var(--radius));
   background-color: var(--btn-bg);
   color: var(--btn-fg);
   font-family: var(--font-heading-family);
   font-size: 1.3rem;
   font-weight: var(--font-body-weight-bold);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: var(--button-tracking, 0.14em);
+  text-transform: var(--button-transform, uppercase);
   text-decoration: none;
   text-align: center;
   transition: background-color var(--duration) var(--ease), color var(--duration) var(--ease),
@@ -353,9 +402,10 @@ blockquote,
   border-color: var(--btn-bg);
 }
 
-/* A quiet text button with an animated rule — used for "Shop now" style links */
+/* A quiet text button with an animated rule — used for "Shop now" style links.
+   It keeps a 44px tap target while the rule stays tucked under the text. */
 .button--link {
-  min-height: 0;
+  min-height: 4.4rem;
   padding: 0.4rem 0;
   border: 0;
   background: none;
@@ -367,7 +417,7 @@ blockquote,
   content: '';
   position: absolute;
   inset-inline: 0;
-  bottom: 0;
+  bottom: calc(50% - 1.2rem);
   height: 1px;
   background-color: currentColor;
   transform-origin: left;

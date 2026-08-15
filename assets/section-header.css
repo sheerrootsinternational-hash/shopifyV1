@@ -22,15 +22,19 @@
 
 .header__inner {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  /* minmax(0, …) lets every column shrink below its content, otherwise a long
+     shop name or wide logo pushes the header past the viewport on small
+     phones instead of wrapping. */
+  grid-template-columns: minmax(0, 1fr) minmax(0, auto) minmax(0, 1fr);
   align-items: center;
   gap: 1.6rem;
-  padding-block: 1.4rem;
+  /* Header height is merchant-controlled through its padding settings. */
+  padding-block: var(--section-padding-top-mobile, 14px) var(--section-padding-bottom-mobile, 14px);
 }
 
 @media screen and (min-width: 990px) {
   .header__inner {
-    padding-block: 2.4rem;
+    padding-block: var(--section-padding-top, 24px) var(--section-padding-bottom, 24px);
   }
 }
 
@@ -67,16 +71,21 @@
 
 .header__logo-image {
   width: var(--logo-width-mobile, 130px);
+  max-width: 100%;
   height: auto;
   margin-inline: auto;
 }
 
+/* The shop name is used when no logo is uploaded. It has to be able to wrap —
+   "Sheer Roots International" is far wider than a 320px viewport in one line. */
 .header__logo-text {
+  display: block;
   font-family: var(--font-heading-family);
-  font-size: 1.8rem;
-  letter-spacing: 0.2em;
+  font-size: clamp(1.3rem, 3.4vw, 1.8rem);
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  white-space: nowrap;
+  text-wrap: balance;
+  overflow-wrap: break-word;
 }
 
 @media screen and (min-width: 750px) {
@@ -86,6 +95,8 @@
 
   .header__logo-text {
     font-size: 2.4rem;
+    letter-spacing: 0.2em;
+    white-space: nowrap;
   }
 }
 

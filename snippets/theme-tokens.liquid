@@ -1,10 +1,15 @@
 {%- comment -%}
   Renders the theme's design tokens as CSS custom properties.
 
-  Every value here comes from Theme settings, so a merchant can restyle the whole
-  storefront without touching code. Colour schemes are expressed as classes that
-  re-point the same variables, which lets any section opt into Ivory / Sand / Ink
-  without duplicating component CSS.
+  Every value here comes from Theme settings, so a merchant can restyle the
+  whole storefront without touching code. Colour schemes are expressed as
+  classes that re-point the same variables, which lets any section opt into
+  Ivory / Sand / Ink without duplicating component CSS.
+
+  Scales are published twice — `--heading-scale-base` (the global value) and
+  `--heading-scale` (the value in effect). A section can override the second in
+  terms of the first, which is how per-section typography sizing works without
+  a circular reference.
 {%- endcomment -%}
 
 {% style %}
@@ -24,8 +29,11 @@
     --font-body-weight: {{ settings.type_body_font.weight }};
     --font-body-weight-bold: {{ settings.type_body_font.weight | plus: 300 | at_most: 1000 }};
 
-    --heading-scale: {{ settings.heading_scale | divided_by: 100.0 }};
-    --body-scale: {{ settings.body_scale | divided_by: 100.0 }};
+    --font-size-base: {{ settings.base_font_size | times: 0.1 }}rem;
+    --heading-scale-base: {{ settings.heading_scale | divided_by: 100.0 }};
+    --heading-scale: var(--heading-scale-base);
+    --body-scale-base: {{ settings.body_scale | divided_by: 100.0 }};
+    --body-scale: var(--body-scale-base);
     --heading-transform: {% if settings.heading_uppercase %}uppercase{% else %}none{% endif %};
     --heading-tracking: {{ settings.heading_letter_spacing | divided_by: 100.0 }}em;
 
@@ -54,12 +62,22 @@
 
     /* Layout */
     --page-width: {{ settings.page_width }}px;
-    --page-width-narrow: 820px;
-    --gutter: 2rem;
-    --gutter-lg: 4rem;
+    --page-width-contained: {{ settings.section_max_width }}px;
+    --page-width-narrow: {{ settings.narrow_width }}px;
+    --page-padding: {{ settings.page_padding }}px;
+    --page-padding-mobile: {{ settings.page_padding_mobile }}px;
+    --gutter: var(--page-padding-mobile);
+    --gutter-lg: var(--page-padding);
+    --section-gap: {{ settings.section_spacing_default }}px;
     --radius: {{ settings.border_radius }}px;
     --radius-pill: 999px;
     --spacing-scale: {{ settings.spacing_scale | divided_by: 100.0 }};
+
+    /* Buttons */
+    --button-radius: {{ settings.button_radius }}px;
+    --button-height: {{ settings.button_height }}px;
+    --button-tracking: {{ settings.button_letter_spacing | divided_by: 100.0 }}em;
+    --button-transform: {% if settings.button_uppercase %}uppercase{% else %}none{% endif %};
 
     /* Motion */
     --ease: cubic-bezier(0.22, 0.61, 0.36, 1);

@@ -38,44 +38,41 @@
   pointer-events: none;
 }
 
-/* Heights ---------------------------------------------------------------- */
+/* Heights ----------------------------------------------------------------
+   Both values come from section settings, so a merchant can make a banner
+   taller or shorter — independently on desktop and mobile — without CSS. */
+
+.hero {
+  min-height: var(--hero-height-mobile, 46rem);
+}
+
+@media screen and (min-width: 750px) {
+  .hero {
+    min-height: var(--hero-height, 76vh);
+  }
+}
 
 /* "Adapt" lets the image set the banner height instead of a fixed viewport
    fraction, so the whole composition is always visible. */
-.hero--adapt .hero__image,
-.hero--adapt .hero__media .placeholder-svg {
+.hero--adapt-mobile .hero__image,
+.hero--adapt-mobile .hero__media .placeholder-svg {
   position: static;
   height: auto;
 }
 
-.hero--small {
-  min-height: 34rem;
-}
-
-.hero--medium {
-  min-height: 46rem;
-}
-
-.hero--large {
-  min-height: 56rem;
-}
-
-.hero--full {
-  min-height: 100vh;
-  min-height: 100svh;
-}
-
 @media screen and (min-width: 750px) {
-  .hero--small {
-    min-height: 40vh;
+  .hero--adapt .hero__image,
+  .hero--adapt .hero__media .placeholder-svg {
+    position: static;
+    height: auto;
   }
 
-  .hero--medium {
-    min-height: 58vh;
-  }
-
-  .hero--large {
-    min-height: 76vh;
+  /* A banner that adapts on mobile but has a fixed desktop height must go back
+     to filling its box on desktop. */
+  .hero--adapt-mobile:not(.hero--adapt) .hero__image,
+  .hero--adapt-mobile:not(.hero--adapt) .hero__media .placeholder-svg {
+    position: absolute;
+    height: 100%;
   }
 }
 

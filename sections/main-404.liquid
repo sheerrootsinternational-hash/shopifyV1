@@ -1,5 +1,8 @@
-<div class="section" style="--section-padding-top: 96px; --section-padding-bottom: 96px;">
-  <div class="page-width page-width--narrow">
+<div
+  class="section scheme-{{ section.settings.color_scheme }}"
+  {% render 'section-styles', cfg: section.settings %}
+>
+  <div class="page-width">
     <div class="empty-state">
       <h1 class="h1">{{ '404.title' | t }}</h1>
       <p>{{ '404.subtext' | t }}</p>
@@ -18,7 +21,178 @@
   "name": "404",
   "tag": "section",
   "enabled_on": {
-    "templates": ["404"]
-  }
+    "templates": [
+      "404"
+    ]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "content_width",
+      "label": "Content width",
+      "options": [
+        {
+          "value": "full",
+          "label": "Full width"
+        },
+        {
+          "value": "wide",
+          "label": "Wide"
+        },
+        {
+          "value": "contained",
+          "label": "Contained"
+        },
+        {
+          "value": "narrow",
+          "label": "Narrow"
+        },
+        {
+          "value": "custom",
+          "label": "Custom"
+        }
+      ],
+      "default": "narrow"
+    },
+    {
+      "type": "range",
+      "id": "content_width_custom",
+      "min": 600,
+      "max": 1800,
+      "step": 20,
+      "unit": "px",
+      "label": "Custom content width",
+      "info": "Only used when Content width is set to Custom.",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "Horizontal padding",
+      "info": "Automatically capped on small screens so it cannot cause sideways scrolling.",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Colours"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "options": [
+        {
+          "value": "ivory",
+          "label": "Ivory"
+        },
+        {
+          "value": "sand",
+          "label": "Sand"
+        },
+        {
+          "value": "ink",
+          "label": "Ink"
+        }
+      ],
+      "default": "ivory"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background override",
+      "info": "Leave empty to use the colour scheme above."
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading colour"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text colour"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent colour"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 70,
+      "max": 150,
+      "step": 5,
+      "unit": "%",
+      "label": "Heading size",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "min": 80,
+      "max": 140,
+      "step": 5,
+      "unit": "%",
+      "label": "Text size",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding (desktop)",
+      "default": 96
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding (desktop)",
+      "default": 96
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding (mobile)",
+      "default": 68
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding (mobile)",
+      "default": 68
+    }
+  ]
 }
 {% endschema %}

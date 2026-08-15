@@ -207,24 +207,26 @@
 
 /* Product grid ----------------------------------------------------------- */
 
+/* Gaps come from section settings. On small screens they are scaled down so a
+   merchant's desktop gap cannot squeeze the columns to nothing. */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(var(--columns-mobile, 2), minmax(0, 1fr));
-  gap: 2.4rem 1.6rem;
+  gap: calc(var(--row-gap, 48px) * 0.5) calc(var(--column-gap, 32px) * 0.5);
   list-style: none;
 }
 
 @media screen and (min-width: 750px) {
   .product-grid {
     grid-template-columns: repeat(var(--columns-tablet, 3), minmax(0, 1fr));
-    gap: 4rem 2.4rem;
+    gap: calc(var(--row-gap, 48px) * 0.8) calc(var(--column-gap, 32px) * 0.8);
   }
 }
 
 @media screen and (min-width: 990px) {
   .product-grid {
     grid-template-columns: repeat(var(--columns-desktop, 4), minmax(0, 1fr));
-    gap: 4.8rem 3.2rem;
+    gap: var(--row-gap, 48px) var(--column-gap, 32px);
   }
 }
 

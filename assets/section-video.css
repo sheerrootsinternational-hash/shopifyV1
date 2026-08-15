@@ -19,6 +19,17 @@
   background-color: rgba(var(--fg-rgb), 0.06);
 }
 
+/* An explicit height wins over the aspect ratio when the merchant sets one. */
+.video-banner__frame {
+  height: var(--video-height-mobile, var(--video-height, auto));
+}
+
+@media screen and (min-width: 750px) {
+  .video-banner__frame {
+    height: var(--video-height, auto);
+  }
+}
+
 .video-banner__frame--wide {
   aspect-ratio: 16 / 9;
 }

@@ -10,14 +10,21 @@
     sizes          {String}   image sizes attribute
     loading        {String}   'lazy' (default) or 'eager'
     heading_tag    {String}   defaults to 'h3'
+    image_ratio    {String}   section-level override for Theme settings
+    text_align     {String}   section-level override for Theme settings
 {%- endcomment -%}
 
 {%- liquid
   assign heading_tag = heading_tag | default: 'h3'
   assign img_loading = loading | default: 'lazy'
   assign img_sizes = sizes | default: '(min-width: 990px) 25vw, (min-width: 750px) 33vw, 45vw'
+
+  # A section may override the global card presentation for its own products.
+  assign ratio = image_ratio | default: settings.card_image_ratio
+  assign align = text_align | default: settings.card_text_alignment
+
   assign ratio_class = 'media--square'
-  case settings.card_image_ratio
+  case ratio
     when 'portrait'
       assign ratio_class = 'media--portrait'
     when 'adapt'
@@ -26,7 +33,7 @@
 -%}
 
 {%- if product == blank or product.empty? -%}
-  <div class="card card--align-{{ settings.card_text_alignment }}" style="--card-align: {{ settings.card_text_alignment }};">
+  <div class="card card--align-{{ align }}" style="--card-align: {{ align }};">
     <div class="card__media">
       <div class="media {{ ratio_class }}">
         {{ placeholder | default: 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
@@ -44,7 +51,7 @@
       assign second_image = product.media[1].preview_image
     endif
   -%}
-  <div class="card card--align-{{ settings.card_text_alignment }}" style="--card-align: {{ settings.card_text_alignment }};">
+  <div class="card card--align-{{ align }}" style="--card-align: {{ align }};">
     <div class="card__media">
       {%- if settings.card_show_sale_badge -%}
         <div class="card__badges">

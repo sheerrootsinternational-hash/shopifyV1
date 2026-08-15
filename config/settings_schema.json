@@ -126,6 +126,17 @@
       },
       {
         "type": "range",
+        "id": "base_font_size",
+        "min": 14,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Base font size",
+        "info": "The size of ordinary body copy. Everything else scales from it.",
+        "default": 16
+      },
+      {
+        "type": "range",
         "id": "body_scale",
         "min": 90,
         "max": 130,
@@ -230,14 +241,78 @@
     "name": "Layout",
     "settings": [
       {
+        "type": "paragraph",
+        "content": "These are the widths every section chooses between. Each section can also override its own width."
+      },
+      {
         "type": "range",
         "id": "page_width",
         "min": 1100,
         "max": 1800,
         "step": 20,
         "unit": "px",
-        "label": "Maximum content width",
+        "label": "Site width (Wide)",
         "default": 1400
+      },
+      {
+        "type": "range",
+        "id": "section_max_width",
+        "min": 900,
+        "max": 1600,
+        "step": 20,
+        "unit": "px",
+        "label": "Section width (Contained)",
+        "default": 1200
+      },
+      {
+        "type": "range",
+        "id": "narrow_width",
+        "min": 600,
+        "max": 1100,
+        "step": 20,
+        "unit": "px",
+        "label": "Reading width (Narrow)",
+        "info": "Used for long-form text so lines stay comfortable to read.",
+        "default": 820
+      },
+      {
+        "type": "header",
+        "content": "Page padding"
+      },
+      {
+        "type": "range",
+        "id": "page_padding",
+        "min": 16,
+        "max": 96,
+        "step": 4,
+        "unit": "px",
+        "label": "Horizontal padding (desktop)",
+        "default": 40
+      },
+      {
+        "type": "range",
+        "id": "page_padding_mobile",
+        "min": 12,
+        "max": 48,
+        "step": 2,
+        "unit": "px",
+        "label": "Horizontal padding (mobile)",
+        "default": 20
+      },
+      {
+        "type": "header",
+        "content": "Spacing"
+      },
+      {
+        "type": "range",
+        "id": "section_spacing_default",
+        "min": 0,
+        "max": 160,
+        "step": 4,
+        "unit": "px",
+        "label": "Default section spacing",
+        "info": "Used by any section that has not been given its own top and bottom padding.",
+        "default": 64
       },
       {
         "type": "range",
@@ -246,9 +321,13 @@
         "max": 140,
         "step": 5,
         "unit": "%",
-        "label": "Section spacing",
-        "info": "Scales the top and bottom padding of every section.",
+        "label": "Section spacing scale",
+        "info": "Scales the top and bottom padding of every section at once.",
         "default": 100
+      },
+      {
+        "type": "header",
+        "content": "Corners"
       },
       {
         "type": "range",
@@ -258,8 +337,49 @@
         "step": 2,
         "unit": "px",
         "label": "Corner radius",
-        "info": "Applies to buttons, inputs, cards and media.",
+        "info": "Applies to inputs, cards and media.",
         "default": 2
+      }
+    ]
+  },
+  {
+    "name": "Buttons",
+    "settings": [
+      {
+        "type": "range",
+        "id": "button_radius",
+        "min": 0,
+        "max": 32,
+        "step": 2,
+        "unit": "px",
+        "label": "Corner radius",
+        "default": 2
+      },
+      {
+        "type": "range",
+        "id": "button_height",
+        "min": 36,
+        "max": 68,
+        "step": 2,
+        "unit": "px",
+        "label": "Height",
+        "default": 48
+      },
+      {
+        "type": "checkbox",
+        "id": "button_uppercase",
+        "label": "Uppercase labels",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "button_letter_spacing",
+        "min": 0,
+        "max": 24,
+        "step": 1,
+        "unit": "%",
+        "label": "Letter spacing",
+        "default": 14
       }
     ]
   },

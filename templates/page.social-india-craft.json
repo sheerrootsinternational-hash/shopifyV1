@@ -28,7 +28,7 @@
       "block_order": ["text"],
       "settings": {
         "color_scheme": "ivory",
-        "width": "narrow",
+        "content_width": "narrow",
         "text_alignment": "center",
         "padding_top": 80,
         "padding_bottom": 64

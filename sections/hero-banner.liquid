@@ -10,11 +10,50 @@
   if section.settings.heading_is_page_title
     assign heading_tag = 'h1'
   endif
+
+  # Desktop height. "adapt" lets the image decide, so the whole composition
+  # stays visible rather than being cropped to a viewport fraction.
+  case section.settings.height
+    when 'adapt'
+      assign height_desktop = 'auto'
+    when 'small'
+      assign height_desktop = '40vh'
+    when 'medium'
+      assign height_desktop = '58vh'
+    when 'large'
+      assign height_desktop = '76vh'
+    when 'full'
+      assign height_desktop = '100svh'
+    when 'custom'
+      assign height_desktop = section.settings.height_custom | append: 'px'
+  endcase
+
+  # Mobile height, defaulting to a sensible smaller preset rather than reusing
+  # a desktop viewport percentage that would be far too short on a phone.
+  assign mobile_choice = section.settings.height_mobile | default: 'medium'
+  case mobile_choice
+    when 'adapt'
+      assign height_mobile = 'auto'
+    when 'small'
+      assign height_mobile = '34rem'
+    when 'medium'
+      assign height_mobile = '46rem'
+    when 'large'
+      assign height_mobile = '60rem'
+    when 'full'
+      assign height_mobile = '100svh'
+    when 'custom'
+      assign height_mobile = section.settings.height_custom_mobile | append: 'px'
+  endcase
 -%}
 
+{%- capture hero_vars -%}
+  --hero-height: {{ height_desktop }};--hero-height-mobile: {{ height_mobile }};
+{%- endcapture -%}
+
 <section
-  class="hero hero--{{ section.settings.height }} hero--text-{{ section.settings.text_position }} scheme-{{ section.settings.color_scheme }}"
-  style="--overlay-opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};"
+  class="hero hero--text-{{ section.settings.text_position }} scheme-{{ section.settings.color_scheme }}{% if section.settings.height == 'adapt' %} hero--adapt{% endif %}{% if mobile_choice == 'adapt' %} hero--adapt-mobile{% endif %}"
+  {% render 'section-styles', cfg: section.settings, extra: hero_vars %}
 >
   <div class="hero__media">
     {% render 'banner-image',
@@ -34,7 +73,7 @@
 
   {%- if has_content -%}
     <div class="hero__content-wrap page-width">
-      <div class="hero__content align-{{ section.settings.text_alignment }} hero__content--{{ section.settings.text_style }}">
+      <div class="hero__content align-{{ section.settings.text_alignment }}{% if section.settings.text_alignment_mobile != blank %} align-mobile-{{ section.settings.text_alignment_mobile }}{% endif %} hero__content--{{ section.settings.text_style }}">
         {%- if section.settings.eyebrow != blank -%}
           <span class="eyebrow">{{ section.settings.eyebrow | escape }}</span>
         {%- endif -%}
@@ -111,13 +150,104 @@
       "id": "height",
       "label": "Banner height",
       "options": [
-        { "value": "adapt", "label": "Use the image's own shape" },
-        { "value": "small", "label": "Small" },
-        { "value": "medium", "label": "Medium" },
-        { "value": "large", "label": "Large" },
-        { "value": "full", "label": "Full screen" }
+        {
+          "value": "adapt",
+          "label": "Use the image's own shape"
+        },
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        },
+        {
+          "value": "full",
+          "label": "Full screen"
+        },
+        {
+          "value": "custom",
+          "label": "Custom"
+        }
       ],
       "default": "large"
+    },
+    {
+      "type": "range",
+      "id": "height_custom",
+      "min": 240,
+      "max": 900,
+      "step": 20,
+      "unit": "px",
+      "label": "Custom height (desktop)",
+      "info": "Only used when Banner height is set to Custom.",
+      "default": 600
+    },
+    {
+      "type": "select",
+      "id": "height_mobile",
+      "label": "Banner height (mobile)",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Use the image's own shape"
+        },
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        },
+        {
+          "value": "full",
+          "label": "Full screen"
+        },
+        {
+          "value": "custom",
+          "label": "Custom"
+        }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "range",
+      "id": "height_custom_mobile",
+      "min": 200,
+      "max": 700,
+      "step": 20,
+      "unit": "px",
+      "label": "Custom height (mobile)",
+      "info": "Only used when the mobile height is set to Custom.",
+      "default": 420
+    },
+    {
+      "type": "select",
+      "id": "image_focal_point",
+      "label": "Image focal point",
+      "info": "Which part of the image stays in view when it is cropped.",
+      "options": [
+        { "value": "center", "label": "Centre" },
+        { "value": "top", "label": "Top" },
+        { "value": "bottom", "label": "Bottom" },
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" },
+        { "value": "top-left", "label": "Top left" },
+        { "value": "top-right", "label": "Top right" },
+        { "value": "bottom-left", "label": "Bottom left" },
+        { "value": "bottom-right", "label": "Bottom right" }
+      ],
+      "default": "center"
     },
     {
       "type": "range",
@@ -172,8 +302,14 @@
       "id": "button_style",
       "label": "Button style",
       "options": [
-        { "value": "primary", "label": "Solid" },
-        { "value": "secondary", "label": "Outline" }
+        {
+          "value": "primary",
+          "label": "Solid"
+        },
+        {
+          "value": "secondary",
+          "label": "Outline"
+        }
       ],
       "default": "primary"
     },
@@ -196,13 +332,34 @@
       "id": "text_position",
       "label": "Text position",
       "options": [
-        { "value": "top-left", "label": "Top left" },
-        { "value": "top-center", "label": "Top centre" },
-        { "value": "middle-left", "label": "Middle left" },
-        { "value": "middle-center", "label": "Middle centre" },
-        { "value": "middle-right", "label": "Middle right" },
-        { "value": "bottom-left", "label": "Bottom left" },
-        { "value": "bottom-center", "label": "Bottom centre" }
+        {
+          "value": "top-left",
+          "label": "Top left"
+        },
+        {
+          "value": "top-center",
+          "label": "Top centre"
+        },
+        {
+          "value": "middle-left",
+          "label": "Middle left"
+        },
+        {
+          "value": "middle-center",
+          "label": "Middle centre"
+        },
+        {
+          "value": "middle-right",
+          "label": "Middle right"
+        },
+        {
+          "value": "bottom-left",
+          "label": "Bottom left"
+        },
+        {
+          "value": "bottom-center",
+          "label": "Bottom centre"
+        }
       ],
       "default": "middle-center"
     },
@@ -211,11 +368,32 @@
       "id": "text_alignment",
       "label": "Text alignment",
       "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Centre"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment_mobile",
+      "label": "Text alignment (mobile)",
+      "options": [
+        { "value": "", "label": "Same as desktop" },
         { "value": "left", "label": "Left" },
         { "value": "center", "label": "Centre" },
         { "value": "right", "label": "Right" }
       ],
-      "default": "center"
+      "default": ""
     },
     {
       "type": "select",
@@ -223,10 +401,74 @@
       "label": "Text treatment",
       "info": "A panel keeps text legible over busy photography.",
       "options": [
-        { "value": "plain", "label": "Directly on the image" },
-        { "value": "panel", "label": "On a panel" }
+        {
+          "value": "plain",
+          "label": "Directly on the image"
+        },
+        {
+          "value": "panel",
+          "label": "On a panel"
+        }
       ],
       "default": "plain"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "content_width",
+      "label": "Content width",
+      "options": [
+        {
+          "value": "full",
+          "label": "Full width"
+        },
+        {
+          "value": "wide",
+          "label": "Wide"
+        },
+        {
+          "value": "contained",
+          "label": "Contained"
+        },
+        {
+          "value": "narrow",
+          "label": "Narrow"
+        },
+        {
+          "value": "custom",
+          "label": "Custom"
+        }
+      ],
+      "default": "full"
+    },
+    {
+      "type": "range",
+      "id": "content_width_custom",
+      "min": 600,
+      "max": 1800,
+      "step": 20,
+      "unit": "px",
+      "label": "Custom content width",
+      "info": "Only used when Content width is set to Custom.",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "Horizontal padding",
+      "info": "Automatically capped on small screens so it cannot cause sideways scrolling.",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Colours"
     },
     {
       "type": "select",
@@ -234,11 +476,109 @@
       "label": "Text colour scheme",
       "info": "Ink gives light text for dark images.",
       "options": [
-        { "value": "ivory", "label": "Ivory (dark text)" },
-        { "value": "sand", "label": "Sand (dark text)" },
-        { "value": "ink", "label": "Ink (light text)" }
+        {
+          "value": "ivory",
+          "label": "Ivory (dark text)"
+        },
+        {
+          "value": "sand",
+          "label": "Sand (dark text)"
+        },
+        {
+          "value": "ink",
+          "label": "Ink (light text)"
+        }
       ],
       "default": "ink"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background override",
+      "info": "Leave empty to use the colour scheme above."
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading colour"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text colour"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent colour"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 70,
+      "max": 150,
+      "step": 5,
+      "unit": "%",
+      "label": "Heading size",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "min": 80,
+      "max": 140,
+      "step": 5,
+      "unit": "%",
+      "label": "Text size",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding (desktop)",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding (desktop)",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding (mobile)",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding (mobile)",
+      "default": 44
     }
   ],
   "presets": [

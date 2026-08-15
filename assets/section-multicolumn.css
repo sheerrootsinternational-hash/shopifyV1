@@ -6,21 +6,22 @@
 .multicolumn__list {
   display: grid;
   grid-template-columns: repeat(var(--columns-mobile, 1), minmax(0, 1fr));
-  gap: 3.2rem 2.4rem;
+  gap: calc(var(--row-gap, 48px) * 0.6) calc(var(--column-gap, 32px) * 0.6);
   list-style: none;
 }
 
 @media screen and (min-width: 750px) {
+  /* Never more than two across on a tablet, whatever the desktop count is. */
   .multicolumn__list {
     grid-template-columns: repeat(min(var(--columns-desktop, 3), 2), minmax(0, 1fr));
-    gap: 4rem 3.2rem;
+    gap: calc(var(--row-gap, 48px) * 0.8) calc(var(--column-gap, 32px) * 0.8);
   }
 }
 
 @media screen and (min-width: 990px) {
   .multicolumn__list {
     grid-template-columns: repeat(var(--columns-desktop, 3), minmax(0, 1fr));
-    gap: 4.8rem 4rem;
+    gap: var(--row-gap, 48px) var(--column-gap, 32px);
   }
 }
 

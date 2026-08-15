@@ -62,7 +62,7 @@
   grid-auto-columns: calc(
     (100% - (var(--slides, 2) - 1) * var(--carousel-gap, 1.6rem)) / var(--slides, 2)
   );
-  gap: var(--carousel-gap, 1.6rem);
+  gap: var(--carousel-gap, calc(var(--column-gap, 32px) * 0.5));
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
@@ -80,14 +80,14 @@
 @media screen and (min-width: 750px) {
   .carousel__track {
     --slides: var(--slides-tablet, 3);
-    --carousel-gap: 2.4rem;
+    --carousel-gap: calc(var(--column-gap, 32px) * 0.8);
   }
 }
 
 @media screen and (min-width: 990px) {
   .carousel__track {
     --slides: var(--slides-desktop, 4);
-    --carousel-gap: 3.2rem;
+    --carousel-gap: var(--column-gap, 32px);
   }
 }
 

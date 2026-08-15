@@ -12,9 +12,10 @@
 
 {%- if has_messages -%}
   <div
-    class="announcement scheme-{{ section.settings.color_scheme }}"
+    class="announcement scheme-{{ section.settings.color_scheme }} align-{{ section.settings.text_alignment | default: 'center' }}"
     role="region"
     aria-label="{{ 'sections.announcements.announcement' | t }}"
+    {% render 'section-styles', cfg: section.settings %}
   >
     {%- if section.settings.scrolling -%}
       {%- comment -%}
@@ -64,17 +65,6 @@
   "max_blocks": 6,
   "settings": [
     {
-      "type": "select",
-      "id": "color_scheme",
-      "label": "Colour scheme",
-      "options": [
-        { "value": "ivory", "label": "Ivory" },
-        { "value": "sand", "label": "Sand" },
-        { "value": "ink", "label": "Ink" }
-      ],
-      "default": "ink"
-    },
-    {
       "type": "checkbox",
       "id": "scrolling",
       "label": "Scroll the text continuously",
@@ -97,6 +87,164 @@
       "label": "Separator",
       "info": "Shown between messages while scrolling.",
       "default": "✳"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Alignment",
+      "info": "Applies when the text is not scrolling.",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Centre"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment_mobile",
+      "label": "Alignment (mobile)",
+      "options": [
+        {
+          "value": "",
+          "label": "Same as desktop"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Centre"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": ""
+    },
+    {
+      "type": "header",
+      "content": "Colours"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "options": [
+        {
+          "value": "ivory",
+          "label": "Ivory"
+        },
+        {
+          "value": "sand",
+          "label": "Sand"
+        },
+        {
+          "value": "ink",
+          "label": "Ink"
+        }
+      ],
+      "default": "ink"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background override",
+      "info": "Leave empty to use the colour scheme above."
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading colour"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text colour"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent colour"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 70,
+      "max": 150,
+      "step": 5,
+      "unit": "%",
+      "label": "Heading size",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "min": 80,
+      "max": 140,
+      "step": 5,
+      "unit": "%",
+      "label": "Text size",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding (desktop)",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding (desktop)",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding (mobile)",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding (mobile)",
+      "default": 8
     }
   ],
   "blocks": [
@@ -121,11 +269,17 @@
   "presets": [
     {
       "name": "Announcement bar",
-      "blocks": [{ "type": "announcement" }]
+      "blocks": [
+        {
+          "type": "announcement"
+        }
+      ]
     }
   ],
   "enabled_on": {
-    "groups": ["header"]
+    "groups": [
+      "header"
+    ]
   }
 }
 {% endschema %}

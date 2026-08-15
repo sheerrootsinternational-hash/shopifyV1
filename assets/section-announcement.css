@@ -21,16 +21,33 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1.2rem 3.2rem;
+  padding-block: var(--section-padding-top-mobile, 8px) var(--section-padding-bottom-mobile, 8px);
+}
+
+.align-left .announcement__static {
+  justify-content: flex-start;
+}
+
+.align-center .announcement__static {
   justify-content: center;
-  padding-block: 1rem;
-  text-align: center;
+}
+
+.align-right .announcement__static {
+  justify-content: flex-end;
 }
 
 .announcement__marquee {
   display: flex;
   width: max-content;
-  padding-block: 1rem;
+  padding-block: var(--section-padding-top-mobile, 8px) var(--section-padding-bottom-mobile, 8px);
   animation: sr-marquee var(--marquee-duration, 45s) linear infinite;
+}
+
+@media screen and (min-width: 750px) {
+  .announcement__static,
+  .announcement__marquee {
+    padding-block: var(--section-padding-top, 10px) var(--section-padding-bottom, 10px);
+  }
 }
 
 .announcement__track {
