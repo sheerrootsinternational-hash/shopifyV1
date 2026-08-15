@@ -17,7 +17,7 @@
       "settings": {
         "products_per_page": 24,
         "columns_desktop": 4,
-        "columns_mobile": 2,
+        "columns_mobile": "2",
         "show_toolbar": true,
         "color_scheme": "ivory",
         "padding_top": 40,

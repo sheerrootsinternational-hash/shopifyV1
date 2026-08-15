@@ -101,7 +101,7 @@
         "heading": "What we believe",
         "heading_alignment": "center",
         "columns_desktop": 4,
-        "columns_mobile": 1,
+        "columns_mobile": "1",
         "text_alignment": "center",
         "image_ratio": "square",
         "show_dividers": true,

@@ -1,0 +1,25 @@
+{%- comment -%}
+  A single social link. Renders nothing when the URL is empty, which is how
+  every caller hides platforms the merchant has not filled in.
+
+  Accepts
+    url         {String}   the link; blank means "not configured"
+    platform    {String}   icon name in snippets/icon.liquid
+    label       {String}   already-translated, human readable platform name
+    link_class  {String}   class for the <a>
+    show_labels {Boolean}  show the name beside the icon instead of only to
+                           assistive technology
+{%- endcomment -%}
+
+{%- if url != blank -%}
+  <li>
+    <a class="{{ link_class }}" href="{{ url }}" target="_blank" rel="noopener noreferrer">
+      {% render 'icon', name: platform %}
+      {%- if show_labels -%}
+        <span>{{ label }}</span>
+      {%- else -%}
+        <span class="visually-hidden">{{ label }}</span>
+      {%- endif -%}
+    </a>
+  </li>
+{%- endif -%}

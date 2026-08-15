@@ -18,12 +18,20 @@
         <div class="social-follow__text rte">{{ section.settings.text }}</div>
       {%- endif -%}
 
-      {%- if section.settings.show_labels -%}
-        {% render 'social-links-labelled' %}
+      {%- liquid
+        assign social_class = ''
+        unless section.settings.show_labels
+          assign social_class = 'social-list--large'
+        endunless
+      -%}
+      {%- capture social_markup -%}
+        {% render 'social-icons', show_labels: section.settings.show_labels, class: social_class %}
+      {%- endcapture -%}
+
+      {%- if social_markup != blank -%}
+        <div class="social-follow__icons">{{ social_markup }}</div>
       {%- else -%}
-        <div class="social-follow__icons">
-          {% render 'social-icons', class: 'social-list--large' %}
-        </div>
+        <p class="text-muted social-labelled__empty">{{ 'sections.social.no_links' | t }}</p>
       {%- endif -%}
 
       {%- if section.settings.handle != blank -%}

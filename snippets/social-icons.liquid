@@ -1,72 +1,81 @@
 {%- comment -%}
   Social links, driven entirely by Theme settings → Social media.
-  A blank setting hides that icon everywhere.
+  A blank setting hides that icon everywhere it appears.
 
   Accepts
-    class  {String}  extra classes on the <ul>, e.g. 'social-list--large'
+    class        {String}   extra classes on the <ul>, e.g. 'social-list--large'
+    show_labels  {Boolean}  render the platform name beside each icon
+
+  Implementation note: the list is built into a capture first so that the <ul>
+  itself is only emitted when at least one platform is configured. Testing the
+  six settings with a chained `or` is not an option here — inside a
+  {% liquid %} tag every newline is its own tag, so a wrapped condition parses
+  as an unknown tag.
 {%- endcomment -%}
 
 {%- liquid
-  assign has_social = false
-  if settings.social_instagram_link != blank
-    or settings.social_facebook_link != blank
-    or settings.social_etsy_link != blank
-    or settings.social_pinterest_link != blank
-    or settings.social_youtube_link != blank
-    or settings.social_whatsapp_link != blank
-    assign has_social = true
+  assign list_class = 'social-list'
+  assign link_class = 'social-list__link'
+  if show_labels
+    assign list_class = 'social-labelled'
+    assign link_class = 'social-labelled__link'
   endif
+
+  assign label_instagram = 'general.social.instagram' | t
+  assign label_facebook = 'general.social.facebook' | t
+  assign label_etsy = 'general.social.etsy' | t
+  assign label_pinterest = 'general.social.pinterest' | t
+  assign label_youtube = 'general.social.youtube' | t
+  assign label_whatsapp = 'general.social.whatsapp' | t
 -%}
 
-{%- if has_social -%}
-  <ul class="social-list {{ class }}" role="list">
-    {%- if settings.social_instagram_link != blank -%}
-      <li>
-        <a class="social-list__link" href="{{ settings.social_instagram_link }}" target="_blank" rel="noopener noreferrer">
-          {% render 'icon', name: 'instagram' %}
-          <span class="visually-hidden">{{ 'general.social.instagram' | t }}</span>
-        </a>
-      </li>
-    {%- endif -%}
-    {%- if settings.social_facebook_link != blank -%}
-      <li>
-        <a class="social-list__link" href="{{ settings.social_facebook_link }}" target="_blank" rel="noopener noreferrer">
-          {% render 'icon', name: 'facebook' %}
-          <span class="visually-hidden">{{ 'general.social.facebook' | t }}</span>
-        </a>
-      </li>
-    {%- endif -%}
-    {%- if settings.social_etsy_link != blank -%}
-      <li>
-        <a class="social-list__link" href="{{ settings.social_etsy_link }}" target="_blank" rel="noopener noreferrer">
-          {% render 'icon', name: 'etsy' %}
-          <span class="visually-hidden">{{ 'general.social.etsy' | t }}</span>
-        </a>
-      </li>
-    {%- endif -%}
-    {%- if settings.social_pinterest_link != blank -%}
-      <li>
-        <a class="social-list__link" href="{{ settings.social_pinterest_link }}" target="_blank" rel="noopener noreferrer">
-          {% render 'icon', name: 'pinterest' %}
-          <span class="visually-hidden">{{ 'general.social.pinterest' | t }}</span>
-        </a>
-      </li>
-    {%- endif -%}
-    {%- if settings.social_youtube_link != blank -%}
-      <li>
-        <a class="social-list__link" href="{{ settings.social_youtube_link }}" target="_blank" rel="noopener noreferrer">
-          {% render 'icon', name: 'youtube' %}
-          <span class="visually-hidden">{{ 'general.social.youtube' | t }}</span>
-        </a>
-      </li>
-    {%- endif -%}
-    {%- if settings.social_whatsapp_link != blank -%}
-      <li>
-        <a class="social-list__link" href="{{ settings.social_whatsapp_link }}" target="_blank" rel="noopener noreferrer">
-          {% render 'icon', name: 'whatsapp' %}
-          <span class="visually-hidden">{{ 'general.social.whatsapp' | t }}</span>
-        </a>
-      </li>
-    {%- endif -%}
+{%- capture social_items -%}
+  {% render 'social-link',
+    url: settings.social_instagram_link,
+    platform: 'instagram',
+    label: label_instagram,
+    link_class: link_class,
+    show_labels: show_labels
+  %}
+  {% render 'social-link',
+    url: settings.social_facebook_link,
+    platform: 'facebook',
+    label: label_facebook,
+    link_class: link_class,
+    show_labels: show_labels
+  %}
+  {% render 'social-link',
+    url: settings.social_etsy_link,
+    platform: 'etsy',
+    label: label_etsy,
+    link_class: link_class,
+    show_labels: show_labels
+  %}
+  {% render 'social-link',
+    url: settings.social_pinterest_link,
+    platform: 'pinterest',
+    label: label_pinterest,
+    link_class: link_class,
+    show_labels: show_labels
+  %}
+  {% render 'social-link',
+    url: settings.social_youtube_link,
+    platform: 'youtube',
+    label: label_youtube,
+    link_class: link_class,
+    show_labels: show_labels
+  %}
+  {% render 'social-link',
+    url: settings.social_whatsapp_link,
+    platform: 'whatsapp',
+    label: label_whatsapp,
+    link_class: link_class,
+    show_labels: show_labels
+  %}
+{%- endcapture -%}
+
+{%- if social_items != blank -%}
+  <ul class="{{ list_class }} {{ class }}" role="list">
+    {{ social_items }}
   </ul>
 {%- endif -%}
