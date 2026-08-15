@@ -1,0 +1,17 @@
+{
+  "name": "sheer-roots-theme",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Custom Shopify Online Store 2.0 theme for Sheer Roots International",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "shopify theme dev",
+    "check": "shopify theme check",
+    "check:fix": "shopify theme check --auto-correct",
+    "pull": "shopify theme pull",
+    "push": "shopify theme push --unpublished"
+  },
+  "devDependencies": {
+    "@shopify/cli": "^3.87.0"
+  }
+}

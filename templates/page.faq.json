@@ -1,0 +1,74 @@
+{
+  "sections": {
+    "heading": {
+      "type": "main-page",
+      "settings": {
+        "show_title": true,
+        "show_breadcrumbs": true,
+        "width": "narrow",
+        "text_alignment": "center",
+        "color_scheme": "ivory",
+        "padding_top": 56,
+        "padding_bottom": 24
+      }
+    },
+    "faq": {
+      "type": "collapsible-content",
+      "blocks": {
+        "delivery": {
+          "type": "row",
+          "settings": {
+            "heading": "How long will it take for my order to be delivered?",
+            "content": "<p>Your order will be shipped within 5 business days. For expedited delivery, you can contact us on +91-8448809111 or email us at info@sheerroots.in<\/p>",
+            "open_by_default": true
+          }
+        },
+        "cancel": {
+          "type": "row",
+          "settings": {
+            "heading": "How do I cancel or change my order?",
+            "content": "<p>You can cancel or change your order if it has not been dispatched. To do so, you can contact us on +91-8448809111 or email us at info@sheerroots.in<\/p>",
+            "open_by_default": false
+          }
+        },
+        "international": {
+          "type": "row",
+          "settings": {
+            "heading": "Can I place an international order?",
+            "content": "<p>Please contact us on +91-8448809111 or email us at info@sheerroots.in, and we can assist you with the cost and timings.<\/p>",
+            "open_by_default": false
+          }
+        },
+        "shipping-charge": {
+          "type": "row",
+          "settings": {
+            "heading": "Is there an additional shipping charge?",
+            "content": "<p>For India: shipping charges will be on actual.<\/p><p>For International: please reach out to us on +91-8448809111 and we can assist further.<\/p>",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": ["delivery", "cancel", "international", "shipping-charge"],
+      "settings": {
+        "heading": "",
+        "text_alignment": "center",
+        "color_scheme": "ivory",
+        "padding_top": 8,
+        "padding_bottom": 72
+      }
+    },
+    "contact": {
+      "type": "contact-details",
+      "settings": {
+        "heading": "Still need help?",
+        "address_label": "Where we are",
+        "phone_label": "Call us",
+        "email_label": "Email us",
+        "color_scheme": "sand",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    }
+  },
+  "order": ["heading", "faq", "contact"]
+}

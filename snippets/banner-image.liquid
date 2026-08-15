@@ -1,0 +1,58 @@
+{%- comment -%}
+  Responsive banner image with an optional, genuinely different mobile crop.
+
+  Accepts
+    desktop_image  {Image}   required unless mobile_image is given
+    mobile_image   {Image}   optional — art-directed crop for < 750px
+    alt            {String}  optional override; falls back to the image's own alt
+    loading        {String}  'eager' for above-the-fold heroes, else 'lazy'
+    fetchpriority  {String}  'high' on the LCP image only
+    sizes          {String}  defaults to full viewport width
+    class          {String}  extra classes on the <img>
+    placeholder    {String}  Shopify placeholder name when no image is set
+
+  Both sources are served from Shopify's CDN, so format negotiation (WebP/AVIF)
+  and resizing are handled by the platform.
+{%- endcomment -%}
+
+{%- liquid
+  assign img_loading = loading | default: 'lazy'
+  assign img_sizes = sizes | default: '100vw'
+  assign img_class = class | default: ''
+  assign img_priority = fetchpriority | default: 'auto'
+  assign primary = desktop_image | default: mobile_image
+  assign alt_text = alt | default: primary.alt
+-%}
+
+{%- if primary != blank -%}
+  <picture class="banner__picture">
+    {%- if mobile_image != blank and desktop_image != blank -%}
+      <source
+        media="(max-width: 749px)"
+        srcset="
+          {{ mobile_image | image_url: width: 400 }} 400w,
+          {{ mobile_image | image_url: width: 600 }} 600w,
+          {{ mobile_image | image_url: width: 800 }} 800w,
+          {{ mobile_image | image_url: width: 1100 }} 1100w,
+          {{ mobile_image | image_url: width: 1500 }} 1500w
+        "
+        sizes="100vw"
+        width="{{ mobile_image.width }}"
+        height="{{ mobile_image.height }}"
+      >
+    {%- endif -%}
+    {{
+      primary
+      | image_url: width: 2400
+      | image_tag:
+        loading: img_loading,
+        fetchpriority: img_priority,
+        sizes: img_sizes,
+        widths: '400, 600, 800, 1100, 1500, 1780, 2000, 2400',
+        alt: alt_text,
+        class: img_class
+    }}
+  </picture>
+{%- elsif placeholder != blank -%}
+  {{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}
+{%- endif -%}

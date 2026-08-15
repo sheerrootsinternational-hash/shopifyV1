@@ -1,0 +1,170 @@
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+
+{%- paginate collection.products by section.settings.products_per_page -%}
+  <div
+    class="section collection scheme-{{ section.settings.color_scheme }}"
+    {% render 'section-styles', padding_top: section.settings.padding_top, padding_bottom: section.settings.padding_bottom %}
+  >
+    <div class="page-width">
+      {%- if section.settings.show_toolbar -%}
+        <form class="collection__toolbar" data-auto-submit>
+          {%- comment -%}
+            Keeping the current filter/tag params as hidden inputs means sorting
+            never silently drops an active filter.
+          {%- endcomment -%}
+          {%- for filter in collection.filters -%}
+            {%- for value in filter.active_values -%}
+              <input type="hidden" name="{{ value.param_name }}" value="{{ value.value | escape }}">
+            {%- endfor -%}
+            {%- if filter.type == 'price_range' -%}
+              {%- if filter.min_value.value -%}
+                <input type="hidden" name="{{ filter.min_value.param_name }}" value="{{ filter.min_value.value }}">
+              {%- endif -%}
+              {%- if filter.max_value.value -%}
+                <input type="hidden" name="{{ filter.max_value.param_name }}" value="{{ filter.max_value.value }}">
+              {%- endif -%}
+            {%- endif -%}
+          {%- endfor -%}
+
+          <p class="collection__count" role="status">
+            {{ 'collections.general.product_count' | t: count: collection.products_count }}
+          </p>
+
+          {%- if collection.sort_options.size > 0 -%}
+            <div class="collection__sort field">
+              <label class="field__label" for="SortBy">{{ 'collections.sorting.title' | t }}</label>
+              <div class="select">
+                <select id="SortBy" class="select__select" name="sort_by">
+                  {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+                  {%- for option in collection.sort_options -%}
+                    <option value="{{ option.value }}" {% if option.value == sort_by %}selected{% endif %}>
+                      {{ option.name }}
+                    </option>
+                  {%- endfor -%}
+                </select>
+                {% render 'icon', name: 'caret' %}
+              </div>
+              <noscript>
+                <button type="submit" class="button button--secondary collection__apply">
+                  {{ 'collections.sorting.apply' | t }}
+                </button>
+              </noscript>
+            </div>
+          {%- endif -%}
+        </form>
+      {%- endif -%}
+
+      {%- if collection.products.size == 0 -%}
+        <div class="empty-state">
+          <h2 class="h3">{{ 'collections.general.no_matches' | t }}</h2>
+          <p>
+            <a class="button button--link" href="{{ collection.url }}">
+              {{ 'collections.general.clear_filters' | t }}
+            </a>
+          </p>
+        </div>
+      {%- else -%}
+        <ul
+          class="product-grid"
+          role="list"
+          style="--columns-desktop: {{ section.settings.columns_desktop }}; --columns-tablet: {{ section.settings.columns_desktop | at_most: 3 }}; --columns-mobile: {{ section.settings.columns_mobile }};"
+        >
+          {%- for product in collection.products -%}
+            {%- liquid
+              assign card_loading = 'lazy'
+              if forloop.index <= 4
+                assign card_loading = 'eager'
+              endif
+            -%}
+            <li>
+              {% render 'product-card', product: product, loading: card_loading, heading_tag: 'h2' %}
+            </li>
+          {%- endfor -%}
+        </ul>
+
+        {% render 'pagination', paginate: paginate %}
+      {%- endif -%}
+    </div>
+  </div>
+{%- endpaginate -%}
+
+{% schema %}
+{
+  "name": "Product grid",
+  "tag": "section",
+  "class": "shopify-section--collection",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 8,
+      "max": 48,
+      "step": 4,
+      "label": "Products per page",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "label": "Columns on desktop",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "min": 1,
+      "max": 2,
+      "step": 1,
+      "label": "Columns on mobile",
+      "default": 2
+    },
+    {
+      "type": "checkbox",
+      "id": "show_toolbar",
+      "label": "Show product count and sorting",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "options": [
+        { "value": "ivory", "label": "Ivory" },
+        { "value": "sand", "label": "Sand" },
+        { "value": "ink", "label": "Ink" }
+      ],
+      "default": "ivory"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 72
+    }
+  ],
+  "enabled_on": {
+    "templates": ["collection"]
+  }
+}
+{% endschema %}

@@ -1,0 +1,51 @@
+{%- comment -%}
+  Theme block: divider.
+{%- endcomment -%}
+
+<div class="flex-block flex-block--divider align-{{ block.settings.alignment }}" {{ block.shopify_attributes }}>
+  {%- if block.settings.style == 'rule' -%}
+    <hr class="rule">
+  {%- else -%}
+    <div class="flex-block__spacer" style="--spacer-height: {{ block.settings.height }}px;"></div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Divider",
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        { "value": "rule", "label": "Short line" },
+        { "value": "space", "label": "Empty space" }
+      ],
+      "default": "rule"
+    },
+    {
+      "type": "range",
+      "id": "height",
+      "min": 8,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Space height",
+      "default": 32
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Centre" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    }
+  ],
+  "presets": [{ "name": "Divider" }]
+}
+{% endschema %}

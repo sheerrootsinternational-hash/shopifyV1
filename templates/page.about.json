@@ -1,0 +1,181 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-banner",
+      "settings": {
+        "height": "medium",
+        "overlay_opacity": 35,
+        "eyebrow": "Sheer Roots International",
+        "heading": "About us",
+        "heading_is_page_title": true,
+        "text": "<p>Rooted in India. Crafted with Purpose. Shared with the World.<\/p>",
+        "text_position": "middle-center",
+        "text_alignment": "center",
+        "text_style": "plain",
+        "color_scheme": "ink"
+      }
+    },
+    "intro": {
+      "type": "rich-text",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Welcome to Sheer Roots International — a celebration of India's rich heritage, craftsmanship, and timeless traditions.<\/p><p>We believe that every Indian craft carries a story. A story of skilled hands, generations of knowledge, cultural traditions, and the beautiful diversity that makes India unique.<\/p><p>At Sheer Roots International, our aim is to bring thoughtfully selected Indian handicrafts, traditional products, artisanal creations, and culturally inspired products to customers across India and around the world.<\/p>",
+            "text_size": "subheading"
+          }
+        }
+      },
+      "block_order": ["text"],
+      "settings": {
+        "color_scheme": "ivory",
+        "width": "narrow",
+        "text_alignment": "center",
+        "padding_top": 80,
+        "padding_bottom": 64
+      }
+    },
+    "story": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our story",
+            "heading_size": "h2",
+            "heading_tag": "h2"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Sheer Roots was born from a simple idea — to connect India's roots with the modern world.<\/p><p>India has an incredible legacy of craftsmanship, from traditional art forms and handmade products to beautiful designs inspired by our culture and heritage. We want to help these stories reach a wider audience while keeping their essence alive.<\/p><p>Our products are chosen with an emphasis on authenticity, design, functionality, and the spirit of Indian craftsmanship.<\/p>"
+          }
+        }
+      },
+      "block_order": ["heading", "text"],
+      "settings": {
+        "image_ratio": "portrait",
+        "image_position": "left",
+        "media_width": "medium",
+        "text_alignment": "left",
+        "color_scheme": "ivory",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "beliefs": {
+      "type": "multicolumn",
+      "blocks": {
+        "heritage": {
+          "type": "column",
+          "settings": {
+            "heading": "Heritage matters",
+            "text": "<p>We celebrate India's traditions and the stories behind them.<\/p>"
+          }
+        },
+        "craftsmanship": {
+          "type": "column",
+          "settings": {
+            "heading": "Craftsmanship matters",
+            "text": "<p>We value the skill, creativity, and dedication that goes into creating meaningful products.<\/p>"
+          }
+        },
+        "quality": {
+          "type": "column",
+          "settings": {
+            "heading": "Quality matters",
+            "text": "<p>We strive to bring products that combine traditional inspiration with dependable quality.<\/p>"
+          }
+        },
+        "story": {
+          "type": "column",
+          "settings": {
+            "heading": "Every piece has a story",
+            "text": "<p>From traditional designs to contemporary interpretations, our products reflect the richness of India.<\/p>"
+          }
+        }
+      },
+      "block_order": ["heritage", "craftsmanship", "quality", "story"],
+      "settings": {
+        "heading": "What we believe",
+        "heading_alignment": "center",
+        "columns_desktop": 4,
+        "columns_mobile": 1,
+        "text_alignment": "center",
+        "image_ratio": "square",
+        "show_dividers": true,
+        "color_scheme": "sand",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "vision": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our vision",
+            "heading_size": "h2",
+            "heading_tag": "h2"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our vision is to build a brand that makes Indian craftsmanship accessible to a global audience while creating a meaningful connection between Indian heritage and contemporary lifestyles.<\/p><p>We aspire to become a trusted destination for people who appreciate products that are not only beautiful and useful, but also connected to India's culture and roots.<\/p>"
+          }
+        }
+      },
+      "block_order": ["heading", "text"],
+      "settings": {
+        "image_ratio": "landscape",
+        "image_position": "right",
+        "media_width": "medium",
+        "text_alignment": "left",
+        "color_scheme": "ivory",
+        "padding_top": 72,
+        "padding_bottom": 64
+      }
+    },
+    "promise": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our promise",
+            "heading_size": "h2",
+            "heading_tag": "h2"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At Sheer Roots International, we are committed to continuously discovering products that represent the beauty and diversity of India.<\/p><p>Because for us, it's not just about selling a product. It's about sharing a piece of India.<\/p>",
+            "text_size": ""
+          }
+        },
+        "rule": {
+          "type": "rule"
+        },
+        "eyebrow": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "Sheer Roots International — Every piece. A story. India."
+          }
+        }
+      },
+      "block_order": ["heading", "text", "rule", "eyebrow"],
+      "settings": {
+        "color_scheme": "sand",
+        "width": "narrow",
+        "text_alignment": "center",
+        "padding_top": 80,
+        "padding_bottom": 88
+      }
+    }
+  },
+  "order": ["hero", "intro", "story", "beliefs", "vision", "promise"]
+}

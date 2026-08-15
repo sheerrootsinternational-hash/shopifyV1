@@ -1,0 +1,193 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-banner",
+      "settings": {
+        "height": "large",
+        "overlay_opacity": 30,
+        "eyebrow": "Sheer Roots International",
+        "heading": "Every piece. A story. India.",
+        "heading_is_page_title": false,
+        "text": "<p>Thoughtfully selected Indian handicrafts, traditional products and artisanal creations — brought to you from the hands that make them.<\/p>",
+        "button_label": "Explore the collection",
+        "button_style": "primary",
+        "text_position": "middle-center",
+        "text_alignment": "center",
+        "text_style": "plain",
+        "color_scheme": "ink"
+      }
+    },
+    "sic-intro": {
+      "type": "image-with-text",
+      "blocks": {
+        "logo": {
+          "type": "logo",
+          "settings": {
+            "width": 160
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Social India Craft",
+            "heading_size": "h1",
+            "heading_tag": "h2"
+          }
+        },
+        "strapline": {
+          "type": "strapline",
+          "settings": {
+            "text": "More than a product, a living legacy"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Social India Craft, operating under the Sheer Roots family, represents our expression of premium Indian craftsmanship and conscious gifting.<\/p><p>The brand draws inspiration from India's ancient relationship with Arts, particularly the enduring tradition of craftsmanship.<\/p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "label": "Discover Social India Craft",
+            "style": "secondary"
+          }
+        }
+      },
+      "block_order": ["logo", "heading", "strapline", "text", "button"],
+      "settings": {
+        "image_ratio": "portrait",
+        "image_position": "right",
+        "media_width": "medium",
+        "text_alignment": "left",
+        "full_width": false,
+        "color_scheme": "ivory",
+        "padding_top": 88,
+        "padding_bottom": 72
+      }
+    },
+    "values": {
+      "type": "multicolumn",
+      "blocks": {
+        "heritage": {
+          "type": "column",
+          "settings": {
+            "heading": "Heritage",
+            "text": "<p>Traditions carried forward through generations.<\/p>"
+          }
+        },
+        "craftsmanship": {
+          "type": "column",
+          "settings": {
+            "heading": "Craftsmanship",
+            "text": "<p>The skill and patience of the human hand.<\/p>"
+          }
+        },
+        "material-integrity": {
+          "type": "column",
+          "settings": {
+            "heading": "Material Integrity",
+            "text": "<p>Respect for the materials that become part of our everyday lives.<\/p>"
+          }
+        },
+        "meaningful-design": {
+          "type": "column",
+          "settings": {
+            "heading": "Meaningful Design",
+            "text": "<p>Contemporary forms inspired by India's cultural vocabulary.<\/p>"
+          }
+        },
+        "conscious-gifting": {
+          "type": "column",
+          "settings": {
+            "heading": "Conscious Gifting",
+            "text": "<p>Gifts chosen to create memories rather than moments of consumption.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heritage",
+        "craftsmanship",
+        "material-integrity",
+        "meaningful-design",
+        "conscious-gifting"
+      ],
+      "settings": {
+        "heading": "You are choosing",
+        "subheading": "<p>When you choose a piece from Sheer Roots or Social India Craft, you are choosing more than an object.<\/p>",
+        "heading_alignment": "center",
+        "columns_desktop": 5,
+        "columns_mobile": 1,
+        "text_alignment": "center",
+        "image_ratio": "square",
+        "show_dividers": true,
+        "color_scheme": "sand",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "quote": {
+      "type": "rich-text",
+      "blocks": {
+        "quote": {
+          "type": "quote",
+          "settings": {
+            "quote": "You are not merely acquiring a vessel; you are taking home a living legacy of human resilience, sacred geometry and the quiet artistry of master hands.",
+            "show_icon": true
+          }
+        }
+      },
+      "block_order": ["quote"],
+      "settings": {
+        "color_scheme": "ivory",
+        "width": "narrow",
+        "text_alignment": "center",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "product-slider": {
+      "type": "featured-collection",
+      "settings": {
+        "products_to_show": 5,
+        "heading": "The collection",
+        "heading_alignment": "center",
+        "show_view_all": true,
+        "layout": "slider",
+        "columns_desktop": 4,
+        "columns_mobile": 2,
+        "autoplay": true,
+        "autoplay_interval": 5,
+        "color_scheme": "ivory",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "video": {
+      "type": "video-banner",
+      "settings": {
+        "playback": "click",
+        "loop": false,
+        "video_ratio": "wide",
+        "heading": "See it in the making",
+        "heading_alignment": "center",
+        "full_width": false,
+        "color_scheme": "sand",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "social": {
+      "type": "social-follow",
+      "settings": {
+        "heading": "Join our socials",
+        "show_labels": true,
+        "text_alignment": "center",
+        "color_scheme": "ivory",
+        "padding_top": 72,
+        "padding_bottom": 88
+      }
+    }
+  },
+  "order": ["hero", "sic-intro", "values", "quote", "product-slider", "video", "social"]
+}

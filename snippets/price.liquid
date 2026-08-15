@@ -1,0 +1,60 @@
+{%- comment -%}
+  Price display for cards and the product page.
+
+  Accepts
+    product        {Product}         required
+    target         {Product|Variant} the object whose price is shown; defaults to product
+    show_from      {Boolean}         prefix with "From" when the product has a price range
+    class          {String}
+{%- endcomment -%}
+
+{%- liquid
+  assign target = target | default: product
+  assign compare_at = target.compare_at_price
+
+  if target.object_type == 'product'
+    assign price = target.price
+    assign price_varies = target.price_varies
+    assign compare_at = target.compare_at_price
+  else
+    assign price = target.price
+    assign price_varies = false
+  endif
+
+  assign on_sale = false
+  if compare_at > price
+    assign on_sale = true
+  endif
+
+  assign money_price = price | money
+  if settings.currency_code_enabled
+    assign money_price = price | money_with_currency
+  endif
+-%}
+
+<div class="price {% if on_sale %}price--on-sale{% endif %} {{ class }}">
+  {%- if on_sale -%}
+    <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
+    <s class="price__regular--compare">
+      {%- if settings.currency_code_enabled -%}
+        {{ compare_at | money_with_currency }}
+      {%- else -%}
+        {{ compare_at | money }}
+      {%- endif -%}
+    </s>
+    <span class="visually-hidden">{{ 'products.product.price.sale_price' | t }}</span>
+    <span class="price__sale">
+      {%- if show_from and price_varies %}{{ 'products.product.price.from_price_html' | t: price: money_price }}{% else %}{{ money_price }}{% endif -%}
+    </span>
+  {%- else -%}
+    <span class="price__regular">
+      {%- if show_from and price_varies %}{{ 'products.product.price.from_price_html' | t: price: money_price }}{% else %}{{ money_price }}{% endif -%}
+    </span>
+  {%- endif -%}
+
+  {%- if target.unit_price_measurement -%}
+    <span class="price__unit">
+      {{- target.unit_price | money }}/{% if target.unit_price_measurement.reference_value != 1 %}{{ target.unit_price_measurement.reference_value }}{% endif %}{{ target.unit_price_measurement.reference_unit -}}
+    </span>
+  {%- endif -%}
+</div>

@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_title": true,
+        "show_breadcrumbs": true,
+        "width": "narrow",
+        "text_alignment": "center",
+        "color_scheme": "ivory",
+        "padding_top": 56,
+        "padding_bottom": 88
+      }
+    }
+  },
+  "order": ["main"]
+}

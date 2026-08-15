@@ -1,0 +1,46 @@
+{%- comment -%}
+  Product JSON-LD.
+
+  Shopify does not add Product structured data on behalf of the theme, so this
+  is the theme's responsibility. Nothing here duplicates what
+  `content_for_header` already outputs.
+
+  Accepts
+    product  {Product}  required
+{%- endcomment -%}
+
+{%- if product != blank -%}
+  {%- liquid
+    assign product_image = product.featured_media.preview_image
+    assign availability = 'https://schema.org/OutOfStock'
+    if product.available
+      assign availability = 'https://schema.org/InStock'
+    endif
+  -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": {{ product.title | json }},
+      "url": {{ request.origin | append: product.url | json }},
+      {% if product_image %}
+        "image": [{{ product_image | image_url: width: 1200 | prepend: "https:" | json }}],
+      {% endif %}
+      "description": {{ product.description | strip_html | truncate: 500 | json }},
+      {% if product.selected_or_first_available_variant.sku != blank %}
+        "sku": {{ product.selected_or_first_available_variant.sku | json }},
+      {% endif %}
+      "brand": {
+        "@type": "Brand",
+        "name": {{ product.vendor | default: shop.name | json }}
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": {{ request.origin | append: product.url | json }},
+        "priceCurrency": {{ cart.currency.iso_code | json }},
+        "price": {{ product.price | divided_by: 100.0 | json }},
+        "availability": {{ availability | json }}
+      }
+    }
+  </script>
+{%- endif -%}

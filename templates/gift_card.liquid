@@ -1,0 +1,38 @@
+{% layout 'gift_card' %}
+
+{%- liquid
+  assign initial_value = gift_card.initial_value | money
+  assign balance = gift_card.balance | money
+-%}
+
+<div class="section" style="--section-padding-top: 64px; --section-padding-bottom: 64px;">
+  <div class="page-width page-width--narrow">
+    <div class="customer gift-card">
+      <h1 class="h2">{{ 'gift_cards.issued.title' | t: value: initial_value }}</h1>
+
+      {%- if gift_card.expired -%}
+        <div class="form__message form__message--error" role="status">
+          {{ 'gift_cards.issued.expired' | t: expiry: gift_card.expires_on | date: format: 'date' }}
+        </div>
+      {%- elsif gift_card.enabled == false -%}
+        <div class="form__message form__message--error" role="status">
+          {{ 'gift_cards.issued.disabled' | t }}
+        </div>
+      {%- endif -%}
+
+      <p class="gift-card__balance h1">{{ balance }}</p>
+      {%- if gift_card.balance != gift_card.initial_value -%}
+        <p class="text-muted">{{ 'gift_cards.issued.remaining' | t: balance: balance }}</p>
+      {%- endif -%}
+
+      <div class="gift-card__code">
+        <p class="field__label">{{ 'gift_cards.issued.code' | t }}</p>
+        <p class="h3">{{ gift_card.code | format_code }}</p>
+      </div>
+
+      <div class="customer__actions">
+        <a class="button" href="{{ shop.url }}">{{ 'gift_cards.issued.shop_link' | t }}</a>
+      </div>
+    </div>
+  </div>
+</div>

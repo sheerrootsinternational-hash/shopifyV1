@@ -1,0 +1,81 @@
+{{ 'section-flexible.css' | asset_url | stylesheet_tag }}
+
+{%- comment -%}
+  A blank canvas section built from theme blocks (blocks/*.liquid).
+
+  Everything else in this theme uses purpose-built sections with fixed content
+  slots. This one exists for the cases those do not cover — a one-off campaign
+  block, an extra note on a policy page — without needing a developer.
+{%- endcomment -%}
+
+<div
+  class="section flexible scheme-{{ section.settings.color_scheme }}"
+  {% render 'section-styles', padding_top: section.settings.padding_top, padding_bottom: section.settings.padding_bottom %}
+>
+  <div class="page-width {% if section.settings.width == 'narrow' %}page-width--narrow{% endif %}">
+    <div class="flexible__inner">
+      {% content_for 'blocks' %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Flexible content",
+  "tag": "section",
+  "class": "shopify-section--flexible",
+  "blocks": [{ "type": "@theme" }, { "type": "@app" }],
+  "settings": [
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Content width",
+      "options": [
+        { "value": "narrow", "label": "Narrow" },
+        { "value": "wide", "label": "Wide" }
+      ],
+      "default": "narrow"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "options": [
+        { "value": "ivory", "label": "Ivory" },
+        { "value": "sand", "label": "Sand" },
+        { "value": "ink", "label": "Ink" }
+      ],
+      "default": "ivory"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "Flexible content"
+    }
+  ]
+}
+{% endschema %}

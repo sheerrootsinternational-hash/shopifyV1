@@ -1,0 +1,48 @@
+{%- comment -%}
+  Theme block: rich text.
+{%- endcomment -%}
+
+{%- if block.settings.text != blank -%}
+  <div
+    class="flex-block flex-block--text rte align-{{ block.settings.alignment }}{% if block.settings.size == 'large' %} subheading{% endif %}"
+    {{ block.shopify_attributes }}
+  >
+    {{ block.settings.text }}
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Text",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Share the story behind this piece.</p>"
+    },
+    {
+      "type": "select",
+      "id": "size",
+      "label": "Size",
+      "options": [
+        { "value": "regular", "label": "Regular" },
+        { "value": "large", "label": "Large" }
+      ],
+      "default": "regular"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Centre" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    }
+  ],
+  "presets": [{ "name": "Text" }]
+}
+{% endschema %}

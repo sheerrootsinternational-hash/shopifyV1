@@ -1,0 +1,86 @@
+{%- comment -%}
+  Theme block: image, with an optional art-directed mobile crop.
+{%- endcomment -%}
+
+{%- liquid
+  assign ratio_class = 'media--landscape'
+  case block.settings.ratio
+    when 'square'
+      assign ratio_class = 'media--square'
+    when 'portrait'
+      assign ratio_class = 'media--portrait'
+    when 'adapt'
+      assign ratio_class = 'media--adapt'
+  endcase
+-%}
+
+<div
+  class="flex-block flex-block--image"
+  style="--block-image-width: {{ block.settings.width }}%;"
+  {{ block.shopify_attributes }}
+>
+  <div class="media {{ ratio_class }}">
+    {% render 'banner-image',
+      desktop_image: block.settings.image,
+      mobile_image: block.settings.mobile_image,
+      alt: block.settings.image_alt,
+      sizes: '(min-width: 990px) 60vw, 100vw',
+      placeholder: 'lifestyle-1'
+    %}
+  </div>
+  {%- if block.settings.caption != blank -%}
+    <p class="flex-block__caption text-muted">{{ block.settings.caption | escape }}</p>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Image",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile image",
+      "info": "Optional. Falls back to the image above."
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image description"
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Caption"
+    },
+    {
+      "type": "select",
+      "id": "ratio",
+      "label": "Shape",
+      "options": [
+        { "value": "adapt", "label": "Use the image's own shape" },
+        { "value": "square", "label": "Square" },
+        { "value": "portrait", "label": "Portrait" },
+        { "value": "landscape", "label": "Landscape" }
+      ],
+      "default": "landscape"
+    },
+    {
+      "type": "range",
+      "id": "width",
+      "min": 30,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Width",
+      "default": 100
+    }
+  ],
+  "presets": [{ "name": "Image" }]
+}
+{% endschema %}

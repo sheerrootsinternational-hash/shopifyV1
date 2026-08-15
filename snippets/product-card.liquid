@@ -1,0 +1,131 @@
+{%- comment -%}
+  Product card.
+
+  All presentation options come from Theme settings → Product cards, so the
+  card looks identical wherever it is used (grid, slider, related products).
+
+  Accepts
+    product        {Product}  required — pass blank to render an onboarding placeholder
+    placeholder    {String}   placeholder_svg name, defaults to 'product-1'
+    sizes          {String}   image sizes attribute
+    loading        {String}   'lazy' (default) or 'eager'
+    heading_tag    {String}   defaults to 'h3'
+{%- endcomment -%}
+
+{%- liquid
+  assign heading_tag = heading_tag | default: 'h3'
+  assign img_loading = loading | default: 'lazy'
+  assign img_sizes = sizes | default: '(min-width: 990px) 25vw, (min-width: 750px) 33vw, 45vw'
+  assign ratio_class = 'media--square'
+  case settings.card_image_ratio
+    when 'portrait'
+      assign ratio_class = 'media--portrait'
+    when 'adapt'
+      assign ratio_class = 'media--adapt'
+  endcase
+-%}
+
+{%- if product == blank or product.empty? -%}
+  <div class="card card--align-{{ settings.card_text_alignment }}" style="--card-align: {{ settings.card_text_alignment }};">
+    <div class="card__media">
+      <div class="media {{ ratio_class }}">
+        {{ placeholder | default: 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      </div>
+    </div>
+    <div class="card__content">
+      <{{ heading_tag }} class="card__title">{{ 'onboarding.product_title' | t }}</{{ heading_tag }}>
+      <div class="price"><span class="price__regular">{{ 1999 | money }}</span></div>
+    </div>
+  </div>
+{%- else -%}
+  {%- liquid
+    assign second_image = null
+    if settings.card_show_second_image and product.media.size > 1
+      assign second_image = product.media[1].preview_image
+    endif
+  -%}
+  <div class="card card--align-{{ settings.card_text_alignment }}" style="--card-align: {{ settings.card_text_alignment }};">
+    <div class="card__media">
+      {%- if settings.card_show_sale_badge -%}
+        <div class="card__badges">
+          {%- if product.available == false -%}
+            <span class="badge badge--sold-out">{{ 'products.product.sold_out' | t }}</span>
+          {%- elsif product.compare_at_price > product.price -%}
+            <span class="badge badge--sale">{{ 'products.product.on_sale' | t }}</span>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      <div class="media {{ ratio_class }}">
+        {%- if product.featured_media -%}
+          {{
+            product.featured_media
+            | image_url: width: 1200
+            | image_tag:
+              loading: img_loading,
+              sizes: img_sizes,
+              widths: '200, 300, 400, 500, 600, 800, 1000, 1200',
+              alt: product.featured_media.alt,
+              class: 'card__image--primary'
+          }}
+          {%- if second_image -%}
+            {{
+              second_image
+              | image_url: width: 1200
+              | image_tag:
+                loading: 'lazy',
+                sizes: img_sizes,
+                widths: '200, 300, 400, 500, 600, 800, 1000, 1200',
+                alt: '',
+                class: 'card__image--secondary'
+            }}
+          {%- endif -%}
+        {%- else -%}
+          {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+      </div>
+    </div>
+
+    <div class="card__content">
+      {%- if settings.card_show_vendor and product.vendor != blank -%}
+        <span class="card__vendor">{{ product.vendor }}</span>
+      {%- endif -%}
+
+      <{{ heading_tag }} class="card__title">
+        <a href="{{ product.url }}">{{ product.title | escape }}</a>
+      </{{ heading_tag }}>
+
+      {% render 'price', product: product, show_from: true %}
+
+      {%- if settings.card_show_quick_add -%}
+        <div class="card__quick-add">
+          {%- if product.available == false -%}
+            <button type="button" class="button button--secondary" disabled>
+              {{- 'products.product.sold_out' | t -}}
+            </button>
+          {%- elsif product.variants.size > 1 or product.has_only_default_variant == false -%}
+            <a href="{{ product.url }}" class="button button--secondary">
+              {{- 'products.product.choose_options' | t -}}
+            </a>
+          {%- else -%}
+            {%- form 'product', product, class: 'card__quick-add-form' -%}
+              <input
+                type="hidden"
+                name="id"
+                value="{{ product.selected_or_first_available_variant.id }}"
+              >
+              <button
+                type="submit"
+                name="add"
+                class="button button--secondary"
+              >
+                {{- 'products.product.add_to_cart' | t -}}
+                <span class="visually-hidden">&nbsp;&mdash;&nbsp;{{ product.title | escape }}</span>
+              </button>
+            {%- endform -%}
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}

@@ -1,0 +1,5 @@
+{%- comment -%}
+  Emits the per-instance spacing custom properties for a section.
+  Used as: <section class="section" {% render 'section-styles', padding_top: section.settings.padding_top, padding_bottom: section.settings.padding_bottom %}>
+{%- endcomment -%}
+style="--section-padding-top: {{ padding_top | default: 60 }}px; --section-padding-bottom: {{ padding_bottom | default: 60 }}px;"

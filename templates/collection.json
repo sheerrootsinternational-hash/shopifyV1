@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "banner": {
+      "type": "collection-banner",
+      "settings": {
+        "show_description": true,
+        "show_breadcrumbs": true,
+        "overlay_opacity": 35,
+        "text_alignment": "center",
+        "color_scheme": "sand",
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "grid": {
+      "type": "main-collection",
+      "settings": {
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "columns_mobile": 2,
+        "show_toolbar": true,
+        "color_scheme": "ivory",
+        "padding_top": 40,
+        "padding_bottom": 72
+      }
+    }
+  },
+  "order": ["banner", "grid"]
+}

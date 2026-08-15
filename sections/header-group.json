@@ -1,0 +1,37 @@
+{
+  "name": "Header",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "message-1": {
+          "type": "announcement",
+          "settings": {
+            "text": "Every piece. A story. India."
+          }
+        }
+      },
+      "block_order": ["message-1"],
+      "settings": {
+        "color_scheme": "ink",
+        "scrolling": true,
+        "speed": 45,
+        "separator": "✳"
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "menu": "main-menu",
+        "color_scheme": "ivory",
+        "sticky": true,
+        "show_bottom_border": true,
+        "show_search": true,
+        "show_social": true,
+        "show_account": true
+      }
+    }
+  },
+  "order": ["announcement-bar", "header"]
+}

@@ -1,0 +1,24 @@
+<div class="section" style="--section-padding-top: 96px; --section-padding-bottom: 96px;">
+  <div class="page-width page-width--narrow">
+    <div class="empty-state">
+      <h1 class="h1">{{ '404.title' | t }}</h1>
+      <p>{{ '404.subtext' | t }}</p>
+      <div class="section__actions" style="justify-content: center;">
+        <a class="button" href="{{ routes.root_url }}">{{ '404.link' | t }}</a>
+        <a class="button button--secondary" href="{{ routes.all_products_collection_url }}">
+          {{ '404.shop_link' | t }}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "404",
+  "tag": "section",
+  "enabled_on": {
+    "templates": ["404"]
+  }
+}
+{% endschema %}

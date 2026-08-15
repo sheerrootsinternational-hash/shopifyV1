@@ -1,0 +1,306 @@
+{{ 'section-video.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'video-banner.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign has_hosted_video = false
+  if section.settings.video != blank
+    assign has_hosted_video = true
+  endif
+
+  assign has_external_video = false
+  if section.settings.video_url != blank
+    assign has_external_video = true
+  endif
+
+  assign ambient = false
+  if section.settings.playback == 'ambient' and has_hosted_video
+    assign ambient = true
+  endif
+
+  assign poster = section.settings.cover_image
+-%}
+
+<div
+  class="section video-banner scheme-{{ section.settings.color_scheme }}"
+  {% render 'section-styles', padding_top: section.settings.padding_top, padding_bottom: section.settings.padding_bottom %}
+>
+  <div class="{% if section.settings.full_width %}page-width page-width--flush{% else %}page-width{% endif %}">
+    {%- if section.settings.heading != blank or section.settings.subheading != blank -%}
+      <div class="section__header align-{{ section.settings.heading_alignment }}">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="eyebrow">{{ section.settings.eyebrow | escape }}</span>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="h2">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+        {%- if section.settings.subheading != blank -%}
+          <div class="subheading rte">{{ section.settings.subheading }}</div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <sr-video
+      class="video-banner__frame video-banner__frame--{{ section.settings.video_ratio }}"
+      {% if ambient %}data-ambient="true"{% endif %}
+    >
+      {%- if has_hosted_video -%}
+        {%- if ambient -%}
+          {{
+            section.settings.video
+            | video_tag:
+              image_size: '1600x',
+              autoplay: true,
+              loop: true,
+              muted: true,
+              controls: false,
+              class: 'video-banner__media'
+          }}
+        {%- else -%}
+          {{
+            section.settings.video
+            | video_tag:
+              image_size: '1600x',
+              controls: true,
+              preload: 'metadata',
+              class: 'video-banner__media'
+          }}
+        {%- endif -%}
+
+      {%- elsif has_external_video -%}
+        {%- comment -%}
+          The embed is only injected once the visitor asks for it, which keeps
+          a third-party iframe off the critical path. <noscript> keeps the video
+          reachable when JavaScript is unavailable.
+        {%- endcomment -%}
+        <button type="button" class="video-banner__poster" data-video-trigger>
+          {% render 'banner-image',
+            desktop_image: poster,
+            mobile_image: section.settings.mobile_cover_image,
+            alt: '',
+            sizes: '(min-width: 990px) 90vw, 100vw',
+            class: 'video-banner__media',
+            placeholder: 'lifestyle-1'
+          %}
+          <span class="video-banner__play" aria-hidden="true">{% render 'icon', name: 'play' %}</span>
+          <span class="visually-hidden">
+            {{- 'sections.video.load_video' | t: description: section.settings.video_alt | default: section.settings.heading -}}
+          </span>
+        </button>
+
+        <template data-video-template>
+          {{
+            section.settings.video_url
+            | external_video_url: autoplay: true, loop: section.settings.loop, playlist: section.settings.video_url.id
+            | external_video_tag: class: 'video-banner__media', loading: 'lazy', title: section.settings.video_alt
+          }}
+        </template>
+
+        <noscript>
+          <a class="button video-banner__fallback" href="{{ section.settings.video_url }}" target="_blank" rel="noopener noreferrer">
+            {{ 'sections.video.watch' | t }}
+          </a>
+        </noscript>
+
+      {%- else -%}
+        <div class="video-banner__empty">
+          {% render 'banner-image',
+            desktop_image: poster,
+            mobile_image: section.settings.mobile_cover_image,
+            alt: '',
+            sizes: '(min-width: 990px) 90vw, 100vw',
+            class: 'video-banner__media',
+            placeholder: 'lifestyle-1'
+          %}
+        </div>
+      {%- endif -%}
+    </sr-video>
+
+    {%- if section.settings.button_label != blank -%}
+      <div class="section__actions video-banner__actions align-{{ section.settings.heading_alignment }}">
+        <a
+          class="button{% if section.settings.button_style == 'secondary' %} button--secondary{% endif %}"
+          {% if section.settings.button_link != blank %}
+            href="{{ section.settings.button_link }}"
+          {% else %}
+            href="#" role="link" aria-disabled="true"
+          {% endif %}
+        >
+          {{- section.settings.button_label | escape -}}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Video banner",
+  "tag": "section",
+  "class": "shopify-section--video",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Video"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video",
+      "info": "Upload to Shopify admin → Content → Files, then choose it here. Preferred over a link — it is faster and has no third-party cookies."
+    },
+    {
+      "type": "video_url",
+      "id": "video_url",
+      "accept": ["youtube", "vimeo"],
+      "label": "Or a YouTube / Vimeo link",
+      "info": "Only used when no video is chosen above."
+    },
+    {
+      "type": "text",
+      "id": "video_alt",
+      "label": "Video description",
+      "info": "Describes the video for screen readers."
+    },
+    {
+      "type": "select",
+      "id": "playback",
+      "label": "Playback",
+      "options": [
+        { "value": "click", "label": "Play on click, with controls" },
+        { "value": "ambient", "label": "Play automatically, muted and looping" }
+      ],
+      "info": "Automatic playback only applies to videos uploaded to Shopify, and is skipped for visitors who ask for reduced motion.",
+      "default": "click"
+    },
+    {
+      "type": "checkbox",
+      "id": "loop",
+      "label": "Loop the video",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "cover_image",
+      "label": "Cover image",
+      "info": "Shown before the video plays."
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_cover_image",
+      "label": "Mobile cover image"
+    },
+    {
+      "type": "select",
+      "id": "video_ratio",
+      "label": "Video shape",
+      "options": [
+        { "value": "wide", "label": "Widescreen (16:9)" },
+        { "value": "cinema", "label": "Cinematic (21:9)" },
+        { "value": "square", "label": "Square" },
+        { "value": "portrait", "label": "Portrait (9:16)" }
+      ],
+      "default": "wide"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Small label"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "See it in the making"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Centre" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "options": [
+        { "value": "primary", "label": "Solid" },
+        { "value": "secondary", "label": "Outline" }
+      ],
+      "default": "secondary"
+    },
+    {
+      "type": "header",
+      "content": "Appearance"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Make the section full width",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "options": [
+        { "value": "ivory", "label": "Ivory" },
+        { "value": "sand", "label": "Sand" },
+        { "value": "ink", "label": "Ink" }
+      ],
+      "default": "sand"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 72
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video banner"
+    }
+  ]
+}
+{% endschema %}

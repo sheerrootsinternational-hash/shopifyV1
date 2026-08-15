@@ -1,0 +1,50 @@
+.flexible {
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+.flexible__inner > * + * {
+  margin-top: 2rem;
+}
+
+.flex-block--text {
+  max-width: 68ch;
+  color: var(--fg-muted);
+}
+
+.flex-block--text.align-center {
+  margin-inline: auto;
+}
+
+.flex-block--text.align-right {
+  margin-left: auto;
+}
+
+.flex-block--heading {
+  text-wrap: balance;
+}
+
+.flex-block--image {
+  width: var(--block-image-width, 100%);
+}
+
+.flex-block--image.align-center {
+  margin-inline: auto;
+}
+
+.flex-block__caption {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+}
+
+.flex-block--divider.align-center .rule {
+  margin-inline: auto;
+}
+
+.flex-block--divider.align-right .rule {
+  margin-left: auto;
+}
+
+.flex-block__spacer {
+  height: var(--spacer-height, 32px);
+}

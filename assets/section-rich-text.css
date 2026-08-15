@@ -1,0 +1,61 @@
+.rich-text__inner > * + * {
+  margin-top: 2rem;
+}
+
+.rich-text__inner > .eyebrow + * {
+  margin-top: 0;
+}
+
+.rich-text__heading {
+  text-wrap: balance;
+}
+
+.rich-text__text {
+  max-width: 68ch;
+  color: var(--fg-muted);
+}
+
+.align-center .rich-text__text {
+  margin-inline: auto;
+}
+
+.rich-text__quote {
+  max-width: 68ch;
+  padding-top: 0.8rem;
+}
+
+.align-center .rich-text__quote {
+  margin-inline: auto;
+}
+
+.rich-text__quote p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.rich-text__quote-icon {
+  width: 3.2rem;
+  height: auto;
+  margin-bottom: 1.6rem;
+  fill: var(--accent);
+  opacity: 0.5;
+}
+
+.align-center .rich-text__quote-icon {
+  margin-inline: auto;
+}
+
+.rich-text__cite {
+  display: block;
+  margin-top: 1.6rem;
+  font-family: var(--font-heading-family);
+  font-size: 1.2rem;
+  font-style: normal;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.rich-text .section__actions {
+  margin-top: 2.8rem;
+}

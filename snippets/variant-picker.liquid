@@ -1,0 +1,86 @@
+{%- comment -%}
+  Variant picker built from links rather than form controls.
+
+  Each option value points at that variant's own URL, so choosing an option
+  works with JavaScript switched off — the page simply navigates. When
+  assets/product-form.js is running it intercepts the click and updates the
+  price, availability, gallery and address bar in place, with no extra request.
+
+  Accepts
+    product  {Product}  required
+    block    {Block}    the section block, for shopify_attributes
+{%- endcomment -%}
+
+{%- unless product.has_only_default_variant -%}
+  <div class="variant-picker" data-variant-picker {{ block.shopify_attributes }}>
+    {%- for option in product.options_with_values -%}
+      {%- assign option_index = forloop.index0 -%}
+      <fieldset class="variant-picker__group">
+        <legend class="variant-picker__label">
+          {{ option.name }}:
+          <span class="variant-picker__selected" data-selected-for="{{ option_index }}">
+            {{- option.selected_value -}}
+          </span>
+        </legend>
+
+        <ul class="variant-picker__values" role="list">
+          {%- for value in option.values -%}
+            {%- liquid
+              # Prefer the variant that keeps every other selected option intact,
+              # so switching one option does not reset the rest.
+              assign target_variant = null
+              for candidate in product.variants
+                assign matches = true
+                for candidate_option in product.options_with_values
+                  assign i = forloop.index0
+                  if i == option_index
+                    unless candidate.options[i] == value
+                      assign matches = false
+                      break
+                    endunless
+                  else
+                    unless candidate.options[i] == candidate_option.selected_value
+                      assign matches = false
+                      break
+                    endunless
+                  endif
+                endfor
+                if matches
+                  assign target_variant = candidate
+                  break
+                endif
+              endfor
+
+              if target_variant == null
+                for candidate in product.variants
+                  if candidate.options[option_index] == value
+                    assign target_variant = candidate
+                    break
+                  endif
+                endfor
+              endif
+
+              assign is_selected = false
+              if option.selected_value == value
+                assign is_selected = true
+              endif
+            -%}
+
+            <li>
+              <a
+                class="variant-picker__value{% if is_selected %} is-selected{% endif %}{% if target_variant.available == false %} is-unavailable{% endif %}"
+                href="{{ product.url }}?variant={{ target_variant.id }}"
+                data-option-index="{{ option_index }}"
+                data-option-value="{{ value | escape }}"
+                data-variant-id="{{ target_variant.id }}"
+                {% if is_selected %}aria-current="true"{% endif %}
+              >
+                {{- value -}}
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </fieldset>
+    {%- endfor -%}
+  </div>
+{%- endunless -%}

@@ -1,0 +1,80 @@
+{{ 'template-page.css' | asset_url | stylesheet_tag }}
+
+<div class="section" style="--section-padding-top: 64px; --section-padding-bottom: 88px;">
+  <div class="page-width">
+    <div class="customer customer--wide">
+      <h1 class="h2">{{ 'customer.addresses.title' | t }}</h1>
+
+      <p class="customer__actions">
+        <a class="button button--link" href="{{ routes.account_url }}">{{ 'customer.order.back' | t }}</a>
+      </p>
+
+      <details class="accordion__item">
+        <summary class="accordion__summary">
+          {{ 'customer.addresses.add_new' | t }}
+          {% render 'icon', name: 'caret' %}
+        </summary>
+        <div class="accordion__content">
+          {%- form 'customer_address', customer.new_address -%}
+            <div class="field">
+              <label class="field__label" for="AddressFirstNameNew">{{ 'customer.addresses.first_name' | t }}</label>
+              <input id="AddressFirstNameNew" class="field__input" type="text" name="address[first_name]" autocomplete="given-name">
+            </div>
+            <div class="field">
+              <label class="field__label" for="AddressLastNameNew">{{ 'customer.addresses.last_name' | t }}</label>
+              <input id="AddressLastNameNew" class="field__input" type="text" name="address[last_name]" autocomplete="family-name">
+            </div>
+            <div class="field">
+              <label class="field__label" for="AddressLine1New">{{ 'customer.addresses.address1' | t }}</label>
+              <input id="AddressLine1New" class="field__input" type="text" name="address[address1]" autocomplete="address-line1">
+            </div>
+            <div class="field">
+              <label class="field__label" for="AddressCityNew">{{ 'customer.addresses.city' | t }}</label>
+              <input id="AddressCityNew" class="field__input" type="text" name="address[city]" autocomplete="address-level2">
+            </div>
+            <div class="field">
+              <label class="field__label" for="AddressZipNew">{{ 'customer.addresses.zip' | t }}</label>
+              <input id="AddressZipNew" class="field__input" type="text" name="address[zip]" autocomplete="postal-code">
+            </div>
+            <div class="field">
+              <label class="field__label" for="AddressCountryNew">{{ 'customer.addresses.country' | t }}</label>
+              <div class="select">
+                <select id="AddressCountryNew" class="select__select" name="address[country]" autocomplete="country">
+                  {{ country_option_tags }}
+                </select>
+                {% render 'icon', name: 'caret' %}
+              </div>
+            </div>
+            <div class="field">
+              <label class="field__label" for="AddressPhoneNew">{{ 'customer.addresses.phone' | t }}</label>
+              <input id="AddressPhoneNew" class="field__input" type="tel" name="address[phone]" autocomplete="tel">
+            </div>
+            <div class="customer__actions">
+              <button type="submit" class="button">{{ 'customer.addresses.add' | t }}</button>
+            </div>
+          {%- endform -%}
+        </div>
+      </details>
+
+      {%- paginate customer.addresses by 10 -%}
+        <ul class="customer__address-list" role="list">
+          {%- for address in customer.addresses -%}
+            <li class="customer__address">
+              {%- if address == customer.default_address -%}
+                <p class="eyebrow">{{ 'customer.addresses.default' | t }}</p>
+              {%- endif -%}
+              <p class="text-muted">{{ address | format_address }}</p>
+              <div class="customer__actions">
+                <a class="button button--link" href="{{ routes.account_addresses_url }}/{{ address.id }}">
+                  {{ 'customer.addresses.edit' | t }}
+                </a>
+              </div>
+            </li>
+          {%- endfor -%}
+        </ul>
+
+        {% render 'pagination', paginate: paginate %}
+      {%- endpaginate -%}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,420 @@
+/* ==========================================================================
+   Sheer Roots — components
+   Patterns reused across sections: media frames, product cards, badges,
+   accordions, pagination, breadcrumbs, social icons, pills.
+   ========================================================================== */
+
+/* Media frame ------------------------------------------------------------ */
+
+.media {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background-color: rgba(var(--fg-rgb), 0.04);
+  border-radius: var(--radius);
+}
+
+/* Descendant selectors rather than child selectors: <picture> wrappers from
+   snippets/banner-image.liquid sit between .media and the <img>. */
+.media img,
+.media video,
+.media iframe,
+.media svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.media--square {
+  padding-bottom: 100%;
+}
+
+.media--portrait {
+  padding-bottom: 125%;
+}
+
+.media--landscape {
+  padding-bottom: 66.6%;
+}
+
+.media--adapt img {
+  position: static;
+  height: auto;
+}
+
+.media--contain img {
+  object-fit: contain;
+}
+
+.placeholder-svg {
+  width: 100%;
+  height: 100%;
+  fill: rgba(var(--fg-rgb), 0.14);
+  background-color: rgba(var(--fg-rgb), 0.04);
+}
+
+/* Product card ----------------------------------------------------------- */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: var(--card-align, center);
+}
+
+.card__media {
+  position: relative;
+  margin-bottom: 1.6rem;
+}
+
+.card__media .media {
+  transition: transform 600ms var(--ease);
+}
+
+.card__image--secondary {
+  opacity: 0;
+  transition: opacity 400ms var(--ease);
+}
+
+@media (hover: hover) {
+  .card:hover .card__image--secondary {
+    opacity: 1;
+  }
+}
+
+.card__badges {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--fg);
+  color: var(--bg);
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.badge--sale {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+.badge--sold-out {
+  background-color: rgba(var(--fg-rgb), 0.6);
+  color: var(--bg);
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex-grow: 1;
+}
+
+.card__vendor {
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.card__title {
+  font-family: var(--font-body-family);
+  font-size: calc(1.5rem * var(--body-scale));
+  font-weight: var(--font-body-weight);
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.card__title a {
+  text-decoration: none;
+}
+
+/* Make the whole card clickable without nesting interactive elements */
+.card__title a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.card {
+  position: relative;
+}
+
+.card__title a:hover {
+  color: var(--accent);
+}
+
+.card__quick-add {
+  margin-top: 1.2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.card__quick-add .button {
+  min-height: 4rem;
+  padding-inline: 2rem;
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+/* Price ------------------------------------------------------------------ */
+
+.price {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: baseline;
+  justify-content: var(--price-justify, center);
+  font-size: calc(1.5rem * var(--body-scale));
+}
+
+.card[style*='left'] .price,
+.card--align-left .price {
+  --price-justify: flex-start;
+}
+
+.price__regular--compare {
+  color: var(--fg-muted);
+  text-decoration: line-through;
+}
+
+.price__sale {
+  color: var(--accent);
+}
+
+.price__unit,
+.price__tax {
+  width: 100%;
+  font-size: 1.3rem;
+  color: var(--fg-muted);
+}
+
+/* Product grid ----------------------------------------------------------- */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--columns-mobile, 2), minmax(0, 1fr));
+  gap: 2.4rem 1.6rem;
+  list-style: none;
+}
+
+@media screen and (min-width: 750px) {
+  .product-grid {
+    grid-template-columns: repeat(var(--columns-tablet, 3), minmax(0, 1fr));
+    gap: 4rem 2.4rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .product-grid {
+    grid-template-columns: repeat(var(--columns-desktop, 4), minmax(0, 1fr));
+    gap: 4.8rem 3.2rem;
+  }
+}
+
+/* Accordion -------------------------------------------------------------- */
+
+.accordion {
+  border-top: 1px solid var(--line);
+}
+
+.accordion__item {
+  border-bottom: 1px solid var(--line);
+}
+
+.accordion__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 0;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-heading-family);
+  font-size: calc(1.6rem * var(--body-scale));
+  letter-spacing: 0.04em;
+}
+
+.accordion__summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion__summary .icon-caret {
+  flex-shrink: 0;
+  width: 1.2rem;
+  transition: transform var(--duration) var(--ease);
+}
+
+.accordion__item[open] .accordion__summary .icon-caret {
+  transform: rotate(180deg);
+}
+
+.accordion__content {
+  padding-bottom: 2.4rem;
+  color: var(--fg-muted);
+}
+
+/* Social icons ----------------------------------------------------------- */
+
+.social-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--social-gap, 1.6rem);
+  list-style: none;
+}
+
+.social-list__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: var(--radius-pill);
+  color: currentColor;
+  transition: color var(--duration) var(--ease), background-color var(--duration) var(--ease);
+}
+
+.social-list__link:hover {
+  color: var(--accent);
+  background-color: rgba(var(--fg-rgb), 0.06);
+}
+
+.social-list__link svg {
+  width: 2rem;
+  height: 2rem;
+  fill: currentColor;
+}
+
+.social-list--large .social-list__link {
+  width: 6.4rem;
+  height: 6.4rem;
+  border: 1px solid var(--line);
+}
+
+.social-list--large .social-list__link svg {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+/* Pagination ------------------------------------------------------------- */
+
+.pagination {
+  margin-top: 6rem;
+}
+
+.pagination__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  list-style: none;
+}
+
+.pagination__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4.4rem;
+  height: 4.4rem;
+  padding-inline: 0.8rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+.pagination__item[aria-current='page'] {
+  background-color: rgba(var(--fg-rgb), 0.08);
+  font-weight: var(--font-body-weight-bold);
+}
+
+.pagination__item svg {
+  width: 1.2rem;
+  fill: currentColor;
+}
+
+/* Breadcrumbs ------------------------------------------------------------ */
+
+.breadcrumbs {
+  margin-bottom: 2.4rem;
+  font-size: 1.3rem;
+  color: var(--fg-muted);
+}
+
+.breadcrumbs__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  list-style: none;
+}
+
+.breadcrumbs__item + .breadcrumbs__item::before {
+  content: '/';
+  margin-right: 0.6rem;
+  opacity: 0.5;
+}
+
+/* Divider / flourish ----------------------------------------------------- */
+
+.rule {
+  width: 6rem;
+  height: 1px;
+  margin: 2rem 0;
+  border: 0;
+  background-color: var(--accent);
+}
+
+.align-center .rule {
+  margin-inline: auto;
+}
+
+/* Tag / pill list -------------------------------------------------------- */
+
+.pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  list-style: none;
+}
+
+.pill {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+.pill:hover,
+.pill[aria-current='true'] {
+  border-color: var(--fg);
+}
+
+/* Empty / notice states -------------------------------------------------- */
+
+.empty-state {
+  padding: 8rem 0;
+  text-align: center;
+}
+
+.empty-state p {
+  color: var(--fg-muted);
+}

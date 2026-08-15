@@ -1,0 +1,407 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Sheer Roots",
+    "theme_version": "1.0.0",
+    "theme_author": "Sheer Roots International",
+    "theme_documentation_url": "https://github.com/sheerrootsinternational-hash/shopifyV1#readme",
+    "theme_support_url": "https://github.com/sheerrootsinternational-hash/shopifyV1/issues"
+  },
+  {
+    "name": "Branding",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Sheer Roots"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo",
+        "info": "Used in the header. A transparent PNG or SVG works best."
+      },
+      {
+        "type": "range",
+        "id": "logo_width",
+        "min": 80,
+        "max": 340,
+        "step": 10,
+        "unit": "px",
+        "label": "Logo width (desktop)",
+        "default": 200
+      },
+      {
+        "type": "range",
+        "id": "logo_width_mobile",
+        "min": 60,
+        "max": 220,
+        "step": 5,
+        "unit": "px",
+        "label": "Logo width (mobile)",
+        "default": 130
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_footer",
+        "label": "Footer logo",
+        "info": "Optional. Falls back to the main logo. Use a light version if your footer is dark."
+      },
+      {
+        "type": "header",
+        "content": "Social India Craft"
+      },
+      {
+        "type": "image_picker",
+        "id": "sic_logo",
+        "label": "Social India Craft logo",
+        "info": "Available to every section that shows the sub-brand logo."
+      },
+      {
+        "type": "header",
+        "content": "Browser"
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon",
+        "info": "Will be scaled to 32 x 32 px."
+      },
+      {
+        "type": "image_picker",
+        "id": "share_image",
+        "label": "Default social sharing image",
+        "info": "Used when a page has no image of its own. 1200 x 630 px recommended."
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Headings"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_heading_font",
+        "label": "Heading font",
+        "default": "assistant_n6"
+      },
+      {
+        "type": "range",
+        "id": "heading_scale",
+        "min": 80,
+        "max": 140,
+        "step": 5,
+        "unit": "%",
+        "label": "Heading size",
+        "default": 100
+      },
+      {
+        "type": "checkbox",
+        "id": "heading_uppercase",
+        "label": "Uppercase headings",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "heading_letter_spacing",
+        "min": 0,
+        "max": 12,
+        "step": 1,
+        "unit": "%",
+        "label": "Heading letter spacing",
+        "info": "Wide letter spacing suits uppercase headings.",
+        "default": 4
+      },
+      {
+        "type": "header",
+        "content": "Body"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_body_font",
+        "label": "Body font",
+        "default": "assistant_n4"
+      },
+      {
+        "type": "range",
+        "id": "body_scale",
+        "min": 90,
+        "max": 130,
+        "step": 5,
+        "unit": "%",
+        "label": "Body size",
+        "default": 100
+      }
+    ]
+  },
+  {
+    "name": "Colours",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Every section can be set to one of three schemes — Ivory, Sand or Ink. These colours define all three."
+      },
+      {
+        "type": "header",
+        "content": "Ivory scheme (default)"
+      },
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Background",
+        "default": "#fbf7f2"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Primary text",
+        "default": "#1f1b16"
+      },
+      {
+        "type": "color",
+        "id": "color_text_muted",
+        "label": "Secondary text",
+        "default": "#6f6357"
+      },
+      {
+        "type": "header",
+        "content": "Sand scheme"
+      },
+      {
+        "type": "color",
+        "id": "color_background_alt",
+        "label": "Background",
+        "default": "#f1e7da"
+      },
+      {
+        "type": "header",
+        "content": "Ink scheme"
+      },
+      {
+        "type": "color",
+        "id": "color_ink",
+        "label": "Background",
+        "default": "#221e19"
+      },
+      {
+        "type": "color",
+        "id": "color_on_ink",
+        "label": "Text",
+        "default": "#f6efe6"
+      },
+      {
+        "type": "header",
+        "content": "Accents"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Accent",
+        "info": "Links, sale prices, small flourishes.",
+        "default": "#a85e2b"
+      },
+      {
+        "type": "color",
+        "id": "color_border",
+        "label": "Borders and rules",
+        "default": "#e2d6c6"
+      },
+      {
+        "type": "header",
+        "content": "Buttons"
+      },
+      {
+        "type": "color",
+        "id": "color_button",
+        "label": "Button background",
+        "default": "#1f1b16"
+      },
+      {
+        "type": "color",
+        "id": "color_button_text",
+        "label": "Button label",
+        "default": "#fbf7f2"
+      }
+    ]
+  },
+  {
+    "name": "Layout",
+    "settings": [
+      {
+        "type": "range",
+        "id": "page_width",
+        "min": 1100,
+        "max": 1800,
+        "step": 20,
+        "unit": "px",
+        "label": "Maximum content width",
+        "default": 1400
+      },
+      {
+        "type": "range",
+        "id": "spacing_scale",
+        "min": 70,
+        "max": 140,
+        "step": 5,
+        "unit": "%",
+        "label": "Section spacing",
+        "info": "Scales the top and bottom padding of every section.",
+        "default": 100
+      },
+      {
+        "type": "range",
+        "id": "border_radius",
+        "min": 0,
+        "max": 24,
+        "step": 2,
+        "unit": "px",
+        "label": "Corner radius",
+        "info": "Applies to buttons, inputs, cards and media.",
+        "default": 2
+      }
+    ]
+  },
+  {
+    "name": "Product cards",
+    "settings": [
+      {
+        "type": "select",
+        "id": "card_image_ratio",
+        "label": "Image shape",
+        "options": [
+          { "value": "adapt", "label": "Use the image's own shape" },
+          { "value": "square", "label": "Square" },
+          { "value": "portrait", "label": "Portrait" }
+        ],
+        "default": "square"
+      },
+      {
+        "type": "select",
+        "id": "card_text_alignment",
+        "label": "Text alignment",
+        "options": [
+          { "value": "left", "label": "Left" },
+          { "value": "center", "label": "Centre" }
+        ],
+        "default": "center"
+      },
+      {
+        "type": "checkbox",
+        "id": "card_show_second_image",
+        "label": "Show second image on hover",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "card_show_vendor",
+        "label": "Show vendor",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "card_show_sale_badge",
+        "label": "Show sale and sold out badges",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "card_show_quick_add",
+        "label": "Show add to cart button",
+        "info": "Products with options link through to the product page instead.",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Leave a field empty to hide that icon everywhere it appears."
+      },
+      {
+        "type": "url",
+        "id": "social_instagram_link",
+        "label": "Instagram"
+      },
+      {
+        "type": "url",
+        "id": "social_facebook_link",
+        "label": "Facebook"
+      },
+      {
+        "type": "url",
+        "id": "social_etsy_link",
+        "label": "Etsy"
+      },
+      {
+        "type": "url",
+        "id": "social_pinterest_link",
+        "label": "Pinterest"
+      },
+      {
+        "type": "url",
+        "id": "social_youtube_link",
+        "label": "YouTube"
+      },
+      {
+        "type": "url",
+        "id": "social_whatsapp_link",
+        "label": "WhatsApp"
+      }
+    ]
+  },
+  {
+    "name": "Contact details",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Used by the footer and the contact page. Edit once, updates everywhere."
+      },
+      {
+        "type": "text",
+        "id": "contact_address",
+        "label": "Address",
+        "default": "Sector 3, Gurgaon, 122011"
+      },
+      {
+        "type": "text",
+        "id": "contact_phone",
+        "label": "Phone number",
+        "default": "+91 8448809111"
+      },
+      {
+        "type": "text",
+        "id": "contact_email",
+        "label": "Email address",
+        "default": "info@sheerroot.in"
+      }
+    ]
+  },
+  {
+    "name": "Currency",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "currency_code_enabled",
+        "label": "Show currency codes",
+        "info": "Shows Rs. 1,000 INR instead of Rs. 1,000.",
+        "default": false
+      }
+    ]
+  },
+  {
+    "name": "Motion",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "animations_enabled",
+        "label": "Reveal sections on scroll",
+        "info": "Automatically disabled for visitors who ask for reduced motion.",
+        "default": true
+      }
+    ]
+  }
+]

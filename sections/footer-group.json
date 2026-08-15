@@ -1,0 +1,44 @@
+{
+  "name": "Footer",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "brand": {
+          "type": "brand",
+          "settings": {
+            "show_logo": true,
+            "logo_width": 180,
+            "heading": "About us",
+            "text": "<p>This website is operated by Sheer Roots International. Sheer Roots International offers Indian handicrafts, artisanal products, culturally inspired products, lifestyle products and gifting collections. Social India Craft operates under the Sheer Roots family and represents our premium artisanal and conscious gifting collections.<\/p>",
+            "tagline": "Every piece. A story. India.",
+            "show_social": true
+          }
+        },
+        "quick-links": {
+          "type": "menu",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "footer"
+          }
+        },
+        "contact": {
+          "type": "contact",
+          "settings": {
+            "heading": "Contact us"
+          }
+        }
+      },
+      "block_order": ["brand", "quick-links", "contact"],
+      "settings": {
+        "color_scheme": "ink",
+        "show_policy_links": true,
+        "show_payment_icons": true,
+        "padding_top": 72,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": ["footer"]
+}

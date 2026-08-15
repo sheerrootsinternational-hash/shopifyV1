@@ -1,0 +1,115 @@
+/* ==========================================================================
+   Collection banner + product grid
+   ========================================================================== */
+
+.collection-banner {
+  position: relative;
+  background-color: var(--bg);
+  color: var(--fg);
+  isolation: isolate;
+}
+
+.collection-banner--with-image {
+  display: grid;
+  min-height: 32rem;
+  align-content: center;
+}
+
+.collection-banner__media {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.collection-banner__image,
+.collection-banner__media .placeholder-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.collection-banner__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: #000;
+  opacity: var(--overlay-opacity, 0.35);
+}
+
+.collection-banner__content {
+  position: relative;
+}
+
+.collection-banner__content.align-center {
+  text-align: center;
+}
+
+.collection-banner__content.align-center .breadcrumbs__list {
+  justify-content: center;
+}
+
+.collection-banner__heading {
+  text-wrap: balance;
+}
+
+.collection-banner__description {
+  max-width: 68ch;
+  margin-top: 1.6rem;
+  color: var(--fg-muted);
+}
+
+.collection-banner__content.align-center .collection-banner__description {
+  margin-inline: auto;
+}
+
+.collection-banner--with-image .collection-banner__description {
+  color: inherit;
+}
+
+/* Toolbar ---------------------------------------------------------------- */
+
+.collection {
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+.collection__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.6rem 2.4rem;
+  margin-bottom: 3.2rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.collection__count {
+  margin: 0;
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.collection__sort {
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.collection__sort .select {
+  min-width: 20rem;
+}
+
+.collection__sort .select__select {
+  min-height: 4.2rem;
+  font-size: 1.4rem;
+}
+
+.collection__apply {
+  min-height: 4.2rem;
+}

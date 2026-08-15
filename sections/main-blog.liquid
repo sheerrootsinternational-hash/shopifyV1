@@ -1,0 +1,89 @@
+{{ 'template-page.css' | asset_url | stylesheet_tag }}
+
+{%- paginate blog.articles by section.settings.posts_per_page -%}
+  <div class="section" {% render 'section-styles', padding_top: section.settings.padding_top, padding_bottom: section.settings.padding_bottom %}>
+    <div class="page-width">
+      <div class="section__header align-center">
+        <h1 class="h1">{{ blog.title | escape }}</h1>
+      </div>
+
+      {%- if blog.articles.size == 0 -%}
+        <div class="empty-state">
+          <p>{{ 'blogs.general.no_articles' | t }}</p>
+        </div>
+      {%- else -%}
+        <ul class="product-grid" role="list" style="--columns-desktop: 3; --columns-tablet: 2; --columns-mobile: 1;">
+          {%- for article in blog.articles -%}
+            <li>
+              <article class="article-card">
+                {%- if article.image -%}
+                  <a href="{{ article.url }}" tabindex="-1" aria-hidden="true">
+                    <div class="media media--landscape">
+                      {{
+                        article.image
+                        | image_url: width: 1000
+                        | image_tag:
+                          loading: 'lazy',
+                          widths: '300, 500, 700, 1000',
+                          sizes: '(min-width: 990px) 33vw, 90vw',
+                          alt: article.image.alt | default: article.title
+                      }}
+                    </div>
+                  </a>
+                {%- endif -%}
+                <p class="article-card__meta">{{ article.published_at | date: format: 'date' }}</p>
+                <h2 class="h4">
+                  <a href="{{ article.url }}">{{ article.title | escape }}</a>
+                </h2>
+                <p class="text-muted">{{ article.excerpt_or_content | strip_html | truncatewords: 26 }}</p>
+              </article>
+            </li>
+          {%- endfor -%}
+        </ul>
+
+        {% render 'pagination', paginate: paginate %}
+      {%- endif -%}
+    </div>
+  </div>
+{%- endpaginate -%}
+
+{% schema %}
+{
+  "name": "Blog posts",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "posts_per_page",
+      "min": 3,
+      "max": 24,
+      "step": 3,
+      "label": "Posts per page",
+      "default": 9
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 72
+    }
+  ],
+  "enabled_on": {
+    "templates": ["blog"]
+  }
+}
+{% endschema %}

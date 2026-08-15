@@ -1,0 +1,125 @@
+/* ==========================================================================
+   Image with text
+   ========================================================================== */
+
+.media-text {
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+.media-text__grid {
+  display: grid;
+  gap: 3.2rem;
+  align-items: center;
+}
+
+@media screen and (min-width: 990px) {
+  .media-text__grid {
+    gap: 6.4rem;
+    grid-template-columns: var(--media-columns, 1fr 1fr);
+  }
+
+  .media-text--media-small {
+    --media-columns: 0.8fr 1.2fr;
+  }
+
+  .media-text--media-large {
+    --media-columns: 1.3fr 0.7fr;
+  }
+
+  /* Image right: place the media cell in column 2 without reordering the DOM,
+     so the reading order stays heading-first for assistive technology. */
+  .media-text--image-right .media-text__media {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .media-text--image-right .media-text__content {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .media-text--image-right.media-text--media-small {
+    --media-columns: 1.2fr 0.8fr;
+  }
+
+  .media-text--image-right.media-text--media-large {
+    --media-columns: 0.7fr 1.3fr;
+  }
+}
+
+.media-text--full .media-text__grid {
+  gap: 0;
+}
+
+@media screen and (min-width: 990px) {
+  .media-text--full .media-text__content {
+    padding: 4rem clamp(3.2rem, 5vw, 8rem);
+  }
+}
+
+.media-text--full .media {
+  border-radius: 0;
+}
+
+.media-text__caption {
+  margin-top: 1.2rem;
+  font-size: 1.3rem;
+  color: var(--fg-muted);
+}
+
+.media-text__content > * + * {
+  margin-top: 1.8rem;
+}
+
+.media-text__content > .eyebrow + * {
+  margin-top: 0;
+}
+
+.media-text__logo img {
+  width: var(--block-logo-width, 160px);
+  height: auto;
+}
+
+.align-center .media-text__logo img {
+  margin-inline: auto;
+}
+
+.media-text__heading {
+  text-wrap: balance;
+}
+
+.media-text__strapline {
+  font-family: var(--font-heading-family);
+  font-size: calc(1.4rem * var(--body-scale));
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.media-text__text {
+  color: var(--fg-muted);
+  max-width: 62ch;
+}
+
+.align-center .media-text__text {
+  margin-inline: auto;
+}
+
+.media-text__quote {
+  padding-left: 2rem;
+  border-left: 2px solid var(--accent);
+}
+
+.align-center .media-text__quote {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.media-text__quote p {
+  margin: 0;
+}
+
+.media-text .section__actions {
+  margin-top: 2.6rem;
+}

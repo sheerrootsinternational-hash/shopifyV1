@@ -1,0 +1,30 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Shopify CLI local state (machine specific — never commit)
+.shopify/
+shopify.theme.toml
+.theme-check-cache/
+
+# Credentials — never commit
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+*.swo
+
+# Scratch
+tmp/
+*.log

@@ -1,0 +1,250 @@
+{{ 'section-hero.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign has_content = false
+  if section.settings.heading != blank or section.settings.text != blank or section.settings.button_label != blank
+    assign has_content = true
+  endif
+
+  assign heading_tag = 'h2'
+  if section.settings.heading_is_page_title
+    assign heading_tag = 'h1'
+  endif
+-%}
+
+<section
+  class="hero hero--{{ section.settings.height }} hero--text-{{ section.settings.text_position }} scheme-{{ section.settings.color_scheme }}"
+  style="--overlay-opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};"
+>
+  <div class="hero__media">
+    {% render 'banner-image',
+      desktop_image: section.settings.desktop_image,
+      mobile_image: section.settings.mobile_image,
+      alt: section.settings.image_alt,
+      loading: 'eager',
+      fetchpriority: 'high',
+      sizes: '100vw',
+      class: 'hero__image',
+      placeholder: 'lifestyle-1'
+    %}
+    {%- if section.settings.overlay_opacity > 0 -%}
+      <span class="hero__overlay" aria-hidden="true"></span>
+    {%- endif -%}
+  </div>
+
+  {%- if has_content -%}
+    <div class="hero__content-wrap page-width">
+      <div class="hero__content align-{{ section.settings.text_alignment }} hero__content--{{ section.settings.text_style }}">
+        {%- if section.settings.eyebrow != blank -%}
+          <span class="eyebrow">{{ section.settings.eyebrow | escape }}</span>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <{{ heading_tag }} class="hero__heading h0">{{ section.settings.heading | escape }}</{{ heading_tag }}>
+        {%- endif -%}
+
+        {%- if section.settings.text != blank -%}
+          <div class="hero__text rte">{{ section.settings.text }}</div>
+        {%- endif -%}
+
+        {%- if section.settings.button_label != blank -%}
+          <div class="section__actions">
+            <a
+              class="button{% if section.settings.button_style == 'secondary' %} button--secondary{% endif %}"
+              {% if section.settings.button_link != blank %}
+                href="{{ section.settings.button_link }}"
+              {% else %}
+                href="#" role="link" aria-disabled="true"
+              {% endif %}
+            >
+              {{- section.settings.button_label | escape -}}
+            </a>
+            {%- if section.settings.button_label_2 != blank -%}
+              <a
+                class="button button--secondary"
+                {% if section.settings.button_link_2 != blank %}
+                  href="{{ section.settings.button_link_2 }}"
+                {% else %}
+                  href="#" role="link" aria-disabled="true"
+                {% endif %}
+              >
+                {{- section.settings.button_label_2 | escape -}}
+              </a>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Hero banner",
+  "tag": "section",
+  "class": "shopify-section--hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop image",
+      "info": "2400 x 1200 px or wider works best."
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile image",
+      "info": "Optional. Use a taller crop so the subject is not cut off on phones. Falls back to the desktop image."
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image description",
+      "info": "Describes the image for screen readers and search engines. Falls back to the alt text set on the file in Content → Files."
+    },
+    {
+      "type": "select",
+      "id": "height",
+      "label": "Banner height",
+      "options": [
+        { "value": "adapt", "label": "Use the image's own shape" },
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" },
+        { "value": "full", "label": "Full screen" }
+      ],
+      "default": "large"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "label": "Image overlay",
+      "info": "Darkens the image so text stays readable.",
+      "default": 25
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Small label above heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Every piece. A story. India."
+    },
+    {
+      "type": "checkbox",
+      "id": "heading_is_page_title",
+      "label": "Use as the page's main heading (H1)",
+      "info": "Turn on for the first banner on a page when it carries the page's title. Only one H1 per page.",
+      "default": false
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "options": [
+        { "value": "primary", "label": "Solid" },
+        { "value": "secondary", "label": "Outline" }
+      ],
+      "default": "primary"
+    },
+    {
+      "type": "text",
+      "id": "button_label_2",
+      "label": "Second button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "Second button link"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "text_position",
+      "label": "Text position",
+      "options": [
+        { "value": "top-left", "label": "Top left" },
+        { "value": "top-center", "label": "Top centre" },
+        { "value": "middle-left", "label": "Middle left" },
+        { "value": "middle-center", "label": "Middle centre" },
+        { "value": "middle-right", "label": "Middle right" },
+        { "value": "bottom-left", "label": "Bottom left" },
+        { "value": "bottom-center", "label": "Bottom centre" }
+      ],
+      "default": "middle-center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Centre" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_style",
+      "label": "Text treatment",
+      "info": "A panel keeps text legible over busy photography.",
+      "options": [
+        { "value": "plain", "label": "Directly on the image" },
+        { "value": "panel", "label": "On a panel" }
+      ],
+      "default": "plain"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Text colour scheme",
+      "info": "Ink gives light text for dark images.",
+      "options": [
+        { "value": "ivory", "label": "Ivory (dark text)" },
+        { "value": "sand", "label": "Sand (dark text)" },
+        { "value": "ink", "label": "Ink (light text)" }
+      ],
+      "default": "ink"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero banner"
+    }
+  ]
+}
+{% endschema %}

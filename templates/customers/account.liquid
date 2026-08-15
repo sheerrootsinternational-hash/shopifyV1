@@ -1,0 +1,52 @@
+{{ 'template-page.css' | asset_url | stylesheet_tag }}
+
+<div class="section" style="--section-padding-top: 64px; --section-padding-bottom: 88px;">
+  <div class="page-width">
+    <div class="customer customer--wide">
+      <h1 class="h2">{{ 'customer.account.title' | t }}</h1>
+
+      <div class="customer__actions">
+        <a class="button button--secondary" href="{{ routes.account_addresses_url }}">
+          {{ 'customer.account.view_addresses' | t }}
+        </a>
+        <a class="button button--link" href="{{ routes.account_logout_url }}">
+          {{ 'customer.account.log_out' | t }}
+        </a>
+      </div>
+
+      <h2 class="h3">{{ 'customer.orders.title' | t }}</h2>
+
+      {%- paginate customer.orders by 20 -%}
+        {%- if customer.orders.size == 0 -%}
+          <p class="text-muted">{{ 'customer.orders.none' | t }}</p>
+        {%- else -%}
+          <table>
+            <caption class="visually-hidden">{{ 'customer.orders.title' | t }}</caption>
+            <thead>
+              <tr>
+                <th scope="col">{{ 'customer.orders.order_number' | t }}</th>
+                <th scope="col">{{ 'customer.orders.date' | t }}</th>
+                <th scope="col">{{ 'customer.orders.payment_status' | t }}</th>
+                <th scope="col">{{ 'customer.orders.fulfillment_status' | t }}</th>
+                <th scope="col">{{ 'customer.orders.total' | t }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {%- for order in customer.orders -%}
+                <tr>
+                  <td><a href="{{ order.customer_url }}">{{ order.name }}</a></td>
+                  <td>{{ order.created_at | date: format: 'date' }}</td>
+                  <td>{{ order.financial_status_label }}</td>
+                  <td>{{ order.fulfillment_status_label }}</td>
+                  <td>{{ order.total_price | money_with_currency }}</td>
+                </tr>
+              {%- endfor -%}
+            </tbody>
+          </table>
+
+          {% render 'pagination', paginate: paginate %}
+        {%- endif -%}
+      {%- endpaginate -%}
+    </div>
+  </div>
+</div>

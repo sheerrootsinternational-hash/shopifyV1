@@ -1,0 +1,113 @@
+.social-follow {
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+.social-follow__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  align-items: flex-start;
+}
+
+.social-follow__inner.align-center {
+  align-items: center;
+}
+
+.social-follow__heading {
+  text-wrap: balance;
+}
+
+.social-follow__text {
+  max-width: 60ch;
+  color: var(--fg-muted);
+}
+
+.social-follow__icons {
+  margin-top: 0.8rem;
+}
+
+.social-follow__handle {
+  font-family: var(--font-heading-family);
+  font-size: 1.3rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+/* Labelled links --------------------------------------------------------- */
+
+.social-labelled {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem 3.2rem;
+  margin-top: 1.2rem;
+  list-style: none;
+}
+
+.align-center .social-labelled {
+  justify-content: center;
+}
+
+.social-labelled__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.6rem 0;
+  font-family: var(--font-heading-family);
+  font-size: 1.3rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color var(--duration) var(--ease);
+}
+
+.social-labelled__link svg {
+  width: 2rem;
+  height: 2rem;
+  fill: currentColor;
+  transition: transform var(--duration) var(--ease);
+}
+
+.social-labelled__link:hover {
+  color: var(--accent);
+}
+
+.social-labelled__link:hover svg {
+  transform: translateY(-2px);
+}
+
+.social-labelled__empty {
+  font-size: 1.4rem;
+}
+
+/* Gallery ---------------------------------------------------------------- */
+
+.social-follow__gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+  margin-top: 4rem;
+  list-style: none;
+}
+
+@media screen and (min-width: 750px) {
+  .social-follow__gallery {
+    grid-template-columns: repeat(var(--gallery-columns, 4), minmax(0, 1fr));
+    gap: 1.6rem;
+  }
+}
+
+.social-follow__gallery-item a {
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+.social-follow__gallery-item img {
+  transition: transform 600ms var(--ease);
+}
+
+.social-follow__gallery-item a:hover img {
+  transform: scale(1.05);
+}

@@ -1,0 +1,60 @@
+{%- comment -%}
+  Theme block: button.
+{%- endcomment -%}
+
+{%- if block.settings.label != blank -%}
+  <div class="flex-block flex-block--button section__actions align-{{ block.settings.alignment }}" {{ block.shopify_attributes }}>
+    <a
+      class="button{% if block.settings.style == 'secondary' %} button--secondary{% elsif block.settings.style == 'link' %} button--link{% endif %}"
+      {% if block.settings.link != blank %}
+        href="{{ block.settings.link }}"
+      {% else %}
+        href="#" role="link" aria-disabled="true"
+      {% endif %}
+    >
+      {{- block.settings.label | escape -}}
+    </a>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Button",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        { "value": "primary", "label": "Solid" },
+        { "value": "secondary", "label": "Outline" },
+        { "value": "link", "label": "Text link" }
+      ],
+      "default": "primary"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Centre" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    }
+  ],
+  "presets": [{ "name": "Button" }]
+}
+{% endschema %}

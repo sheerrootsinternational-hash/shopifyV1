@@ -1,0 +1,65 @@
+{%- comment -%}
+  Theme block: heading.
+  Reusable in any section that accepts @theme blocks.
+{%- endcomment -%}
+
+{%- if block.settings.heading != blank -%}
+  <{{ block.settings.heading_tag }}
+    class="flex-block flex-block--heading {{ block.settings.heading_size }} align-{{ block.settings.alignment }}"
+    {{ block.shopify_attributes }}
+  >
+    {{- block.settings.heading | escape -}}
+  </{{ block.settings.heading_tag }}>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Heading",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Size",
+      "options": [
+        { "value": "h4", "label": "Extra small" },
+        { "value": "h3", "label": "Small" },
+        { "value": "h2", "label": "Medium" },
+        { "value": "h1", "label": "Large" },
+        { "value": "h0", "label": "Extra large" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Heading level",
+      "info": "Affects SEO and screen readers, not the visible size.",
+      "options": [
+        { "value": "h1", "label": "H1" },
+        { "value": "h2", "label": "H2" },
+        { "value": "h3", "label": "H3" },
+        { "value": "h4", "label": "H4" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Centre" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    }
+  ],
+  "presets": [{ "name": "Heading" }]
+}
+{% endschema %}

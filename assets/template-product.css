@@ -1,0 +1,215 @@
+/* ==========================================================================
+   Product page
+   Gallery: a swipeable scroller on small screens, a stacked column on desktop.
+   Neither needs JavaScript.
+   ========================================================================== */
+
+.product__grid {
+  display: block;
+}
+
+@media screen and (min-width: 990px) {
+  .product__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(34rem, 0.75fr);
+    gap: 6.4rem;
+    align-items: start;
+  }
+}
+
+/* Gallery ---------------------------------------------------------------- */
+
+.product__media-list {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 88%;
+  gap: 1.2rem;
+  margin-inline: calc(var(--gutter) * -1);
+  padding-inline: var(--gutter);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  list-style: none;
+}
+
+.product__media-list::-webkit-scrollbar {
+  display: none;
+}
+
+.product__media-item {
+  scroll-snap-align: center;
+}
+
+@media screen and (min-width: 990px) {
+  .product__media-list {
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.6rem;
+    margin-inline: 0;
+    padding-inline: 0;
+    overflow: visible;
+  }
+
+  /* Sticky info column pairs with a scrolling gallery. */
+  .product__info {
+    position: sticky;
+    top: 12rem;
+  }
+}
+
+.product__media .media {
+  background-color: rgba(var(--fg-rgb), 0.03);
+}
+
+/* Info ------------------------------------------------------------------- */
+
+.product__info > * + * {
+  margin-top: 2rem;
+}
+
+.product__info {
+  padding-top: 2.4rem;
+}
+
+@media screen and (min-width: 990px) {
+  .product__info {
+    padding-top: 0;
+  }
+}
+
+.product__vendor {
+  margin-bottom: 0;
+}
+
+.product__title {
+  text-wrap: balance;
+}
+
+.product__price .price {
+  --price-justify: flex-start;
+  font-size: calc(2rem * var(--body-scale));
+}
+
+.product__tax {
+  margin-top: 0.6rem;
+  font-size: 1.3rem;
+}
+
+.product__strapline {
+  font-family: var(--font-heading-family);
+  font-size: 1.3rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.product__description {
+  color: var(--fg-muted);
+}
+
+.product__quantity {
+  max-width: 14rem;
+}
+
+.product__quantity-input {
+  text-align: center;
+}
+
+.product__submit {
+  margin-bottom: 1rem;
+}
+
+.product__buy .shopify-payment-button__button {
+  border-radius: var(--radius);
+  min-height: 4.8rem;
+  font-family: var(--font-heading-family);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.product__accordion + .product__accordion {
+  margin-top: 0;
+}
+
+.product__accordion {
+  border-bottom: 1px solid var(--line);
+}
+
+.product__accordion:first-of-type {
+  border-top: 1px solid var(--line);
+}
+
+.product__share .field__label {
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+/* Variant picker --------------------------------------------------------- */
+
+.variant-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.variant-picker__group {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.variant-picker__label {
+  padding: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.variant-picker__selected {
+  color: var(--fg);
+}
+
+.variant-picker__values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  list-style: none;
+}
+
+.variant-picker__value {
+  display: inline-flex;
+  align-items: center;
+  min-height: 4.2rem;
+  padding: 0.6rem 1.8rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: border-color var(--duration) var(--ease), background-color var(--duration) var(--ease);
+}
+
+.variant-picker__value:hover {
+  border-color: var(--fg);
+}
+
+.variant-picker__value.is-selected {
+  border-color: var(--fg);
+  background-color: var(--fg);
+  color: var(--bg);
+}
+
+/* Sold-out combinations stay clickable — the customer can still see them. */
+.variant-picker__value.is-unavailable {
+  opacity: 0.45;
+  text-decoration: line-through;
+}
+
+/* Related products ------------------------------------------------------- */
+
+.related-products {
+  background-color: var(--bg);
+  color: var(--fg);
+}

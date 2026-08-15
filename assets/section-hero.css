@@ -1,0 +1,155 @@
+/* ==========================================================================
+   Hero banner
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  display: grid;
+  isolation: isolate;
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+.hero__media,
+.hero__content-wrap {
+  grid-area: 1 / 1;
+}
+
+.hero__media {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__image,
+.hero__media .placeholder-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--image-position, center);
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: #000;
+  opacity: var(--overlay-opacity, 0.25);
+  pointer-events: none;
+}
+
+/* Heights ---------------------------------------------------------------- */
+
+/* "Adapt" lets the image set the banner height instead of a fixed viewport
+   fraction, so the whole composition is always visible. */
+.hero--adapt .hero__image,
+.hero--adapt .hero__media .placeholder-svg {
+  position: static;
+  height: auto;
+}
+
+.hero--small {
+  min-height: 34rem;
+}
+
+.hero--medium {
+  min-height: 46rem;
+}
+
+.hero--large {
+  min-height: 56rem;
+}
+
+.hero--full {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+@media screen and (min-width: 750px) {
+  .hero--small {
+    min-height: 40vh;
+  }
+
+  .hero--medium {
+    min-height: 58vh;
+  }
+
+  .hero--large {
+    min-height: 76vh;
+  }
+}
+
+/* Content ---------------------------------------------------------------- */
+
+.hero__content-wrap {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 100%;
+  padding-block: 6rem;
+}
+
+.hero__content {
+  max-width: 62ch;
+}
+
+.hero--text-top-left .hero__content-wrap {
+  place-items: start start;
+}
+.hero--text-top-center .hero__content-wrap {
+  place-items: start center;
+}
+.hero--text-middle-left .hero__content-wrap {
+  place-items: center start;
+}
+.hero--text-middle-center .hero__content-wrap {
+  place-items: center center;
+}
+.hero--text-middle-right .hero__content-wrap {
+  place-items: center end;
+}
+.hero--text-bottom-left .hero__content-wrap {
+  place-items: end start;
+}
+.hero--text-bottom-center .hero__content-wrap {
+  place-items: end center;
+}
+
+.hero__content--panel {
+  padding: 3.2rem;
+  background-color: var(--bg);
+  border-radius: var(--radius);
+}
+
+@media screen and (min-width: 750px) {
+  .hero__content--panel {
+    padding: 4.8rem;
+  }
+}
+
+.hero__heading {
+  margin-bottom: 1.6rem;
+  text-wrap: balance;
+}
+
+.hero__text {
+  font-size: calc(1.7rem * var(--body-scale));
+  max-width: 54ch;
+}
+
+.align-center .hero__text {
+  margin-inline: auto;
+}
+
+.hero__content--plain .hero__heading,
+.hero__content--plain .hero__text {
+  /* Keeps text legible if a merchant sets a low overlay on a busy photo. */
+  text-shadow: 0 1px 24px rgba(0, 0, 0, 0.28);
+}
+
+.scheme-ivory.hero .hero__content--plain .hero__heading,
+.scheme-ivory.hero .hero__content--plain .hero__text,
+.scheme-sand.hero .hero__content--plain .hero__heading,
+.scheme-sand.hero .hero__content--plain .hero__text {
+  text-shadow: none;
+}

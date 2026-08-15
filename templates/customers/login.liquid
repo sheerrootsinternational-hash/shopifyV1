@@ -1,0 +1,84 @@
+{{ 'template-page.css' | asset_url | stylesheet_tag }}
+
+<div class="section" style="--section-padding-top: 64px; --section-padding-bottom: 88px;">
+  <div class="page-width">
+    <div class="customer">
+      <h1 class="h2">{{ 'customer.login.title' | t }}</h1>
+
+      {%- form 'customer_login', novalidate: 'novalidate' -%}
+        {%- if form.errors -%}
+          <div class="form__message form__message--error" role="alert" tabindex="-1" autofocus>
+            {{ form.errors | default_errors }}
+          </div>
+        {%- endif -%}
+
+        <div class="field">
+          <label class="field__label" for="CustomerEmail">{{ 'customer.login.email' | t }}</label>
+          <input
+            id="CustomerEmail"
+            class="field__input"
+            type="email"
+            name="customer[email]"
+            autocomplete="email"
+            autocapitalize="off"
+            spellcheck="false"
+            required
+          >
+        </div>
+
+        {%- if form.password_needed -%}
+          <div class="field">
+            <label class="field__label" for="CustomerPassword">{{ 'customer.login.password' | t }}</label>
+            <input
+              id="CustomerPassword"
+              class="field__input"
+              type="password"
+              name="customer[password]"
+              autocomplete="current-password"
+              required
+            >
+          </div>
+        {%- endif -%}
+
+        <div class="customer__actions">
+          <button type="submit" class="button">{{ 'customer.login.sign_in' | t }}</button>
+          {%- if form.password_needed -%}
+            <a class="button button--link" href="{{ routes.account_recover_url }}">
+              {{ 'customer.login.forgot_password' | t }}
+            </a>
+          {%- endif -%}
+        </div>
+      {%- endform -%}
+
+      {%- if shop.customer_accounts_optional -%}
+        <p class="customer__actions">
+          <a class="button button--link" href="{{ routes.account_register_url }}">
+            {{ 'customer.login.create_account' | t }}
+          </a>
+        </p>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%}
+      Shown alongside the sign-in form rather than toggled with JavaScript, so
+      password recovery works on the password-less path too.
+    {%- endcomment -%}
+    <div class="customer" id="recover">
+      <h2 class="h3">{{ 'customer.recover_password.title' | t }}</h2>
+      {%- form 'recover_customer_password' -%}
+        {%- if form.posted_successfully? -%}
+          <div class="form__message form__message--success" role="status">
+            {{ 'customer.recover_password.success' | t }}
+          </div>
+        {%- endif -%}
+        <div class="field">
+          <label class="field__label" for="RecoverEmail">{{ 'customer.login.email' | t }}</label>
+          <input id="RecoverEmail" class="field__input" type="email" name="email" autocomplete="email" required>
+        </div>
+        <div class="customer__actions">
+          <button type="submit" class="button">{{ 'customer.recover_password.submit' | t }}</button>
+        </div>
+      {%- endform -%}
+    </div>
+  </div>
+</div>

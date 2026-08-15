@@ -1,0 +1,164 @@
+/* ==========================================================================
+   Featured collection + carousel
+   ========================================================================== */
+
+.featured-collection {
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+.featured-collection__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.6rem 3.2rem;
+  margin-bottom: 4rem;
+}
+
+.featured-collection__header.align-center {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.featured-collection__header .subheading {
+  margin-top: 1.2rem;
+  max-width: 62ch;
+}
+
+.featured-collection__view-all {
+  flex-shrink: 0;
+}
+
+.featured-collection__empty {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+/* Carousel --------------------------------------------------------------- */
+
+.carousel {
+  display: block;
+  position: relative;
+}
+
+.carousel__viewport {
+  /* Bleed to the viewport edge on small screens so slides can peek in. */
+  margin-inline: calc(var(--gutter) * -1);
+  padding-inline: var(--gutter);
+}
+
+@media screen and (min-width: 990px) {
+  .carousel__viewport {
+    margin-inline: 0;
+    padding-inline: 0;
+  }
+}
+
+.carousel__track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc(
+    (100% - (var(--slides, 2) - 1) * var(--carousel-gap, 1.6rem)) / var(--slides, 2)
+  );
+  gap: var(--carousel-gap, 1.6rem);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  padding-bottom: 0.4rem;
+  list-style: none;
+  --slides: var(--slides-mobile, 2);
+}
+
+.carousel__track::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (min-width: 750px) {
+  .carousel__track {
+    --slides: var(--slides-tablet, 3);
+    --carousel-gap: 2.4rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .carousel__track {
+    --slides: var(--slides-desktop, 4);
+    --carousel-gap: 3.2rem;
+  }
+}
+
+.carousel__track:focus-visible {
+  outline: var(--focus-ring) solid var(--accent);
+  outline-offset: 4px;
+}
+
+.carousel__slide {
+  scroll-snap-align: start;
+  min-width: 0;
+}
+
+/* Controls --------------------------------------------------------------- */
+
+.carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 3.2rem;
+}
+
+.carousel__controls[hidden] {
+  display: none;
+}
+
+.carousel__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.8rem;
+  height: 4.8rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  color: var(--fg);
+  transition: border-color var(--duration) var(--ease), color var(--duration) var(--ease),
+    opacity var(--duration) var(--ease);
+}
+
+.carousel__button:hover:not(:disabled) {
+  border-color: var(--fg);
+  color: var(--accent);
+}
+
+.carousel__button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.carousel__button svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+/* Pause / play glyph drawn in CSS to avoid two more inline SVGs */
+.carousel__pause-icon {
+  position: relative;
+  display: block;
+  width: 1.2rem;
+  height: 1.4rem;
+  border-left: 3px solid currentColor;
+  border-right: 3px solid currentColor;
+}
+
+.carousel__button--play.is-paused .carousel__pause-icon {
+  width: 0;
+  height: 0;
+  border-left: 1.2rem solid currentColor;
+  border-right: 0;
+  border-top: 0.7rem solid transparent;
+  border-bottom: 0.7rem solid transparent;
+  margin-left: 0.3rem;
+}
