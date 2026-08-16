@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "Footer",
   "type": "footer",
@@ -8,10 +17,10 @@
         "brand": {
           "type": "brand",
           "settings": {
-            "show_logo": true,
+            "show_logo": false,
             "logo_width": 180,
             "heading": "About us",
-            "text": "<p>This website is operated by Sheer Roots International. Sheer Roots International offers Indian handicrafts, artisanal products, culturally inspired products, lifestyle products and gifting collections. Social India Craft operates under the Sheer Roots family and represents our premium artisanal and conscious gifting collections.<\/p>",
+            "text": "<p>This website is operated by Sheer Roots. Sheer Roots offers Indian handicrafts, artisanal products, culturally inspired products, lifestyle products and gifting collections. Social India Craft operates under the Sheer Roots family and represents our premium artisanal and conscious gifting collections.</p>",
             "tagline": "Every piece. A story. India.",
             "show_social": true
           }
@@ -26,19 +35,39 @@
         "contact": {
           "type": "contact",
           "settings": {
-            "heading": "Contact us"
+            "heading": "Contact us",
+            "address": "",
+            "phone": "",
+            "email": ""
           }
         }
       },
-      "block_order": ["brand", "quick-links", "contact"],
+      "block_order": [
+        "brand",
+        "quick-links",
+        "contact"
+      ],
       "settings": {
-        "color_scheme": "ink",
         "show_policy_links": true,
         "show_payment_icons": true,
+        "content_width": "wide",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "color_scheme": "ink",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
         "padding_top": 72,
-        "padding_bottom": 40
+        "padding_bottom": 40,
+        "padding_top_mobile": 52,
+        "padding_bottom_mobile": 28
       }
     }
   },
-  "order": ["footer"]
+  "order": [
+    "footer"
+  ]
 }
