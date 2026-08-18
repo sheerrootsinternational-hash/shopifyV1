@@ -57,7 +57,7 @@
     "contact_address": "Sector 3, Gurgaon, 122011",
     "contact_phone": "+91 8448809111",
     "contact_email": "info@sheerroot.in",
-    "currency_code_enabled": false,
+    "currency_code_enabled": true,
     "animations_enabled": true,
     "content_for_index": []
   }
