@@ -28,7 +28,7 @@
         "quick-links": {
           "type": "menu",
           "settings": {
-            "heading": "Quick links",
+            "heading": "QUICK LINKS",
             "menu": "footer"
           }
         },
@@ -55,9 +55,9 @@
         "padding_horizontal": 40,
         "color_scheme": "ink",
         "background_color": "",
-        "heading_color": "#EDF0EF",
-        "text_color": "#EDF0EF",
-        "accent_color": "#CBE315",
+        "heading_color": "#edf0ef",
+        "text_color": "#edf0ef",
+        "accent_color": "#cbe315",
         "heading_size": 150,
         "body_size": 100,
         "padding_top": 72,
