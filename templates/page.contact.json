@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "intro": {
@@ -8,18 +17,19 @@
           "settings": {
             "heading": "Contact us",
             "heading_size": "h1",
-            "heading_tag": "h1"
+            "heading_tag": "h3"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>This website is operated by Sheer Roots International.<\/p><p>Sheer Roots International offers Indian handicrafts, artisanal products, culturally inspired products, lifestyle products and gifting collections.<\/p><p>Social India Craft operates under the Sheer Roots family and represents our premium artisanal and conscious gifting collections.<\/p>",
-            "text_size": ""
+            "text": "<h2><strong>Sheer Roots</strong></h2><p>This website is operated by <strong>Sheer Roots</strong>.</p><p>We bring together <strong>Indian handicrafts, artisanal products, culturally inspired<br/>products, lifestyle products and thoughtful gifting collections</strong>,<br/>celebrating the beauty, creativity and heritage of Indian craftsmanship.</p><p>At Sheer Roots, we believe that every handmade creation carries more than beauty — it carries the </p><p><strong>skill, time and story of the hands that make it</strong>. </p><p>Our vision is to bring India's rich craft traditions into contemporary everyday living while creating meaningful opportunities for artisans and helping traditional art forms continue to thrive.</p><p><strong>Social India Craft</strong> operates under the <strong>Sheer Roots family</strong> and represents our premium <strong>artisanal and conscious gifting collections</strong>, created for those who value craftsmanship, culture and thoughtful living.</p><p><strong>Every Piece. A Story. India.</strong></p><p><strong>Sheer Roots</strong><br/><em>Rooted in India. Crafted with Purpose.</em></p><p><em>We're here to help.</em></p><p><strong>Customer Support</strong></p><p>For questions regarding:</p><p>Orders & order status, Product information, Returns & exchanges, Refunds, Shipping & delivery, Damaged or incorrect products Artisan-made products and craftsmanship</p><p><strong>General enquiries</strong></p><p>Please email us with your <strong>order number</strong>, where applicable, so that we can assist you more quickly.</p><p><strong>Stay connected. Stay rooted.</strong></p>",
+            "text_size": "subheading"
           }
         },
         "rule": {
-          "type": "rule"
+          "type": "rule",
+          "settings": {}
         },
         "eyebrow": {
           "type": "eyebrow",
@@ -28,36 +38,90 @@
           }
         }
       },
-      "block_order": ["heading", "text", "rule", "eyebrow"],
+      "block_order": [
+        "heading",
+        "text",
+        "rule",
+        "eyebrow"
+      ],
       "settings": {
-        "color_scheme": "ivory",
-        "content_width": "narrow",
         "text_alignment": "center",
+        "text_alignment_mobile": "",
+        "content_width": "contained",
+        "content_width_custom": 1800,
+        "padding_horizontal": 0,
+        "color_scheme": "ivory",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
         "padding_top": 72,
-        "padding_bottom": 56
+        "padding_bottom": 56,
+        "padding_top_mobile": 52,
+        "padding_bottom_mobile": 52
       }
     },
     "details": {
       "type": "contact-details",
       "settings": {
+        "heading": "",
+        "text": "",
         "address_label": "Where we are",
+        "address": "",
+        "map_link": "",
+        "map_alt": "",
         "phone_label": "Call us",
+        "phone": "",
+        "phone_secondary": "",
+        "hours": "",
         "email_label": "Email us",
+        "email": "",
+        "content_width": "wide",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
         "color_scheme": "sand",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
         "padding_top": 64,
-        "padding_bottom": 64
+        "padding_bottom": 64,
+        "padding_top_mobile": 44,
+        "padding_bottom_mobile": 44
       }
     },
     "form": {
       "type": "contact-form",
       "settings": {
-        "heading": "Reach out",
+        "heading": "We’d Love to Hear From You",
+        "text": "",
+        "privacy_note": "",
         "text_alignment": "center",
+        "text_alignment_mobile": "",
+        "content_width": "narrow",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
         "color_scheme": "ivory",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
         "padding_top": 72,
-        "padding_bottom": 88
+        "padding_bottom": 88,
+        "padding_top_mobile": 52,
+        "padding_bottom_mobile": 60
       }
     }
   },
-  "order": ["intro", "details", "form"]
+  "order": [
+    "intro",
+    "details",
+    "form"
+  ]
 }
