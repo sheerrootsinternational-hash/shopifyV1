@@ -55,7 +55,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<h3>Rooted in India. Crafted with Purpose.  Shared with the World.</h3><p>Welcome to <strong>Sheer Roots</strong>, a celebration of India's diverse heritage, craftsmanship and the timeless traditions that continue to shape the way we create and live.</p><p>We believe that Indian craftsmanship is not simply about making beautiful objects. It is about <strong>knowledge passed through generations, skilled hands, cultural identity and stories waiting to be carried forward</strong>.</p><p>At Sheer Roots, we thoughtfully bring together Indian handicrafts, traditional products, artisanal creations and contemporary interpretations of Indian culture—connecting the richness of our roots with the way the world lives today.</p><p>Our journey is guided by a simple belief:</p><p><strong>Every piece has a story. And every story deserves to be carried forward.</strong></p>",
+            "text": "<h3><strong>Rooted in India. Crafted with Purpose.  Shared with the World.</strong></h3><p>Welcome to <strong>Sheer Roots</strong>, a celebration of India's diverse heritage, craftsmanship and the timeless traditions that continue to shape the way we create and live.</p><p>We believe that Indian craftsmanship is not simply about making beautiful objects. It is about <strong>knowledge passed through generations, skilled hands, cultural identity and stories waiting to be carried forward</strong>.</p><p>At Sheer Roots, we thoughtfully bring together Indian handicrafts, traditional products, artisanal creations and contemporary interpretations of Indian culture—connecting the richness of our roots with the way the world lives today.</p><p>Our journey is guided by a simple belief:</p><p><strong>Every piece has a story. And every story deserves to be carried forward.</strong></p>",
             "text_size": "subheading"
           }
         }
@@ -69,9 +69,9 @@
         "content_width": "full",
         "content_width_custom": 1200,
         "padding_horizontal": 40,
-        "color_scheme": "ivory",
+        "color_scheme": "ink",
         "background_color": "",
-        "heading_color": "",
+        "heading_color": "#CF1414",
         "text_color": "",
         "accent_color": "#130202",
         "heading_size": 100,
@@ -105,6 +105,7 @@
         "text"
       ],
       "settings": {
+        "desktop_image": "shopify://shop_images/ChatGPT_Image_Aug_16_2026_12_46_13_PM_20f28cad-75cc-4c89-ba04-6723bf7a648b.png",
         "image_alt": "",
         "caption": "",
         "image_ratio": "portrait",
@@ -116,7 +117,7 @@
         "content_width": "wide",
         "content_width_custom": 1200,
         "padding_horizontal": 40,
-        "color_scheme": "ink",
+        "color_scheme": "sand",
         "background_color": "",
         "heading_color": "",
         "text_color": "",
@@ -125,86 +126,6 @@
         "body_size": 100,
         "padding_top": 64,
         "padding_bottom": 64,
-        "padding_top_mobile": 52,
-        "padding_bottom_mobile": 52
-      }
-    },
-    "beliefs": {
-      "type": "multicolumn",
-      "blocks": {
-        "heritage": {
-          "type": "column",
-          "settings": {
-            "image_alt": "",
-            "heading": "Heritage matters",
-            "text": "<p>We celebrate India's traditions and the stories behind them.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "craftsmanship": {
-          "type": "column",
-          "settings": {
-            "image_alt": "",
-            "heading": "Craftsmanship matters",
-            "text": "<p>We value the skill, creativity, and dedication that goes into creating meaningful products.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "quality": {
-          "type": "column",
-          "settings": {
-            "image_alt": "",
-            "heading": "Quality matters",
-            "text": "<p>We strive to bring products that combine traditional inspiration with dependable quality.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "story": {
-          "type": "column",
-          "settings": {
-            "image_alt": "",
-            "heading": "Every piece has a story",
-            "text": "<p>From traditional designs to contemporary interpretations, our products reflect the richness of India.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "heritage",
-        "craftsmanship",
-        "quality",
-        "story"
-      ],
-      "settings": {
-        "eyebrow": "",
-        "heading": "What we believe",
-        "subheading": "",
-        "heading_alignment": "center",
-        "heading_alignment_mobile": "",
-        "columns_desktop": 4,
-        "columns_mobile": "1",
-        "text_alignment": "center",
-        "text_alignment_mobile": "",
-        "image_ratio": "square",
-        "show_dividers": true,
-        "content_width": "wide",
-        "content_width_custom": 1200,
-        "padding_horizontal": 40,
-        "column_gap": 32,
-        "row_gap": 48,
-        "color_scheme": "sand",
-        "background_color": "",
-        "heading_color": "",
-        "text_color": "",
-        "accent_color": "",
-        "heading_size": 100,
-        "body_size": 100,
-        "padding_top": 80,
-        "padding_bottom": 80,
         "padding_top_mobile": 52,
         "padding_bottom_mobile": 52
       }
@@ -232,11 +153,12 @@
         "text"
       ],
       "settings": {
+        "desktop_image": "shopify://shop_images/ChatGPT_Image_Aug_15_2026_10_07_54_PM.png",
         "image_alt": "",
         "caption": "",
         "image_ratio": "landscape",
         "image_position": "right",
-        "media_width": "medium",
+        "media_width": "large",
         "text_alignment": "left",
         "text_alignment_mobile": "",
         "full_width": false,
@@ -246,7 +168,7 @@
         "color_scheme": "ink",
         "background_color": "",
         "heading_color": "#EEEEEE",
-        "text_color": "",
+        "text_color": "#F3EAEA",
         "accent_color": "",
         "heading_size": 100,
         "body_size": 100,
@@ -270,7 +192,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<h3><strong>Thoughtfully Chosen. Meaningfully Created.</strong></h3><p>At Sheer Roots, we promise to approach every product with <strong>care, curiosity and respect</strong>.</p><p>We strive to:</p><p><strong>Celebrate Authenticity</strong><br/>Respect the cultural inspiration, traditional techniques and stories behind the products we bring to you.</p><p><strong>Value Craftsmanship</strong><br/>Recognize the skill, patience and human effort involved in handmade creation.</p><p><strong>Choose with Purpose</strong><br/>Select products not simply because they are beautiful, but because they carry meaning, craftsmanship or cultural value.</p><p><strong>Respect Materials</strong><br/>Pay attention to the materials that become part of our everyday lives and appreciate their natural character and integrity.</p><p><strong>Support Artisan Livelihoods</strong><br/>Wherever possible, create opportunities that help artisans and craft communities sustain their skills and livelihoods.</p><p><strong>Bring Tradition into Today</strong><br/>Present India's rich craft heritage in ways that feel relevant, useful and beautiful in contemporary life.</p>",
+            "text": "<h4><strong>Thoughtfully Chosen. Meaningfully Created.</strong></h4><p>At Sheer Roots, we promise to approach every product with <strong>care, curiosity and respect</strong>.</p><p>We strive to:</p><p><strong>Celebrate Authenticity</strong><br/>Respect the cultural inspiration, traditional techniques and stories behind the products we bring to you.</p><p><strong>Value Craftsmanship</strong><br/>Recognize the skill, patience and human effort involved in handmade creation.</p><p><strong>Choose with Purpose</strong><br/>Select products not simply because they are beautiful, but because they carry meaning, craftsmanship or cultural value.</p><p><strong>Respect Materials</strong><br/>Pay attention to the materials that become part of our everyday lives and appreciate their natural character and integrity.</p><p><strong>Support Artisan Livelihoods</strong><br/>Wherever possible, create opportunities that help artisans and craft communities sustain their skills and livelihoods.</p><p><strong>Bring Tradition into Today</strong><br/>Present India's rich craft heritage in ways that feel relevant, useful and beautiful in contemporary life.</p>",
             "text_size": ""
           }
         },
@@ -281,7 +203,7 @@
         "eyebrow": {
           "type": "eyebrow",
           "settings": {
-            "text": "Sheer Roots International — Every piece. A story. India."
+            "text": "Every piece. A story. India."
           }
         }
       },
@@ -299,13 +221,13 @@
         "padding_horizontal": 40,
         "color_scheme": "sand",
         "background_color": "",
-        "heading_color": "",
-        "text_color": "",
-        "accent_color": "",
+        "heading_color": "#CF1414",
+        "text_color": "#130202",
+        "accent_color": "#CF1414",
         "heading_size": 100,
         "body_size": 100,
-        "padding_top": 80,
-        "padding_bottom": 88,
+        "padding_top": 48,
+        "padding_bottom": 32,
         "padding_top_mobile": 52,
         "padding_bottom_mobile": 52
       }
@@ -315,7 +237,6 @@
     "hero",
     "intro",
     "story",
-    "beliefs",
     "vision",
     "promise"
   ]
