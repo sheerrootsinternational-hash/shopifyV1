@@ -216,8 +216,8 @@
           "type": "heading",
           "settings": {
             "heading": "Our vision",
-            "heading_size": "h2",
-            "heading_tag": "h2"
+            "heading_size": "h1",
+            "heading_tag": "h3"
           }
         },
         "text": {
@@ -245,7 +245,7 @@
         "padding_horizontal": 40,
         "color_scheme": "ink",
         "background_color": "",
-        "heading_color": "",
+        "heading_color": "#EEEEEE",
         "text_color": "",
         "accent_color": "",
         "heading_size": 100,
