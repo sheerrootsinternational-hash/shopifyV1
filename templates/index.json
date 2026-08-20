@@ -49,6 +49,100 @@
         "padding_bottom_mobile": 44
       }
     },
+    "multicolumn_ynA9dN": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_FbYJg6": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/1_4b8c23dd-7c4b-49ed-a9f0-5563903df0c4.jpg",
+            "image_alt": "",
+            "heading": "KAMALA",
+            "text": "<p><strong>Kamala</strong> draws inspiration from the timeless beauty associated with the lotus and the graceful character of Indian artistic traditions.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_PAxWGg": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/19_c38b0068-8f5b-4b04-a737-6f14cf09534b.jpg",
+            "image_alt": "",
+            "heading": "ANANTA",
+            "text": "<p><strong>Ananta</strong>, meaning <em>boundless</em> or <em>infinite</em>, represents the idea of timeless beauty and endless creativity.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_g6W6FY": {
+          "type": "column",
+          "settings": {
+            "image_alt": "",
+            "heading": "Heritage",
+            "text": "<p>Traditions carried forward through generations.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_3iRr4t": {
+          "type": "column",
+          "settings": {
+            "image_alt": "",
+            "heading": "Heritage",
+            "text": "<p>Traditions carried forward through generations.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_x7FeaC": {
+          "type": "column",
+          "settings": {
+            "image_alt": "",
+            "heading": "Heritage",
+            "text": "<p>Traditions carried forward through generations.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_FbYJg6",
+        "column_PAxWGg",
+        "column_g6W6FY",
+        "column_3iRr4t",
+        "column_x7FeaC"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "eyebrow": "",
+        "heading": "Mandala collection",
+        "subheading": "<p>A celebration of <strong>Indian-inspired artistry, colour and symmetry</strong>, the Mandala Collection brings together handcrafted copper bottles adorned with intricate mandala designs. Each piece blends traditional inspiration with contemporary aesthetics, creating a meaningful addition to everyday living.</p><p><strong>Rooted in Indian artistry. Designed for today.</strong></p>",
+        "heading_alignment": "center",
+        "heading_alignment_mobile": "",
+        "columns_desktop": 5,
+        "columns_mobile": "1",
+        "text_alignment": "center",
+        "text_alignment_mobile": "",
+        "image_ratio": "square",
+        "show_dividers": false,
+        "content_width": "wide",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "column_gap": 32,
+        "row_gap": 48,
+        "color_scheme": "ivory",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "padding_top_mobile": 52,
+        "padding_bottom_mobile": 52
+      }
+    },
     "sic-intro": {
       "type": "image-with-text",
       "blocks": {
@@ -318,6 +412,7 @@
   },
   "order": [
     "hero",
+    "multicolumn_ynA9dN",
     "sic-intro",
     "values",
     "quote",
