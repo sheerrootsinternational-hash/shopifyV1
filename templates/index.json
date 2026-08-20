@@ -58,7 +58,7 @@
             "image": "shopify://shop_images/1_4b8c23dd-7c4b-49ed-a9f0-5563903df0c4.jpg",
             "image_alt": "",
             "heading": "KAMALA",
-            "text": "<p><strong>Kamala</strong> draws inspiration from the timeless beauty associated with the lotus and the graceful character of Indian artistic traditions.</p><p><strong>A celebration of colour, beauty and Indian-inspired artistry.</strong></p>",
+            "text": "<p>Kamala draws inspiration from the timeless beauty associated with the lotus and the graceful character of Indian artistic traditions.</p><p><strong>A celebration of colour, beauty and Indian-inspired artistry.</strong></p>",
             "link_label": "",
             "link": ""
           }
@@ -69,7 +69,7 @@
             "image": "shopify://shop_images/19_c38b0068-8f5b-4b04-a737-6f14cf09534b.jpg",
             "image_alt": "",
             "heading": "ANANTA",
-            "text": "<p><strong>Ananta</strong>, meaning <em>boundless</em> or <em>infinite</em>, represents the idea of timeless beauty and endless creativity.</p><p><strong>Ananta — Inspired by the infinite possibilities of Indian artistry.</strong></p>",
+            "text": "<p>Ananta, meaning <em>boundless</em> or <em>infinite</em>, represents the idea of timeless beauty and endless creativity.</p><p><strong>Inspired by the infinite possibilities of Indian artistry.</strong></p>",
             "link_label": "",
             "link": ""
           }
@@ -80,7 +80,7 @@
             "image": "shopify://shop_images/28_0c3167e9-0f29-4eff-8ee3-e0e736ba5b49.jpg",
             "image_alt": "",
             "heading": "PRANAVA",
-            "text": "<p><strong>Pranava</strong>  a traditional name associated with the sacred sound \"Om,\"<br/><br/><strong>Pranava — Where depth, design and tradition meet.</strong></p>",
+            "text": "<p>Pranava  a traditional name associated with the sacred sound \"Om,\"<br/></p><p><strong>Where depth, design and tradition meet.</strong></p>",
             "link_label": "",
             "link": ""
           }
@@ -88,9 +88,10 @@
         "column_3iRr4t": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/11.jpg",
             "image_alt": "",
-            "heading": "Heritage",
-            "text": "<p>Traditions carried forward through generations.</p>",
+            "heading": "AARUNYA",
+            "text": "<p>Aarunya<strong> </strong>brings together vibrant colour and intricate Indian-inspired artistry<br/><br/><strong>Inspired by the warmth of dawn, crafted with Indian artistry.</strong><br/><br/><br/><br/><br/></p>",
             "link_label": "",
             "link": ""
           }
@@ -98,9 +99,10 @@
         "column_x7FeaC": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/36.jpg",
             "image_alt": "",
-            "heading": "Heritage",
-            "text": "<p>Traditions carried forward through generations.</p>",
+            "heading": "PADMA",
+            "text": "<p><strong>Padma</strong>, meaning <em>lotus</em>, draws inspiration from one of the most recognizable motifs in Indian art and cultural traditions.</p><p><strong>Inspired by the timeless beauty of the lotus.</strong></p>",
             "link_label": "",
             "link": ""
           }
