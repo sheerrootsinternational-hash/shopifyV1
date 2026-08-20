@@ -77,14 +77,14 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Social India Craft, operating under the Sheer Roots family, represents our expression of premium Indian craftsmanship and conscious gifting.</p><p>The brand draws inspiration from India's ancient relationship with Arts, particularly the enduring tradition of craftsmanship.</p>"
+            "text": "<h3><strong>By Sheer Roots</strong></h3><p><strong>Where Indian Craft Meets Contemporary Living</strong></p><p>Discover <strong>Social India Craft</strong>, a curated collection by <strong>Sheer Roots</strong>, celebrating India’s timeless craftsmanship through thoughtfully designed, meaningful creations.</p><p>From handcrafted copperware to artisanal products, each piece connects <strong>heritage, skilled craftsmanship, and modern living</strong>—while supporting the artisans and communities who keep these traditions alive.</p><p><strong>Social India Craft — Crafted by Tradition. Designed for Today.</strong></p>"
           }
         },
         "button": {
           "type": "button",
           "settings": {
             "label": "Discover Social India Craft",
-            "link": "",
+            "link": "shopify://pages/social-india-craft",
             "style": "secondary"
           }
         }
@@ -208,8 +208,8 @@
         "color_scheme": "sand",
         "background_color": "",
         "heading_color": "#130202",
-        "text_color": "#CF1414",
-        "accent_color": "#CBE315",
+        "text_color": "#cf1414",
+        "accent_color": "#cbe315",
         "heading_size": 100,
         "body_size": 100,
         "padding_top": 80,
@@ -243,7 +243,7 @@
         "background_color": "",
         "heading_color": "",
         "text_color": "",
-        "accent_color": "#CBE315",
+        "accent_color": "#cbe315",
         "heading_size": 100,
         "body_size": 100,
         "padding_top": 80,
