@@ -17,7 +17,7 @@
         "brand": {
           "type": "brand",
           "settings": {
-            "show_logo": false,
+            "show_logo": true,
             "logo_width": 180,
             "heading": "",
             "text": "<h3>Sheer Roots</h3><p><strong>Sheer Roots</strong> is a celebration of India's rich craft heritage, bringing thoughtfully crafted Indian products into contemporary everyday living.</p><p>We work to showcase the skill, creativity and stories of Indian artisans while creating meaningful opportunities for traditional crafts to thrive. Every piece is chosen or created with a deep appreciation for the hands, culture and traditions behind it.</p><p>From timeless crafts to thoughtfully designed everyday products, we believe that what we bring into your home should carry more than beauty — <strong>it should carry a story.</strong></p><p><strong>Rooted in India. Crafted with Purpose.</strong></p>",
@@ -57,7 +57,7 @@
         "background_color": "",
         "heading_color": "#edf0ef",
         "text_color": "#edf0ef",
-        "accent_color": "#CF1414",
+        "accent_color": "#cf1414",
         "heading_size": 150,
         "body_size": 100,
         "padding_top": 72,
