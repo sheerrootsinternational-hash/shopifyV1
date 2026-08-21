@@ -130,7 +130,7 @@
         "content_width": "wide",
         "content_width_custom": 1200,
         "padding_horizontal": 40,
-        "color_scheme": "ivory",
+        "color_scheme": "ink",
         "background_color": "",
         "heading_color": "",
         "text_color": "",
@@ -174,7 +174,7 @@
         "heading_size": 100,
         "body_size": 100,
         "padding_top": 32,
-        "padding_bottom": 80,
+        "padding_bottom": 52,
         "padding_top_mobile": 52,
         "padding_bottom_mobile": 52
       }
@@ -199,7 +199,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>A handcrafted crochet bottle cover that brings comfort, character, and purpose to everyday living. Made with care by skilled craftspersons, each piece helps support traditional craftsmanship and artisan livelihoods, creating meaningful opportunities for skilled hands and their families.</p><p><em>Handcrafted in India | Supporting Artisan Livelihoods | Made with Purpose</em></p>"
+            "text": "<h3><strong>Threads of Craft. Stories of the Hands That Create.</strong></h3><p>The <strong>Crochet Collection by Social India Craft</strong> celebrates the beauty of handmade artistry and the timeless skill of crochet.</p><p>Each creation is carefully handcrafted by <strong>Indian women artisans</strong>, transforming simple threads into thoughtful, functional pieces for everyday life. Every stitch reflects patience, creativity and the individuality of the hands that made it.</p><p>The collection was born from our founder's desire to <strong>bring Indian handmade art forms into contemporary living while creating meaningful livelihood opportunities for artisans</strong>.</p><p>From everyday essentials to thoughtful accessories, each piece is designed to carry the warmth of handmade craftsmanship while remaining practical and beautiful.</p><p><strong>Every stitch carries a story.<br/>Every creation supports a craft.<br/>Every purchase helps carry that story forward.<br/></strong><br/></p><p></p>"
           }
         }
       },
@@ -209,6 +209,7 @@
         "text"
       ],
       "settings": {
+        "mobile_image": "shopify://shop_images/16_8d7578ef-c5f8-4d22-943f-f4b86013357d.jpg",
         "image_alt": "",
         "caption": "",
         "image_ratio": "portrait",
@@ -220,14 +221,14 @@
         "content_width": "wide",
         "content_width_custom": 1200,
         "padding_horizontal": 40,
-        "color_scheme": "sand",
+        "color_scheme": "ink",
         "background_color": "",
         "heading_color": "",
         "text_color": "",
         "accent_color": "",
         "heading_size": 100,
         "body_size": 100,
-        "padding_top": 80,
+        "padding_top": 72,
         "padding_bottom": 48,
         "padding_top_mobile": 52,
         "padding_bottom_mobile": 52
@@ -236,10 +237,10 @@
     "crochet-products": {
       "type": "featured-collection",
       "settings": {
-        "collection": "",
+        "collection": "crochet-collection",
         "products_to_show": 5,
         "eyebrow": "",
-        "heading": "Shop crochet bottle covers",
+        "heading": "Shop crochet collection",
         "subheading": "",
         "heading_alignment": "center",
         "heading_alignment_mobile": "",
