@@ -146,7 +146,7 @@
     "mandala-products": {
       "type": "featured-collection",
       "settings": {
-        "collection": "",
+        "collection": "mandala-collection",
         "products_to_show": 5,
         "eyebrow": "",
         "heading": "Shop the Mandala Collection",
