@@ -1,17 +1,51 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "hero-banner",
       "settings": {
+        "image_alt": "",
         "height": "large",
+        "height_custom": 600,
+        "height_mobile": "medium",
+        "height_custom_mobile": 420,
+        "image_focal_point": "center",
         "overlay_opacity": 35,
+        "eyebrow": "",
         "heading": "Social India Craft",
         "heading_is_page_title": true,
-        "text": "<p>More than a product, a living legacy.<\/p>",
+        "text": "<p>More than a product, a living legacy.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "button_label_2": "",
+        "button_link_2": "",
         "text_position": "middle-center",
         "text_alignment": "center",
+        "text_alignment_mobile": "",
         "text_style": "plain",
-        "color_scheme": "ink"
+        "content_width": "full",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "color_scheme": "ink",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "padding_top_mobile": 44,
+        "padding_bottom_mobile": 44
       }
     },
     "intro": {
@@ -20,18 +54,31 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Social India Craft, operating under the Sheer Roots family, represents our expression of premium Indian craftsmanship and conscious gifting.<\/p><p>The brand draws inspiration from India's ancient relationship with Arts, particularly the enduring tradition of craftsmanship.<\/p>",
+            "text": "<h3><strong>More Than a Product. A Living Legacy.</strong></h3><p><strong>Social India Craft</strong>, a premium artisanal expression of the <strong>Sheer Roots</strong> family, celebrates the beauty of Indian craftsmanship through thoughtfully designed creations for contemporary living.</p><p>Inspired by India's rich artistic heritage and the skills passed down through generations, Social India Craft brings together <strong>traditional craftsmanship, meaningful design and modern functionality</strong>.</p><p>Our creations are made for those who believe that everyday objects can carry a deeper story—of <strong>culture, craftsmanship, creativity and the hands that bring them to life</strong>.</p>",
             "text_size": "subheading"
           }
         }
       },
-      "block_order": ["text"],
+      "block_order": [
+        "text"
+      ],
       "settings": {
-        "color_scheme": "ivory",
-        "content_width": "narrow",
         "text_alignment": "center",
-        "padding_top": 80,
-        "padding_bottom": 64
+        "text_alignment_mobile": "",
+        "content_width": "narrow",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "color_scheme": "ivory",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
+        "padding_top": 28,
+        "padding_bottom": 16,
+        "padding_top_mobile": 52,
+        "padding_bottom_mobile": 52
       }
     },
     "mandala": {
@@ -54,7 +101,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>The Mandala Collection by Social India Craft celebrates the beauty of Indian-inspired artistry through colour, symmetry and thoughtful design.<\/p><p>Each bottle is crafted from pure copper and decorated with a distinctive mandala-inspired artwork, bringing together the traditional character of copperware with a contemporary aesthetic.<\/p><p>The collection is created for people who appreciate products that are more than functional objects — pieces that bring together Indian artistic inspiration, craftsmanship and everyday living.<\/p><p>From vibrant colours to intricate patterns, every design has its own personality while remaining connected to the spirit of the collection.<\/p>"
+            "text": "<h4><strong>Where Indian Artistry Meets Everyday Living</strong></h4><p>The <strong>Mandala Collection by Social India Craft</strong> is a celebration of colour, symmetry and Indian-inspired artistry.</p><p>Each piece brings together the timeless character of <strong>copper craftsmanship</strong> with intricate mandala-inspired designs, creating a harmonious balance between traditional artistic expression and contemporary aesthetics.</p><p>Inspired by the mandala—an enduring symbol found across Indian art and culture—the collection reflects ideas of <strong>balance, harmony, unity and wholeness</strong>. Every design has its own character, while remaining connected to the visual language of the collection.</p><p>Created for modern living, these pieces are more than functional objects. They are thoughtfully designed expressions of <strong>Indian craftsmanship, creativity and cultural inspiration</strong>.</p>"
           }
         },
         "strapline": {
@@ -64,32 +111,72 @@
           }
         }
       },
-      "block_order": ["eyebrow", "heading", "text", "strapline"],
+      "block_order": [
+        "eyebrow",
+        "heading",
+        "text",
+        "strapline"
+      ],
       "settings": {
+        "desktop_image": "shopify://shop_images/42.jpg",
+        "image_alt": "",
+        "caption": "",
         "image_ratio": "portrait",
         "image_position": "left",
         "media_width": "medium",
         "text_alignment": "left",
+        "text_alignment_mobile": "",
+        "full_width": false,
+        "content_width": "wide",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
         "color_scheme": "ivory",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
         "padding_top": 64,
-        "padding_bottom": 48
+        "padding_bottom": 48,
+        "padding_top_mobile": 52,
+        "padding_bottom_mobile": 52
       }
     },
     "mandala-products": {
       "type": "featured-collection",
       "settings": {
+        "collection": "",
         "products_to_show": 5,
+        "eyebrow": "",
         "heading": "Shop the Mandala Collection",
+        "subheading": "",
         "heading_alignment": "center",
+        "heading_alignment_mobile": "",
         "show_view_all": true,
         "layout": "slider",
         "columns_desktop": 4,
         "columns_mobile": "2",
         "autoplay": false,
         "autoplay_interval": 5,
+        "content_width": "wide",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "column_gap": 32,
+        "row_gap": 48,
+        "card_image_ratio": "",
+        "card_text_alignment": "",
         "color_scheme": "ivory",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
         "padding_top": 32,
-        "padding_bottom": 80
+        "padding_bottom": 80,
+        "padding_top_mobile": 52,
+        "padding_bottom_mobile": 52
       }
     },
     "crochet": {
@@ -112,38 +199,83 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>A handcrafted crochet bottle cover that brings comfort, character, and purpose to everyday living. Made with care by skilled craftspersons, each piece helps support traditional craftsmanship and artisan livelihoods, creating meaningful opportunities for skilled hands and their families.<\/p><p><em>Handcrafted in India | Supporting Artisan Livelihoods | Made with Purpose<\/em><\/p>"
+            "text": "<p>A handcrafted crochet bottle cover that brings comfort, character, and purpose to everyday living. Made with care by skilled craftspersons, each piece helps support traditional craftsmanship and artisan livelihoods, creating meaningful opportunities for skilled hands and their families.</p><p><em>Handcrafted in India | Supporting Artisan Livelihoods | Made with Purpose</em></p>"
           }
         }
       },
-      "block_order": ["heading", "strapline", "text"],
+      "block_order": [
+        "heading",
+        "strapline",
+        "text"
+      ],
       "settings": {
+        "image_alt": "",
+        "caption": "",
         "image_ratio": "portrait",
         "image_position": "right",
         "media_width": "medium",
         "text_alignment": "left",
+        "text_alignment_mobile": "",
+        "full_width": false,
+        "content_width": "wide",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
         "color_scheme": "sand",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
         "padding_top": 80,
-        "padding_bottom": 48
+        "padding_bottom": 48,
+        "padding_top_mobile": 52,
+        "padding_bottom_mobile": 52
       }
     },
     "crochet-products": {
       "type": "featured-collection",
       "settings": {
+        "collection": "",
         "products_to_show": 5,
+        "eyebrow": "",
         "heading": "Shop crochet bottle covers",
+        "subheading": "",
         "heading_alignment": "center",
+        "heading_alignment_mobile": "",
         "show_view_all": true,
         "layout": "slider",
         "columns_desktop": 4,
         "columns_mobile": "2",
         "autoplay": false,
         "autoplay_interval": 5,
+        "content_width": "wide",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "column_gap": 32,
+        "row_gap": 48,
+        "card_image_ratio": "",
+        "card_text_alignment": "",
         "color_scheme": "sand",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
         "padding_top": 32,
-        "padding_bottom": 88
+        "padding_bottom": 88,
+        "padding_top_mobile": 52,
+        "padding_bottom_mobile": 52
       }
     }
   },
-  "order": ["hero", "intro", "mandala", "mandala-products", "crochet", "crochet-products"]
+  "order": [
+    "hero",
+    "intro",
+    "mandala",
+    "mandala-products",
+    "crochet",
+    "crochet-products"
+  ]
 }
