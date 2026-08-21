@@ -23,32 +23,25 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<h2><strong>Sheer Roots</strong></h2><p>This website is operated by <strong>Sheer Roots</strong>.</p><p>We bring together <strong>Indian handicrafts, artisanal products, culturally inspired<br/>products, lifestyle products and thoughtful gifting collections</strong>,<br/>celebrating the beauty, creativity and heritage of Indian craftsmanship.</p><p>At Sheer Roots, we believe that every handmade creation carries more than beauty — it carries the </p><p><strong>skill, time and story of the hands that make it</strong>. </p><p>Our vision is to bring India's rich craft traditions into contemporary everyday living while creating meaningful opportunities for artisans and helping traditional art forms continue to thrive.</p><p><strong>Social India Craft</strong> operates under the <strong>Sheer Roots family</strong> and represents our premium <strong>artisanal and conscious gifting collections</strong>, created for those who value craftsmanship, culture and thoughtful living.</p><p><strong>Every Piece. A Story. India.</strong></p><p><strong>Sheer Roots</strong><br/><em>Rooted in India. Crafted with Purpose.</em></p><p><em>We're here to help.</em></p><p><strong>Customer Support</strong></p><p>For questions regarding:</p><p>Orders & order status, Product information, Returns & exchanges, Refunds, Shipping & delivery, Damaged or incorrect products Artisan-made products and craftsmanship</p><p><strong>General enquiries</strong></p><p>Please email us with your <strong>order number</strong>, where applicable, so that we can assist you more quickly.</p><p><strong>Stay connected. Stay rooted.</strong></p>",
+            "text": "<p>This website is operated by <strong>Sheer Roots</strong>.</p><p>We bring together <strong>Indian handicrafts, artisanal products, culturally inspired products, lifestyle products and thoughtful gifting collections</strong>, celebrating the beauty, creativity and heritage of Indian craftsmanship.</p><p><strong>Social India Craft</strong> operates under the <strong>Sheer Roots family</strong> and represents our premium <strong>artisanal and conscious gifting collections</strong>, created for those who value craftsmanship, culture and thoughtful living.</p><p><em>We're here to help</em></p><p>Please email us with your <strong>order number</strong>, where applicable, so that we can assist you more quickly.<br/><strong>Every piece. A story. India.</strong></p>",
             "text_size": "subheading"
           }
         },
         "rule": {
           "type": "rule",
           "settings": {}
-        },
-        "eyebrow": {
-          "type": "eyebrow",
-          "settings": {
-            "text": "Every piece. A story. India."
-          }
         }
       },
       "block_order": [
         "heading",
         "text",
-        "rule",
-        "eyebrow"
+        "rule"
       ],
       "settings": {
         "text_alignment": "center",
         "text_alignment_mobile": "",
-        "content_width": "contained",
-        "content_width_custom": 1800,
+        "content_width": "full",
+        "content_width_custom": 1460,
         "padding_horizontal": 0,
         "color_scheme": "ivory",
         "background_color": "",
@@ -57,8 +50,51 @@
         "accent_color": "",
         "heading_size": 100,
         "body_size": 100,
+        "padding_top": 12,
+        "padding_bottom": 16,
+        "padding_top_mobile": 52,
+        "padding_bottom_mobile": 52
+      }
+    },
+    "rich_text_F4GftM": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_MmGdRn": {
+          "type": "heading",
+          "settings": {
+            "heading": "Customer Support and General enquiries",
+            "heading_size": "h3",
+            "heading_tag": "h2"
+          }
+        },
+        "text_BAqrBV": {
+          "type": "text",
+          "settings": {
+            "text": "<p>For questions regarding: Orders & order status, Product information, Returns & exchanges, Refunds, Shipping & delivery, Damaged or incorrect products Artisan-made products and craftsmanship</p>",
+            "text_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_MmGdRn",
+        "text_BAqrBV"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "",
+        "content_width": "narrow",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "color_scheme": "ink",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
         "padding_top": 72,
-        "padding_bottom": 56,
+        "padding_bottom": 72,
         "padding_top_mobile": 52,
         "padding_bottom_mobile": 52
       }
@@ -88,10 +124,10 @@
         "accent_color": "",
         "heading_size": 100,
         "body_size": 100,
-        "padding_top": 64,
-        "padding_bottom": 64,
-        "padding_top_mobile": 44,
-        "padding_bottom_mobile": 44
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 16
       }
     },
     "form": {
@@ -105,23 +141,84 @@
         "content_width": "narrow",
         "content_width_custom": 1200,
         "padding_horizontal": 40,
-        "color_scheme": "ivory",
+        "color_scheme": "ink",
         "background_color": "",
         "heading_color": "",
         "text_color": "",
         "accent_color": "",
         "heading_size": 100,
         "body_size": 100,
-        "padding_top": 72,
-        "padding_bottom": 88,
+        "padding_top": 44,
+        "padding_bottom": 12,
         "padding_top_mobile": 52,
         "padding_bottom_mobile": 60
+      }
+    },
+    "collapsible_content_TqDnLD": {
+      "type": "collapsible-content",
+      "blocks": {
+        "row_PMQYBm": {
+          "type": "row",
+          "settings": {
+            "heading": "How long will it take for my order to be delivered?",
+            "content": "<p>Orders are generally processed and shipped within 5 business days of receiving the order.</p><p>Once your order has been shipped, the delivery time will depend on your location and the shipping partner.</p><p>You will receive the relevant shipping or tracking information once your order has been dispatched.</p><p>If you need an order urgently or would like to check the possibility of expedited delivery, please contact us before placing your order:</p><p>Call: +91 8448809111<br/>Email: <a href=\"mailto:info@sheerroots.in\">info@sheerroots.in</a></p>",
+            "page": "",
+            "open_by_default": false
+          }
+        },
+        "row_wcw6cy": {
+          "type": "row",
+          "settings": {
+            "heading": "How can I cancel or change my order?",
+            "content": "<p>You may request to cancel or change your order before it has been dispatched.</p><p>Please contact us as soon as possible.</p><p>Once an order has been dispatched, cancellation or changes may no longer be possible. In such cases, you may need to follow our Exchange, Return & Refund Policy, where applicable.</p>",
+            "page": "",
+            "open_by_default": false
+          }
+        },
+        "row_zfkLz4": {
+          "type": "row",
+          "settings": {
+            "heading": "Can I place an international order?",
+            "content": "<p>Yes, we are able to accept international orders.</p><p>International shipping availability, delivery timelines and shipping charges may vary depending on the destination.</p><p>If you wish to place an international order, please contact us before placing the order so that we can confirm:</p><ul><li>Shipping availability</li><li>Estimated delivery time</li><li>Shipping charges</li><li>Any applicable customs duties or taxes</li></ul>",
+            "page": "",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "row_PMQYBm",
+        "row_wcw6cy",
+        "row_zfkLz4"
+      ],
+      "name": "Collapsible content",
+      "settings": {
+        "eyebrow": "",
+        "heading": "Orders and shipping",
+        "text": "",
+        "text_alignment": "center",
+        "text_alignment_mobile": "",
+        "content_width": "narrow",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "color_scheme": "ivory",
+        "background_color": "",
+        "heading_color": "#CF1414",
+        "text_color": "#130202",
+        "accent_color": "#EEEEEE",
+        "heading_size": 100,
+        "body_size": 100,
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "padding_top_mobile": 44,
+        "padding_bottom_mobile": 52
       }
     }
   },
   "order": [
     "intro",
+    "rich_text_F4GftM",
     "details",
-    "form"
+    "form",
+    "collapsible_content_TqDnLD"
   ]
 }
