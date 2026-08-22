@@ -1,32 +1,94 @@
 {{ 'section-footer.css' | asset_url | stylesheet_tag }}
 
+{%- comment -%}
+  Footer.
+
+  Each column is its own block so the merchant can edit, reorder, add or remove
+  them independently in the Theme Editor. The desktop grid template is built
+  from the blocks actually present, which keeps the layout correct when a
+  column is removed or reordered instead of assuming there are always four.
+{%- endcomment -%}
+
+{%- liquid
+  assign section_align = section.settings.text_alignment | default: 'left'
+
+  # Column weights: the content column carries the most copy, the logo column
+  # the least. Built from the live block list so removing a block cannot leave
+  # an empty grid track behind.
+  assign column_template = ''
+  for block in section.blocks
+    case block.type
+      when 'logo'
+        assign weight = '0.7fr'
+      when 'brand'
+        assign weight = '1.7fr'
+      when 'menu'
+        assign weight = '1fr'
+      when 'contact'
+        assign weight = '1.2fr'
+      else
+        assign weight = '1fr'
+    endcase
+    assign column_template = column_template | append: ' minmax(0, ' | append: weight | append: ')'
+  endfor
+-%}
+
+{%- capture footer_vars -%}
+  {%- if column_template != blank %}--footer-columns-desktop:{{ column_template }};{% endif -%}
+  {%- if section.settings.column_gap_mobile != blank %}--footer-gap-mobile: {{ section.settings.column_gap_mobile }}px;{% endif -%}
+{%- endcapture -%}
+
 <footer
   class="footer scheme-{{ section.settings.color_scheme }}"
-  {% render 'section-styles', cfg: section.settings %}
+  {% render 'section-styles', cfg: section.settings, extra: footer_vars %}
 >
   <div class="page-width">
     {%- if section.blocks.size > 0 -%}
       <div class="footer__grid">
         {%- for block in section.blocks -%}
-          <div class="footer__column footer__column--{{ block.type }}" {{ block.shopify_attributes }}>
+          {%- liquid
+            assign block_align = block.settings.text_alignment | default: section_align
+            assign block_align_mobile = section.settings.text_alignment_mobile
+          -%}
+          {%- capture block_vars -%}
+            {%- if block.settings.heading_color != blank %}--heading-color: {{ block.settings.heading_color }};{% endif -%}
+            {%- if block.settings.text_color != blank %}--fg-muted: {{ block.settings.text_color }};{% endif -%}
+          {%- endcapture -%}
+          <div
+            class="footer__column footer__column--{{ block.type }} align-{{ block_align }}{% if block_align_mobile != blank %} align-mobile-{{ block_align_mobile }}{% endif %}"
+            {% if block_vars != blank %}style="{{ block_vars }}"{% endif %}
+            {{ block.shopify_attributes }}
+          >
             {%- case block.type -%}
-              {%- when 'brand' -%}
+              {%- when 'logo' -%}
                 {%- liquid
-                  assign footer_logo = settings.logo_footer | default: settings.logo
+                  assign logo_image = block.settings.image | default: settings.logo_footer | default: settings.logo
+                  assign logo_link = block.settings.link | default: routes.root_url
+                  assign logo_alt = block.settings.image_alt | default: shop.name
+                  assign logo_align = block.settings.alignment | default: block_align
                 -%}
-                {%- if block.settings.show_logo and footer_logo != blank -%}
-                  <div class="footer__logo" style="--footer-logo-width: {{ block.settings.logo_width }}px;">
-                    {{
-                      footer_logo
-                      | image_url: width: 600
-                      | image_tag:
-                        loading: 'lazy',
-                        widths: '140, 200, 300, 400, 600',
-                        sizes: '200px',
-                        alt: shop.name
-                    }}
+                {%- if block.settings.show_logo and logo_image != blank -%}
+                  {%- capture logo_sizes -%}{{ block.settings.width }}px{%- endcapture -%}
+                  <div
+                    class="footer__logo align-{{ logo_align }}"
+                    style="--footer-logo-width: {{ block.settings.width }}px;"
+                  >
+                    <a class="footer__logo-link" href="{{ logo_link }}">
+                      {{
+                        logo_image
+                        | image_url: width: 640
+                        | image_tag:
+                          loading: 'lazy',
+                          widths: '120, 180, 240, 320, 480, 640',
+                          sizes: logo_sizes,
+                          alt: logo_alt,
+                          class: 'footer__logo-image'
+                      }}
+                    </a>
                   </div>
                 {%- endif -%}
+
+              {%- when 'brand' -%}
                 {%- if block.settings.heading != blank -%}
                   <h2 class="footer__heading">{{ block.settings.heading | escape }}</h2>
                 {%- endif -%}
@@ -132,7 +194,7 @@
 {
   "name": "Footer",
   "class": "shopify-section--footer",
-  "max_blocks": 5,
+  "max_blocks": 6,
   "settings": [
     {
       "type": "checkbox",
@@ -156,26 +218,11 @@
       "id": "content_width",
       "label": "Content width",
       "options": [
-        {
-          "value": "full",
-          "label": "Full width"
-        },
-        {
-          "value": "wide",
-          "label": "Wide"
-        },
-        {
-          "value": "contained",
-          "label": "Contained"
-        },
-        {
-          "value": "narrow",
-          "label": "Narrow"
-        },
-        {
-          "value": "custom",
-          "label": "Custom"
-        }
+        { "value": "full", "label": "Full width" },
+        { "value": "wide", "label": "Wide" },
+        { "value": "contained", "label": "Contained" },
+        { "value": "narrow", "label": "Narrow" },
+        { "value": "custom", "label": "Custom" }
       ],
       "default": "wide"
     },
@@ -202,6 +249,51 @@
       "default": 40
     },
     {
+      "type": "range",
+      "id": "column_gap",
+      "min": 16,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "Column gap (desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "column_gap_mobile",
+      "min": 16,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "label": "Column gap (mobile)",
+      "info": "The vertical space between the stacked columns.",
+      "default": 32
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Alignment (desktop)",
+      "info": "Each block can override this.",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Centre" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment_mobile",
+      "label": "Alignment (mobile)",
+      "options": [
+        { "value": "", "label": "Same as desktop" },
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Centre" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": ""
+    },
+    {
       "type": "header",
       "content": "Colours"
     },
@@ -210,18 +302,9 @@
       "id": "color_scheme",
       "label": "Colour scheme",
       "options": [
-        {
-          "value": "ivory",
-          "label": "Ivory"
-        },
-        {
-          "value": "sand",
-          "label": "Sand"
-        },
-        {
-          "value": "ink",
-          "label": "Ink"
-        }
+        { "value": "ivory", "label": "Ivory" },
+        { "value": "sand", "label": "Sand" },
+        { "value": "ink", "label": "Ink" }
       ],
       "default": "ink"
     },
@@ -317,27 +400,63 @@
   ],
   "blocks": [
     {
-      "type": "brand",
-      "name": "Brand",
+      "type": "logo",
+      "name": "Logo",
       "limit": 1,
       "settings": [
         {
           "type": "checkbox",
           "id": "show_logo",
           "label": "Show logo",
-          "info": "Set the footer logo in Theme settings → Branding.",
           "default": true
         },
         {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Logo",
+          "info": "Leave empty to use the footer logo, then the main logo, from Theme settings → Branding."
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Logo description",
+          "info": "Falls back to the shop name."
+        },
+        {
           "type": "range",
-          "id": "logo_width",
-          "min": 80,
+          "id": "width",
+          "min": 60,
           "max": 320,
           "step": 10,
           "unit": "px",
           "label": "Logo width",
-          "default": 180
+          "default": 160
         },
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "Logo alignment",
+          "options": [
+            { "value": "", "label": "Use the footer alignment" },
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Centre" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": ""
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link",
+          "info": "Leave empty to link to the home page."
+        }
+      ]
+    },
+    {
+      "type": "brand",
+      "name": "Content",
+      "limit": 1,
+      "settings": [
         {
           "type": "text",
           "id": "heading",
@@ -359,7 +478,30 @@
           "type": "checkbox",
           "id": "show_social",
           "label": "Show social icons",
+          "info": "Links are set in Theme settings → Social media.",
           "default": true
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "label": "Text alignment",
+          "options": [
+            { "value": "", "label": "Use the footer alignment" },
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Centre" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": ""
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "label": "Heading colour"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text colour"
         }
       ]
     },
@@ -379,6 +521,18 @@
           "label": "Menu",
           "info": "Manage the links in Shopify admin → Content → Menus.",
           "default": "footer"
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "label": "Text alignment",
+          "options": [
+            { "value": "", "label": "Use the footer alignment" },
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Centre" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": ""
         }
       ]
     },
@@ -398,7 +552,7 @@
           "content": "Leave these empty to use Theme settings → Contact details."
         },
         {
-          "type": "text",
+          "type": "textarea",
           "id": "address",
           "label": "Address"
         },
@@ -411,6 +565,18 @@
           "type": "text",
           "id": "email",
           "label": "Email"
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "label": "Text alignment",
+          "options": [
+            { "value": "", "label": "Use the footer alignment" },
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Centre" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": ""
         }
       ]
     },
@@ -427,14 +593,24 @@
           "type": "richtext",
           "id": "text",
           "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "label": "Text alignment",
+          "options": [
+            { "value": "", "label": "Use the footer alignment" },
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Centre" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": ""
         }
       ]
     }
   ],
   "enabled_on": {
-    "groups": [
-      "footer"
-    ]
+    "groups": ["footer"]
   }
 }
 {% endschema %}

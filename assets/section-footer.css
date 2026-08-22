@@ -1,58 +1,125 @@
+/* ==========================================================================
+   Footer
+   Four independent block columns on desktop, two on tablet, one on mobile.
+   The desktop track list is built in Liquid from the blocks actually present
+   (--footer-columns-desktop), so removing or reordering a column in the Theme
+   Editor cannot leave an empty or mis-weighted track behind.
+   ========================================================================== */
+
 .footer {
-  padding-top: calc(var(--section-padding-top, 72px) * var(--spacing-scale));
-  padding-bottom: calc(var(--section-padding-bottom, 40px) * var(--spacing-scale));
+  padding-top: calc(var(--section-padding-top-mobile, var(--section-padding-top, 72px)) * var(--spacing-scale));
+  padding-bottom: calc(
+    var(--section-padding-bottom-mobile, var(--section-padding-bottom, 40px)) * var(--spacing-scale)
+  );
   background-color: var(--bg);
   color: var(--fg);
 }
 
+@media screen and (min-width: 750px) {
+  .footer {
+    padding-top: calc(var(--section-padding-top, 72px) * var(--spacing-scale));
+    padding-bottom: calc(var(--section-padding-bottom, 40px) * var(--spacing-scale));
+  }
+}
+
+/* Grid ------------------------------------------------------------------- */
+
 .footer__grid {
   display: grid;
-  gap: 4rem 3.2rem;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--footer-gap-mobile, 32px);
 }
 
 @media screen and (min-width: 750px) {
   .footer__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--footer-gap-mobile, 32px) var(--column-gap, 40px);
+    align-items: start;
   }
 }
 
 @media screen and (min-width: 990px) {
   .footer__grid {
-    /* The brand column carries the most copy, so give it extra room. */
-    grid-template-columns: repeat(3fr)(auto-fit, minmax(16rem, 1fr));
-    gap: 4rem;
+    grid-template-columns: var(--footer-columns-desktop, repeat(4, minmax(0, 1fr)));
+    gap: var(--column-gap, 40px);
   }
 }
 
-.footer__column--brand {
-  max-width: 52ch;
+/* minmax(0, …) on the tracks plus this guard stops a long link, email address
+   or unbroken word from pushing a column past the viewport. */
+.footer__column {
+  min-width: 0;
 }
 
-.footer__logo {
-  margin-bottom: 2rem;
+.footer__column > * + * {
+  margin-top: 1.6rem;
 }
 
-.footer__logo img {
-  width: var(--footer-logo-width, 180px);
+/* On mobile the logo reads as a separate lockup above the content rather than
+   running straight into the about text. */
+@media screen and (max-width: 749px) {
+  .footer__column--logo {
+    padding-bottom: var(--footer-gap-mobile, 32px);
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+/* Logo ------------------------------------------------------------------- */
+
+.footer__logo-link {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.footer__logo-image {
+  width: var(--footer-logo-width, 160px);
+  max-width: 100%;
   height: auto;
 }
 
+.footer__logo.align-center {
+  text-align: center;
+}
+
+.footer__logo.align-right {
+  text-align: right;
+}
+
+/* Typography ------------------------------------------------------------- */
+
 .footer__heading {
   margin-bottom: 1.6rem;
-  font-size: 1.3rem;
+  font-size: calc(1.3rem * var(--heading-scale));
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
 .footer__text {
   color: var(--fg-muted);
-  font-size: 1.4rem;
+  font-size: calc(1.4rem * var(--body-scale));
   line-height: 1.8;
 }
 
+.footer__text > * + * {
+  margin-top: 1.2rem;
+}
+
+/* Headings the merchant types into the rich text field keep the footer's
+   proportions instead of inheriting full page heading sizes. */
+.footer__text h1,
+.footer__text h2,
+.footer__text h3,
+.footer__text h4,
+.footer__text h5,
+.footer__text h6 {
+  margin-bottom: 1.2rem;
+  font-size: calc(1.6rem * var(--heading-scale));
+  line-height: 1.35;
+  letter-spacing: 0.12em;
+  color: var(--heading-color, var(--fg));
+}
+
 .footer__tagline {
-  margin-top: 1.6rem;
   font-family: var(--font-heading-family);
   font-size: 1.3rem;
   letter-spacing: 0.2em;
@@ -60,11 +127,7 @@
   color: var(--accent);
 }
 
-.footer__social {
-  --social-gap: 0.4rem;
-  margin-top: 2rem;
-  margin-left: -1rem;
-}
+/* Lists ------------------------------------------------------------------ */
 
 .footer__links,
 .footer__contact {
@@ -72,13 +135,15 @@
   flex-direction: column;
   gap: 1rem;
   list-style: none;
-  font-size: 1.4rem;
+  font-size: calc(1.4rem * var(--body-scale));
 }
 
 .footer__links a,
 .footer__contact a {
   color: var(--fg-muted);
   text-decoration: none;
+  /* Long addresses and emails wrap instead of overflowing their column. */
+  overflow-wrap: anywhere;
   transition: color var(--duration) var(--ease);
 }
 
@@ -93,6 +158,7 @@
   align-items: flex-start;
   gap: 1rem;
   color: var(--fg-muted);
+  overflow-wrap: anywhere;
 }
 
 .footer__contact-item svg {
@@ -102,6 +168,63 @@
   margin-top: 0.35rem;
   color: var(--accent);
 }
+
+.footer__social {
+  --social-gap: 0.4rem;
+  margin-left: -1rem;
+}
+
+/* Alignment -------------------------------------------------------------- */
+
+.footer__column.align-center .footer__links,
+.footer__column.align-center .footer__contact {
+  align-items: center;
+}
+
+.footer__column.align-right .footer__links,
+.footer__column.align-right .footer__contact {
+  align-items: flex-end;
+}
+
+.footer__column.align-center .footer__contact-item {
+  justify-content: center;
+}
+
+.footer__column.align-right .footer__contact-item {
+  justify-content: flex-end;
+}
+
+.footer__column.align-center .social-list {
+  justify-content: center;
+  margin-left: 0;
+}
+
+.footer__column.align-right .social-list {
+  justify-content: flex-end;
+  margin-left: 0;
+}
+
+@media screen and (max-width: 749px) {
+  .footer__column.align-mobile-center .footer__links,
+  .footer__column.align-mobile-center .footer__contact {
+    align-items: center;
+  }
+
+  .footer__column.align-mobile-center .footer__contact-item,
+  .footer__column.align-mobile-center .social-list {
+    justify-content: center;
+  }
+
+  .footer__column.align-mobile-center .social-list {
+    margin-left: 0;
+  }
+
+  .footer__column.align-mobile-center .footer__logo {
+    text-align: center;
+  }
+}
+
+/* Bottom bar ------------------------------------------------------------- */
 
 .footer__bottom {
   display: flex;
@@ -114,6 +237,12 @@
   border-top: 1px solid var(--line);
   font-size: 1.3rem;
   color: var(--fg-muted);
+}
+
+@media screen and (max-width: 749px) {
+  .footer__bottom {
+    margin-top: 4rem;
+  }
 }
 
 .footer__copyright {
