@@ -14,29 +14,37 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
+        "announcement_Dd8XRy": {
+          "type": "announcement",
+          "settings": {
+            "text": "COPPER BOTTLE, CORPORATE GIFTING,",
+            "link": "shopify://collections/all"
+          }
+        },
         "message-1": {
           "type": "announcement",
           "settings": {
-            "text": "Every piece. A story. India.",
-            "link": ""
+            "text": "Celebrating India's Heritage, One Creation at a Time",
+            "link": "shopify://pages/social-india-craft"
           }
         },
         "announcement_X6GDwW": {
           "type": "announcement",
           "settings": {
-            "text": "Every piece. A story. India.",
-            "link": ""
+            "text": "From Artisan Hands to Your Home",
+            "link": "shopify://pages/mandala-collection"
           }
         },
         "announcement_E3kVjK": {
           "type": "announcement",
           "settings": {
-            "text": "Every piece. A story. India.",
-            "link": ""
+            "text": "Discover Indian Handicrafts, Artisanal Creations & Conscious Gifting",
+            "link": "shopify://pages/mandala-collection"
           }
         }
       },
       "block_order": [
+        "announcement_Dd8XRy",
         "message-1",
         "announcement_X6GDwW",
         "announcement_E3kVjK"
