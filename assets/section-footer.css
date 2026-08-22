@@ -20,7 +20,7 @@
 @media screen and (min-width: 990px) {
   .footer__grid {
     /* The brand column carries the most copy, so give it extra room. */
-    grid-template-columns: repeat(3fr,1fr)(auto-fit, minmax(16rem, 1fr));
+    grid-template-columns: repeat(3fr)(auto-fit, minmax(16rem, 1fr));
     gap: 4rem;
   }
 }
