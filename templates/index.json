@@ -352,6 +352,7 @@
     "video": {
       "type": "video-banner",
       "settings": {
+        "video": "shopify://files/videos/Unboxing .mp4",
         "video_url": "",
         "video_alt": "",
         "playback": "click",
