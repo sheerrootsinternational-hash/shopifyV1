@@ -53,6 +53,14 @@
             "page": ""
           }
         },
+        "collapsible_row_YFEgmy": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Thoughtfully Designed",
+            "content": "<p>This is a test</p>",
+            "page": ""
+          }
+        },
         "share": {
           "type": "share",
           "settings": {}
@@ -67,6 +75,7 @@
         "buy_buttons",
         "description",
         "collapsible_row_QG6i6R",
+        "collapsible_row_YFEgmy",
         "share"
       ],
       "settings": {
