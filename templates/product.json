@@ -48,6 +48,14 @@
             "show_dynamic_checkout": true
           }
         },
+        "collapsible_row_E4pCjz": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Care and Safety Instructions",
+            "content": "<p><strong>Care Instructions</strong></p><ul><li>Handle carefully to protect the printed artwork.</li><li>Avoid abrasive scrubbers on the decorative exterior.</li><li>Keep the bottle clean and dry when not in use.</li><li>Copper naturally develops oxidation/patina over time; this is a normal characteristic of the material.</li><li>Allow the bottle to dry completely before storing for an extended period.</li></ul><p><strong>Cleaning Instructions</strong></p><p><strong>Interior:<br/></strong> Clean regularly using a cleaning method suitable for copper utensils.</p><p><strong>Exterior:<br/></strong> Wipe gently with a soft, damp cloth to help protect the printed pink and multicolour surface.</p><p><strong>Avoid:<br/></strong> Steel wool, abrasive scrubbers and harsh cleaning products on the printed exterior.</p><p><strong>Safety Instructions</strong></p><ul><li>Wash thoroughly before first use.</li><li><strong>For normal drinking water only.</strong></li><li><strong>Do not use it for hot water or hot beverages.</strong></li><li><strong>Do not store milk, juice, carbonated drinks, acidic beverages, or any other liquids in the bottle.</strong></li><li>Do not use abrasive cleaning materials on the printed exterior.</li><li>Keep the bottle clean and dry when not in use.</li><li>Keep away from direct flame and excessive heat.</li><li>Allow the bottle to dry completely before storing</li></ul>",
+            "page": ""
+          }
+        },
         "collapsible_row_HmytjY": {
           "type": "collapsible_row",
           "settings": {
@@ -74,6 +82,7 @@
         "variant_picker",
         "quantity",
         "buy_buttons",
+        "collapsible_row_E4pCjz",
         "collapsible_row_HmytjY",
         "description",
         "share"
