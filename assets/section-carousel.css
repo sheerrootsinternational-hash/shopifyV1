@@ -143,6 +143,59 @@
   height: 1.8rem;
 }
 
+/* Pagination dots ------------------------------------------------------- */
+
+.carousel__dots {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 2.4rem;
+}
+
+.carousel__dots[hidden] {
+  display: none;
+}
+
+/* The visible dot is small, but the button keeps a 44px tap target. */
+.carousel__dot {
+  position: relative;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.carousel__dot::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--fg);
+  background-color: transparent;
+  transition: background-color var(--duration) var(--ease), transform var(--duration) var(--ease);
+}
+
+.carousel__dot:hover::after {
+  background-color: rgba(var(--fg-rgb), 0.4);
+}
+
+.carousel__dot.is-active::after {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  transform: translate(-50%, -50%) scale(1.25);
+}
+
+.carousel__controls[hidden] + .carousel__dots {
+  display: none;
+}
+
 /* Pause / play glyph drawn in CSS to avoid two more inline SVGs */
 .carousel__pause-icon {
   position: relative;

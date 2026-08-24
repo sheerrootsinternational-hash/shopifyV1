@@ -123,6 +123,7 @@
         "heading_alignment": "center",
         "heading_alignment_mobile": "",
         "columns_desktop": 5,
+        "layout": "carousel",
         "columns_mobile": "1",
         "text_alignment": "center",
         "text_alignment_mobile": "",

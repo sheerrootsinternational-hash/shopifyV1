@@ -1,4 +1,10 @@
 {
+  "404": {
+    "title": "Page not found",
+    "subtext": "The page you were looking for does not exist. It may have moved, or the address may be mistyped.",
+    "link": "Back to home",
+    "shop_link": "Browse everything"
+  },
   "general": {
     "meta": {
       "tags": "Tagged \"{{ tags }}\"",
@@ -29,7 +35,8 @@
       "next": "Next",
       "play": "Play slideshow",
       "pause": "Pause slideshow",
-      "paused": "Slideshow paused"
+      "paused": "Slideshow paused",
+      "go_to": "Go to item"
     },
     "social": {
       "instagram": "Instagram",
@@ -103,7 +110,12 @@
         "regular_price": "Regular price",
         "sale_price": "Sale price",
         "from_price_html": "From {{ price }}"
-      }
+      },
+      "gallery": "Product media",
+      "previous_image": "Previous image",
+      "next_image": "Next image",
+      "image_counter": "Image {{ index }} of {{ total }}",
+      "show_image": "Show image {{ index }} of {{ total }}"
     }
   },
   "collections": {
@@ -254,11 +266,5 @@
       "code": "Gift card code",
       "shop_link": "Start shopping"
     }
-  },
-  "404": {
-    "title": "Page not found",
-    "subtext": "The page you were looking for does not exist. It may have moved, or the address may be mistyped.",
-    "link": "Back to home",
-    "shop_link": "Browse everything"
   }
 }

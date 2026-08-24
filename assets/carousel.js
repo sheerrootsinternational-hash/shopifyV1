@@ -25,7 +25,9 @@
       this.toggleButton = this.querySelector('[data-carousel-toggle]');
       this.status = this.querySelector('[data-carousel-status]');
 
+      this.dots = this.querySelector('[data-carousel-dots]');
       this.autoplayRequested = this.dataset.autoplay === 'true';
+      this.loop = this.dataset.loop === 'true';
       this.interval = parseInt(this.dataset.autoplayInterval, 10) || 5000;
       this.timer = null;
       this.playing = false;
@@ -52,6 +54,7 @@
       this.addEventListener('focusin', this.pause);
       this.addEventListener('focusout', this.resume);
 
+      this.buildDots();
       this.refresh();
 
       if (this.autoplayRequested && !SR.prefersReducedMotion() && this.isScrollable()) {
@@ -81,6 +84,43 @@
       return this.track.scrollWidth - this.track.clientWidth > 4;
     }
 
+    /**
+     * One dot per slide. Built here rather than in Liquid so the count always
+     * matches the slides actually rendered.
+     */
+    buildDots() {
+      if (!this.dots) return;
+
+      this.dots.innerHTML = '';
+      this.dotButtons = this.slides.map((slide, index) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'carousel__dot';
+        dot.setAttribute('aria-label', (this.dots.dataset.dotLabel || 'Go to item') + ' ' + (index + 1));
+        dot.addEventListener('click', () => {
+          this.stop();
+          this.track.scrollTo({
+            left: slide.offsetLeft - this.track.offsetLeft,
+            behavior: SR.prefersReducedMotion() ? 'auto' : 'smooth'
+          });
+        });
+        this.dots.appendChild(dot);
+        return dot;
+      });
+    }
+
+    /** Marks the dot for the left-most fully visible slide. */
+    updateDots() {
+      if (!this.dotButtons || !this.dotButtons.length) return;
+      const step = this.slideStep();
+      const current = Math.round(this.track.scrollLeft / step);
+      this.dotButtons.forEach((dot, index) => {
+        const active = index === current;
+        dot.classList.toggle('is-active', active);
+        dot.setAttribute('aria-current', active ? 'true' : 'false');
+      });
+    }
+
     /** Width of one slide including the gap between slides. */
     slideStep() {
       if (this.slides.length < 2) return this.track.clientWidth;
@@ -95,6 +135,7 @@
       // With everything visible there is nothing to control — hide the buttons
       // rather than show dead ones.
       if (this.controls) this.controls.hidden = !scrollable;
+      if (this.dots) this.dots.hidden = !scrollable;
 
       if (!scrollable) {
         this.stop();
@@ -104,8 +145,11 @@
       const atStart = this.track.scrollLeft <= 2;
       const atEnd = this.track.scrollLeft + this.track.clientWidth >= this.track.scrollWidth - 2;
 
-      if (this.prevButton) this.prevButton.disabled = atStart;
-      if (this.nextButton) this.nextButton.disabled = atEnd && !this.playing;
+      // When looping, the arrows always stay live because either end wraps.
+      if (this.prevButton) this.prevButton.disabled = atStart && !this.loop;
+      if (this.nextButton) this.nextButton.disabled = atEnd && !this.loop && !this.playing;
+
+      this.updateDots();
     }
 
     scrollBySlides(direction) {
@@ -117,12 +161,32 @@
 
     onPrev() {
       this.stop();
+      if (this.loop && this.track.scrollLeft <= 2) {
+        this.scrollToEnd();
+        return;
+      }
       this.scrollBySlides(-1);
     }
 
     onNext() {
       this.stop();
+      const atEnd = this.track.scrollLeft + this.track.clientWidth >= this.track.scrollWidth - 2;
+      if (this.loop && atEnd) {
+        this.scrollToStart();
+        return;
+      }
       this.scrollBySlides(1);
+    }
+
+    scrollToStart() {
+      this.track.scrollTo({ left: 0, behavior: SR.prefersReducedMotion() ? 'auto' : 'smooth' });
+    }
+
+    scrollToEnd() {
+      this.track.scrollTo({
+        left: this.track.scrollWidth,
+        behavior: SR.prefersReducedMotion() ? 'auto' : 'smooth'
+      });
     }
 
     onScroll() {

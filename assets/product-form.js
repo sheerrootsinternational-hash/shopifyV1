@@ -31,7 +31,7 @@
       this.variantInput = this.querySelector('[data-variant-input]');
       this.addButton = this.querySelector('[data-add-button]');
       this.addButtonText = this.querySelector('[data-add-button-text]');
-      this.mediaItems = Array.prototype.slice.call(this.querySelectorAll('[data-media-id]'));
+      this.gallery = this.querySelector('sr-gallery');
 
       this.selected = this.currentOptions();
 
@@ -153,21 +153,15 @@
       priceEl.innerHTML = parts.join('');
     }
 
+    /**
+     * Selecting a variant moves the gallery to that variant's image.
+     * <sr-gallery> owns the gallery state, so this just delegates rather than
+     * keeping a second copy of "which media is showing".
+     */
     showMedia(mediaId) {
-      if (!mediaId || !this.mediaItems.length) return;
-      const target = this.mediaItems.find((item) => item.dataset.mediaId === String(mediaId));
-      if (!target) return;
-
-      this.mediaItems.forEach((item) => item.classList.remove('is-active'));
-      target.classList.add('is-active');
-
-      // On mobile the gallery is a horizontal scroller; bring the variant's
-      // image into view without yanking the whole page.
-      if (target.parentElement && target.parentElement.scrollWidth > target.parentElement.clientWidth) {
-        target.parentElement.scrollTo({
-          left: target.offsetLeft - target.parentElement.offsetLeft,
-          behavior: SR.prefersReducedMotion() ? 'auto' : 'smooth'
-        });
+      if (!mediaId || !this.gallery) return;
+      if (typeof this.gallery.selectByMediaId === 'function') {
+        this.gallery.selectByMediaId(mediaId);
       }
     }
   }

@@ -17,49 +17,192 @@
   }
 }
 
-/* Gallery ---------------------------------------------------------------- */
+/* Gallery ----------------------------------------------------------------
+   A scroll-snap stage plus a thumbnail strip. The stage is a real scroll
+   container, so touch swiping is native and the gallery still works as a
+   scrollable strip if JavaScript never runs.
+   ------------------------------------------------------------------------ */
 
-.product__media-list {
+.product-gallery {
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 88%;
-  gap: 1.2rem;
-  margin-inline: calc(var(--gutter) * -1);
-  padding-inline: var(--gutter);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  list-style: none;
+  gap: var(--thumb-gap, 10px);
 }
 
-.product__media-list::-webkit-scrollbar {
+.product-gallery__stage {
+  position: relative;
+  min-width: 0;
+}
+
+.product-gallery__track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  list-style: none;
+  border-radius: var(--radius);
+}
+
+.product-gallery__track::-webkit-scrollbar {
   display: none;
 }
 
-.product__media-item {
+.product-gallery__track:focus-visible {
+  outline: var(--focus-ring) solid var(--accent);
+  outline-offset: 3px;
+}
+
+.product-gallery__slide {
   scroll-snap-align: center;
+  min-width: 0;
 }
 
-@media screen and (min-width: 990px) {
-  .product__media-list {
-    grid-auto-flow: row;
-    grid-auto-columns: auto;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1.6rem;
-    margin-inline: 0;
-    padding-inline: 0;
-    overflow: visible;
-  }
-
-  /* Sticky info column pairs with a scrolling gallery. */
-  .product__info {
-    position: sticky;
-    top: 12rem;
-  }
-}
-
-.product__media .media {
+.product-gallery__slide .media {
   background-color: rgba(var(--fg-rgb), 0.03);
+}
+
+/* Zoom is opt-in and desktop-only — it would fight touch scrolling. */
+@media (hover: hover) and (min-width: 990px) {
+  .product-gallery--zoom .product-gallery__slide .media {
+    cursor: zoom-in;
+  }
+
+  .product-gallery--zoom .product-gallery__image {
+    transition: transform 500ms var(--ease);
+  }
+
+  .product-gallery--zoom .product-gallery__slide:hover .product-gallery__image {
+    transform: scale(1.5);
+  }
+}
+
+/* Arrows ----------------------------------------------------------------- */
+
+.product-gallery__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.4rem;
+  height: 4.4rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background-color: var(--bg);
+  color: var(--fg);
+  opacity: 0.92;
+  transition: opacity var(--duration) var(--ease), color var(--duration) var(--ease);
+}
+
+.product-gallery__arrow:hover:not(:disabled) {
+  opacity: 1;
+  color: var(--accent);
+}
+
+.product-gallery__arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.product-gallery__arrow svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.product-gallery__arrow--prev {
+  left: 1.2rem;
+}
+
+.product-gallery__arrow--next {
+  right: 1.2rem;
+}
+
+/* Thumbnails ------------------------------------------------------------- */
+
+.product-gallery__thumbs {
+  display: flex;
+  gap: var(--thumb-gap, 10px);
+  overflow-x: auto;
+  scrollbar-width: none;
+  list-style: none;
+  /* Bleed to the screen edge on mobile so the strip can scroll fully. */
+  padding-bottom: 0.4rem;
+}
+
+.product-gallery__thumbs::-webkit-scrollbar {
+  display: none;
+}
+
+.product-gallery__thumb {
+  position: relative;
+  display: block;
+  width: var(--thumb-size, 88px);
+  flex: 0 0 auto;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: none;
+  cursor: pointer;
+  aspect-ratio: 1 / 1;
+  transition: border-color var(--duration) var(--ease), opacity var(--duration) var(--ease);
+  opacity: 0.7;
+}
+
+.product-gallery__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-gallery__thumb:hover {
+  opacity: 1;
+}
+
+.product-gallery__thumb.is-active {
+  border-color: var(--fg);
+  opacity: 1;
+}
+
+.product-gallery__thumb-badge {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.35);
+  color: #fff;
+}
+
+.product-gallery__thumb-badge svg {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+/* Thumbnails beside the image, desktop only. */
+@media screen and (min-width: 990px) {
+  .product-gallery--thumbs-left {
+    grid-template-columns: var(--thumb-size, 88px) minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .product-gallery--thumbs-left .product-gallery__stage {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .product-gallery--thumbs-left .product-gallery__thumbs {
+    grid-column: 1;
+    grid-row: 1;
+    flex-direction: column;
+    overflow-x: visible;
+    overflow-y: auto;
+    max-height: 60rem;
+  }
 }
 
 /* Info ------------------------------------------------------------------- */

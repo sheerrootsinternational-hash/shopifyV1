@@ -1,6 +1,7 @@
 {{ 'template-product.css' | asset_url | stylesheet_tag }}
 {{ 'section-carousel.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-gallery.js' | asset_url }}" defer="defer"></script>
 
 {%- liquid
   assign current_variant = product.selected_or_first_available_variant
@@ -16,47 +17,123 @@
     <sr-product class="product__grid" data-url="{{ product.url }}" data-section-id="{{ section.id }}">
       <div class="product__media" data-product-media>
         {%- if product.media.size > 0 -%}
-          <ul class="product__media-list" role="list" data-media-list>
-            {%- for media in product.media -%}
-              {%- liquid
-                assign media_loading = 'lazy'
-                if forloop.first
-                  assign media_loading = 'eager'
-                endif
-              -%}
-              <li
-                class="product__media-item{% if media.id == current_variant.featured_media.id %} is-active{% endif %}"
-                data-media-id="{{ media.id }}"
+          <sr-gallery
+            class="product-gallery product-gallery--thumbs-{{ section.settings.thumbnail_position }}{% if section.settings.enable_zoom %} product-gallery--zoom{% endif %}"
+            style="--thumb-size: {{ section.settings.thumbnail_size }}px; --thumb-gap: {{ section.settings.thumbnail_gap }}px;"
+          >
+            <div class="product-gallery__stage">
+              <ul
+                class="product-gallery__track"
+                role="list"
+                tabindex="0"
+                aria-label="{{ 'products.product.gallery' | t }}"
+                data-gallery-track
               >
-                {%- case media.media_type -%}
-                  {%- when 'image' -%}
-                    <div class="media media--adapt">
+                {%- for media in product.media -%}
+                  {%- liquid
+                    # Only the first image is worth fetching eagerly; the rest
+                    # load as the visitor reaches them.
+                    assign media_loading = 'lazy'
+                    assign media_priority = 'auto'
+                    if forloop.first
+                      assign media_loading = 'eager'
+                      assign media_priority = 'high'
+                    endif
+                  -%}
+                  <li
+                    class="product-gallery__slide{% if media.id == current_variant.featured_media.id %} is-active{% endif %}"
+                    data-media-id="{{ media.id }}"
+                  >
+                    {%- case media.media_type -%}
+                      {%- when 'image' -%}
+                        <div class="media media--{{ section.settings.image_ratio }}">
+                          {{
+                            media
+                            | image_url: width: 1600
+                            | image_tag:
+                              loading: media_loading,
+                              fetchpriority: media_priority,
+                              widths: '400, 600, 800, 1000, 1200, 1400, 1600',
+                              sizes: '(min-width: 990px) 55vw, 100vw',
+                              alt: media.alt,
+                              class: 'product-gallery__image'
+                          }}
+                        </div>
+                      {%- when 'video' -%}
+                        <div class="media media--{{ section.settings.image_ratio }}">
+                          {{ media | video_tag: controls: true, preload: 'metadata', image_size: '1200x' }}
+                        </div>
+                      {%- when 'external_video' -%}
+                        <div class="media media--landscape">
+                          {{ media | external_video_tag: loading: 'lazy' }}
+                        </div>
+                      {%- when 'model' -%}
+                        <div class="media media--{{ section.settings.image_ratio }}">
+                          {{ media | model_viewer_tag }}
+                        </div>
+                    {%- endcase -%}
+                  </li>
+                {%- endfor -%}
+              </ul>
+
+              {%- if section.settings.show_arrows and product.media.size > 1 -%}
+                <button
+                  type="button"
+                  class="product-gallery__arrow product-gallery__arrow--prev"
+                  data-gallery-prev
+                  aria-label="{{ 'products.product.previous_image' | t }}"
+                >
+                  {% render 'icon', name: 'arrow-left' %}
+                </button>
+                <button
+                  type="button"
+                  class="product-gallery__arrow product-gallery__arrow--next"
+                  data-gallery-next
+                  aria-label="{{ 'products.product.next_image' | t }}"
+                >
+                  {% render 'icon', name: 'arrow-right' %}
+                </button>
+              {%- endif -%}
+
+              <p
+                class="visually-hidden"
+                aria-live="polite"
+                data-gallery-status
+                data-template="{{ 'products.product.image_counter' | t: index: '[index]', total: '[total]' | escape }}"
+              ></p>
+            </div>
+
+            {%- if section.settings.show_thumbnails and product.media.size > 1 -%}
+              <ul class="product-gallery__thumbs" role="list" data-gallery-thumbs>
+                {%- for media in product.media -%}
+                  <li>
+                    <button
+                      type="button"
+                      class="product-gallery__thumb{% if media.id == current_variant.featured_media.id %} is-active{% endif %}"
+                      data-gallery-thumb
+                      data-media-id="{{ media.id }}"
+                      aria-label="{{ 'products.product.show_image' | t: index: forloop.index, total: product.media.size }}"
+                    >
                       {{
-                        media
-                        | image_url: width: 1600
+                        media.preview_image
+                        | image_url: width: 300
                         | image_tag:
-                          loading: media_loading,
-                          widths: '400, 600, 800, 1000, 1200, 1400, 1600',
-                          sizes: '(min-width: 990px) 55vw, 100vw',
-                          alt: media.alt
+                          loading: 'lazy',
+                          widths: '60, 90, 120, 180, 240, 300',
+                          sizes: '120px',
+                          alt: ''
                       }}
-                    </div>
-                  {%- when 'video' -%}
-                    <div class="media media--adapt">
-                      {{ media | video_tag: controls: true, preload: 'metadata', image_size: '1200x' }}
-                    </div>
-                  {%- when 'external_video' -%}
-                    <div class="media media--landscape">
-                      {{ media | external_video_tag: loading: 'lazy' }}
-                    </div>
-                  {%- when 'model' -%}
-                    <div class="media media--adapt">
-                      {{ media | model_viewer_tag }}
-                    </div>
-                {%- endcase -%}
-              </li>
-            {%- endfor -%}
-          </ul>
+                      {%- unless media.media_type == 'image' -%}
+                        <span class="product-gallery__thumb-badge" aria-hidden="true">
+                          {% render 'icon', name: 'play' %}
+                        </span>
+                      {%- endunless -%}
+                    </button>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+          </sr-gallery>
         {%- else -%}
           <div class="media media--square">
             {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
@@ -244,6 +321,91 @@
       "id": "show_breadcrumbs",
       "label": "Show breadcrumbs",
       "default": true
+    },
+    {
+      "type": "header",
+      "content": "Gallery"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Image shape",
+      "info": "A fixed shape keeps the main image from jumping as you move between media.",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Use the image own shape"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        },
+        {
+          "value": "portrait",
+          "label": "Portrait"
+        },
+        {
+          "value": "landscape",
+          "label": "Landscape"
+        }
+      ],
+      "default": "square"
+    },
+    {
+      "type": "select",
+      "id": "thumbnail_position",
+      "label": "Thumbnail position",
+      "info": "Thumbnails always sit below the image on mobile.",
+      "options": [
+        {
+          "value": "below",
+          "label": "Below the image"
+        },
+        {
+          "value": "left",
+          "label": "Left of the image"
+        }
+      ],
+      "default": "below"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_thumbnails",
+      "label": "Show thumbnails",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "thumbnail_size",
+      "min": 56,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Thumbnail size",
+      "default": 88
+    },
+    {
+      "type": "range",
+      "id": "thumbnail_gap",
+      "min": 4,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Thumbnail gap",
+      "default": 10
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show previous / next arrows",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_zoom",
+      "label": "Zoom the image on hover",
+      "info": "Desktop only.",
+      "default": false
     },
     {
       "type": "header",

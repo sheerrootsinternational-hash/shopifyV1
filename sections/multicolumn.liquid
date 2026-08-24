@@ -1,4 +1,8 @@
 {{ 'section-multicolumn.css' | asset_url | stylesheet_tag }}
+{%- if section.settings.layout == 'carousel' -%}
+  {{ 'section-carousel.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'carousel.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
 
 <div
   class="section multicolumn scheme-{{ section.settings.color_scheme }}"
@@ -20,13 +24,14 @@
     {%- endif -%}
 
     {%- if section.blocks.size > 0 -%}
-      <ul
-        class="multicolumn__list align-{{ section.settings.text_alignment }}{% if section.settings.text_alignment_mobile != blank %} align-mobile-{{ section.settings.text_alignment_mobile }}{% endif %}{% if section.settings.show_dividers %} multicolumn__list--divided{% endif %}{% if settings.animations_enabled %} scroll-reveal{% endif %}"
-        role="list"
-        style="--columns-desktop: {{ section.settings.columns_desktop }}; --columns-mobile: {{ section.settings.columns_mobile }};"
-      >
+      {%- comment -%}
+        The column markup is captured once and reused by both layouts, so the
+        grid and the carousel can never drift apart. Blocks, settings and IDs
+        are untouched — only the wrapper changes.
+      {%- endcomment -%}
+      {%- capture multicolumn_items -%}
         {%- for block in section.blocks -%}
-          <li class="multicolumn__item" {{ block.shopify_attributes }}>
+          <li class="multicolumn__item carousel__slide" {{ block.shopify_attributes }}>
             {%- if block.settings.image != blank -%}
               <div class="multicolumn__media media media--{{ section.settings.image_ratio }}">
                 {{
@@ -63,7 +68,73 @@
             {%- endif -%}
           </li>
         {%- endfor -%}
-      </ul>
+      {%- endcapture -%}
+
+      {%- if section.settings.layout == 'carousel' -%}
+        {%- liquid
+          assign fallback_tablet = section.settings.columns_desktop | at_most: 3
+          assign slides_tablet = section.settings.columns_tablet | default: fallback_tablet
+        -%}
+        <sr-carousel
+          class="carousel multicolumn__carousel"
+          {% if section.settings.autoplay %}
+            data-autoplay="true"
+            data-autoplay-interval="{{ section.settings.autoplay_interval | times: 1000 }}"
+          {% endif %}
+          {% if section.settings.carousel_loop %}data-loop="true"{% endif %}
+          style="--slides-mobile: {{ section.settings.columns_mobile }}; --slides-tablet: {{ slides_tablet }}; --slides-desktop: {{ section.settings.columns_desktop }};"
+        >
+          <div class="carousel__viewport">
+            <ul
+              class="carousel__track align-{{ section.settings.text_alignment }}{% if section.settings.text_alignment_mobile != blank %} align-mobile-{{ section.settings.text_alignment_mobile }}{% endif %}"
+              role="list"
+              tabindex="0"
+              aria-label="{{ section.settings.heading | default: section.settings.eyebrow | escape }}"
+              data-carousel-track
+            >
+              {{ multicolumn_items }}
+            </ul>
+          </div>
+
+          {%- if section.settings.show_arrows -%}
+            <div class="carousel__controls" data-carousel-controls hidden>
+              <button type="button" class="carousel__button" data-carousel-prev aria-label="{{ 'general.slider.previous' | t }}">
+                {% render 'icon', name: 'arrow-left' %}
+              </button>
+              {%- if section.settings.autoplay -%}
+                <button
+                  type="button"
+                  class="carousel__button carousel__button--play"
+                  data-carousel-toggle
+                  data-pause-label="{{ 'general.slider.pause' | t | escape }}"
+                  data-play-label="{{ 'general.slider.play' | t | escape }}"
+                  data-paused-text="{{ 'general.slider.paused' | t | escape }}"
+                  aria-label="{{ 'general.slider.pause' | t }}"
+                >
+                  <span class="carousel__pause-icon" aria-hidden="true"></span>
+                </button>
+              {%- endif -%}
+              <button type="button" class="carousel__button" data-carousel-next aria-label="{{ 'general.slider.next' | t }}">
+                {% render 'icon', name: 'arrow-right' %}
+              </button>
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings.show_dots -%}
+            <div class="carousel__dots" data-carousel-dots data-dot-label="{{ 'general.slider.go_to' | t | escape }}" hidden></div>
+          {%- endif -%}
+
+          <p class="visually-hidden" aria-live="polite" data-carousel-status></p>
+        </sr-carousel>
+      {%- else -%}
+        <ul
+          class="multicolumn__list align-{{ section.settings.text_alignment }}{% if section.settings.text_alignment_mobile != blank %} align-mobile-{{ section.settings.text_alignment_mobile }}{% endif %}{% if section.settings.show_dividers %} multicolumn__list--divided{% endif %}{% if settings.animations_enabled %} scroll-reveal{% endif %}"
+          role="list"
+          style="--columns-desktop: {{ section.settings.columns_desktop }}; --columns-mobile: {{ section.settings.columns_mobile }};"
+        >
+          {{ multicolumn_items }}
+        </ul>
+      {%- endif -%}
     {%- endif -%}
   </div>
 </div>
@@ -133,6 +204,32 @@
     {
       "type": "header",
       "content": "Columns"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "info": "Carousel keeps the same columns but lets visitors swipe or use the arrows.",
+      "options": [
+        {
+          "value": "grid",
+          "label": "Grid"
+        },
+        {
+          "value": "carousel",
+          "label": "Carousel"
+        }
+      ],
+      "default": "grid"
+    },
+    {
+      "type": "range",
+      "id": "columns_tablet",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "label": "Columns on tablet",
+      "default": 2
     },
     {
       "type": "range",
@@ -302,6 +399,45 @@
       "unit": "px",
       "label": "Row gap",
       "default": 48
+    },
+    {
+      "type": "header",
+      "content": "Carousel"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show previous / next arrows",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Show pagination dots",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "carousel_loop",
+      "label": "Loop back to the start",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Advance automatically",
+      "info": "A pause button is shown, and motion is skipped for visitors who ask for reduced motion.",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "autoplay_interval",
+      "min": 3,
+      "max": 12,
+      "step": 1,
+      "unit": "s",
+      "label": "Time between slides",
+      "default": 5
     },
     {
       "type": "header",

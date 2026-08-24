@@ -59,13 +59,20 @@
         {%- endfor -%}
       </ul>
     {%- else -%}
+      {%- liquid
+        # Tablet count falls back to the desktop count capped at 3, which is
+        # what this section did before the setting existed.
+        assign fallback_tablet = section.settings.columns_desktop | at_most: 3
+        assign slides_tablet = section.settings.columns_tablet | default: fallback_tablet
+      -%}
       <sr-carousel
         class="carousel"
         {% if section.settings.autoplay %}
           data-autoplay="true"
           data-autoplay-interval="{{ section.settings.autoplay_interval | times: 1000 }}"
         {% endif %}
-        style="--slides-mobile: {{ section.settings.columns_mobile }}; --slides-tablet: {{ section.settings.columns_desktop | at_most: 3 }}; --slides-desktop: {{ section.settings.columns_desktop }};"
+        {% if section.settings.carousel_loop %}data-loop="true"{% endif %}
+        style="--slides-mobile: {{ section.settings.columns_mobile }}; --slides-tablet: {{ slides_tablet }}; --slides-desktop: {{ section.settings.columns_desktop }};"
       >
         <div class="carousel__viewport">
           <ul
@@ -83,6 +90,7 @@
           </ul>
         </div>
 
+        {%- if section.settings.show_arrows -%}
         <div class="carousel__controls" data-carousel-controls hidden>
           <button
             type="button"
@@ -116,6 +124,16 @@
             {% render 'icon', name: 'arrow-right' %}
           </button>
         </div>
+        {%- endif -%}
+
+        {%- if section.settings.show_dots -%}
+          <div
+            class="carousel__dots"
+            data-carousel-dots
+            data-dot-label="{{ 'general.slider.go_to' | t | escape }}"
+            hidden
+          ></div>
+        {%- endif -%}
 
         <p class="visually-hidden" aria-live="polite" data-carousel-status></p>
       </sr-carousel>
@@ -252,8 +270,36 @@
       "default": "2"
     },
     {
+      "type": "range",
+      "id": "columns_tablet",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "label": "Products per row on tablet",
+      "default": 3
+    },
+    {
       "type": "header",
       "content": "Slider motion"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show previous / next arrows",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Show pagination dots",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "carousel_loop",
+      "label": "Loop back to the start",
+      "info": "The arrows wrap around instead of stopping at the ends.",
+      "default": false
     },
     {
       "type": "checkbox",
