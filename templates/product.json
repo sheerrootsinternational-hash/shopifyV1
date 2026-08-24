@@ -48,6 +48,14 @@
             "show_dynamic_checkout": true
           }
         },
+        "collapsible_row_HmytjY": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Exchange, Return  & Return Policy",
+            "content": "<p><a href=\"/pages/exchange-and-return\" target=\"_blank\" title=\"Exchange, Return & Refund Policy\">Refund and return Policy</a></p>",
+            "page": ""
+          }
+        },
         "description": {
           "type": "description",
           "disabled": true,
@@ -66,6 +74,7 @@
         "variant_picker",
         "quantity",
         "buy_buttons",
+        "collapsible_row_HmytjY",
         "description",
         "share"
       ],
