@@ -26,14 +26,6 @@
             "show_tax_note": true
           }
         },
-        "collapsible_row_QG6i6R": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Thoughtfully Designed",
-            "content": "{{ block.settings.page.content }}",
-            "page": ""
-          }
-        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {}
@@ -53,6 +45,14 @@
           "disabled": true,
           "settings": {}
         },
+        "collapsible_row_QG6i6R": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Thoughtfully Designed",
+            "content": "<p>test content</p>",
+            "page": ""
+          }
+        },
         "share": {
           "type": "share",
           "settings": {}
@@ -62,11 +62,11 @@
         "vendor",
         "title",
         "price",
-        "collapsible_row_QG6i6R",
         "variant_picker",
         "quantity",
         "buy_buttons",
         "description",
+        "collapsible_row_QG6i6R",
         "share"
       ],
       "settings": {
