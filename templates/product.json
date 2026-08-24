@@ -20,14 +20,6 @@
           "type": "title",
           "settings": {}
         },
-        "collapsible_row_YFEgmy": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Product Information",
-            "content": "<p>Ananta is a 1-litre pure copper water bottle from the Social India Craft Mandala Collection, featuring intricate copper-toned mandala artwork against a glossy black finish. Its elegant design brings together the traditional character of copperware with contemporary Indian-inspired artistry.</p><p><strong>PRODUCT DETAILS</strong></p><ul><li><strong>Material:</strong> Pure Copper </li><li><strong>Capacity:</strong> 1 Litre </li><li><strong>Design:</strong> Black with copper-coloured printed Ananta mandala artwork </li><li><strong>Finish:</strong> Glossy </li><li><strong>Closure:</strong> Screw cap with silicone/rubber sealing ring </li><li><strong>Dimensions:</strong> 10 inches height × 3 inches diameter </li><li><strong>Weight:</strong> Approx. 300g </li><li><strong>Country of Origin:</strong> India </li><li><strong>Recommended Use:</strong> Preferably for regular drinking water only</li></ul><p>The mandala artwork on Ananta was personally created by the founder, with genuine appreciation for the beauty and artistry of mandala design. The design is inspired by the idea of Ananta — boundless and infinite, reflecting timeless beauty and creativity.</p><p>Copper vessels have traditionally been used for storing drinking water, and water stored in copper is associated with traditional wellness practices. This bottle is intended for normal drinking water and is not suitable for hot water, hot beverages, milk, juice, carbonated drinks, acidic beverages, or other liquids.</p><p>Each bottle comes with a <strong>Copper Purity Certificate, and Thank You Card</strong>. </p><p><strong>THE STORY OF ANANTA</strong></p><p>Ananta, meaning<em> </em>boundless or infinite, represents the idea of timeless beauty and endless creativity.</p><p>Its black finish provides a striking canvas for the intricate mandala-inspired artwork, creating a sophisticated and contemporary appearance.</p><p>Ananta reflects the balance between traditional artistic inspiration and modern design, making it a distinctive member of the Mandala Collection.</p><p><strong>Ananta — Inspired by the infinite possibilities of Indian artistry.</strong></p><p><strong>Please note: </strong>The actual product may appear slightly darker in shade than it does in the product images.</p>",
-            "page": ""
-          }
-        },
         "price": {
           "type": "price",
           "settings": {
@@ -66,7 +58,6 @@
         },
         "description": {
           "type": "description",
-          "disabled": true,
           "settings": {}
         },
         "share": {
@@ -77,7 +68,6 @@
       "block_order": [
         "vendor",
         "title",
-        "collapsible_row_YFEgmy",
         "price",
         "variant_picker",
         "quantity",
