@@ -12,13 +12,135 @@
     "banner": {
       "type": "collection-banner",
       "settings": {
+        "heading": "",
         "show_description": true,
+        "text": "",
         "show_breadcrumbs": true,
         "overlay_opacity": 35,
         "text_alignment": "center",
+        "text_alignment_mobile": "",
+        "content_width": "full",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
         "color_scheme": "sand",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
         "padding_top": 56,
-        "padding_bottom": 56
+        "padding_bottom": 56,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "rich_text_NNPhQr": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Jcp7DY": {
+          "type": "heading",
+          "settings": {
+            "heading": "More than a product, a living legacy",
+            "heading_size": "h2",
+            "heading_tag": "h2"
+          }
+        },
+        "text_tj7Pti": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Social India Craft</strong>, a premium artisanal expression of the <strong>Sheer Roots</strong> family, celebrates the beauty of Indian craftsmanshipthrough thoughtfully designed creations for contemporary living.</p><p>Inspired by India's rich artistic heritage and the skills passed down through generations, Social India Craft brings together </p><p><strong>traditional Craftsmanship, meaningful Design and Modern Functionality</strong>.</p><p>Our creations are made for those who believe that everyday objects can carry a deeper story—of </p><p><strong>Culture, Craftsmanship, Creativity and The hands that bring them to life</strong>.</p>",
+            "text_size": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_Jcp7DY",
+        "text_tj7Pti"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "",
+        "content_width": "narrow",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "color_scheme": "sand",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "image_with_text_zXxWUn": {
+      "type": "image-with-text",
+      "blocks": {
+        "eyebrow_JezMUR": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "Social India Craft"
+          }
+        },
+        "heading_VJTynE": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Mandala Collection",
+            "heading_size": "h2",
+            "heading_tag": "h3"
+          }
+        },
+        "text_L8jLnh": {
+          "type": "text",
+          "settings": {
+            "text": "<h3><strong>Where Indian Artistry Meets Everyday Living</strong></h3><p>The <strong>Mandala Collection by Social India Craft</strong> is a celebration of colour, symmetry and Indian-inspired artistry.</p><p>Each piece brings together the timeless character of <strong>copper craftsmanship</strong> with intricate mandala-inspired designs, creating a harmonious balance between traditional artistic expression and contemporary aesthetics.</p><p>Inspired by the mandala—an enduring symbol found across Indian art and culture—the collection reflects ideas of <strong>balance, harmony, unity and wholeness</strong>. </p><p>Every design has its own character, while remaining connected to the visual language of the collection.</p><p>Created for modern living, these pieces are more than functional objects. They are thoughtfully designed expressions of <strong>Indian craftsmanship, creativity and cultural inspiration</strong>.</p><p> </p>"
+          }
+        },
+        "button_9a6FC9": {
+          "type": "button",
+          "settings": {
+            "label": "Explore",
+            "link": "shopify://collections/mandala-collection",
+            "style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "eyebrow_JezMUR",
+        "heading_VJTynE",
+        "text_L8jLnh",
+        "button_9a6FC9"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "desktop_image": "shopify://shop_images/42.jpg",
+        "image_alt": "",
+        "caption": "",
+        "image_ratio": "portrait",
+        "image_position": "right",
+        "media_width": "medium",
+        "text_alignment": "left",
+        "text_alignment_mobile": "",
+        "full_width": false,
+        "content_width": "wide",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "color_scheme": "ink",
+        "background_color": "",
+        "heading_color": "#F3EAEA",
+        "text_color": "#F0CFCF",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mobile": 52,
+        "padding_bottom_mobile": 52
       }
     },
     "grid": {
@@ -28,14 +150,31 @@
         "columns_desktop": 4,
         "columns_mobile": "2",
         "show_toolbar": true,
+        "content_width": "wide",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "column_gap": 32,
+        "row_gap": 48,
+        "card_image_ratio": "",
+        "card_text_alignment": "",
         "color_scheme": "ivory",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
         "padding_top": 40,
-        "padding_bottom": 72
+        "padding_bottom": 72,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 52
       }
     }
   },
   "order": [
     "banner",
+    "rich_text_NNPhQr",
+    "image_with_text_zXxWUn",
     "grid"
   ]
 }
