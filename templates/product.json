@@ -20,6 +20,16 @@
           "type": "title",
           "settings": {}
         },
+        "description": {
+          "type": "description",
+          "settings": {
+            "display_mode": "read_more",
+            "heading": "Description",
+            "preview_height": 200,
+            "read_more_label": "Read more",
+            "read_less_label": "Read less"
+          }
+        },
         "price": {
           "type": "price",
           "settings": {
@@ -56,16 +66,6 @@
             "page": ""
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {
-            "display_mode": "read_more",
-            "heading": "Description",
-            "preview_height": 200,
-            "read_more_label": "Read more",
-            "read_less_label": "Read less"
-          }
-        },
         "share": {
           "type": "share",
           "settings": {}
@@ -74,13 +74,13 @@
       "block_order": [
         "vendor",
         "title",
+        "description",
         "price",
         "variant_picker",
         "quantity",
         "buy_buttons",
         "collapsible_row_E4pCjz",
         "collapsible_row_HmytjY",
-        "description",
         "share"
       ],
       "settings": {
