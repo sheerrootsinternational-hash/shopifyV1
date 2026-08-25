@@ -12,13 +12,84 @@
     "banner": {
       "type": "collection-banner",
       "settings": {
+        "heading": "",
         "show_description": true,
+        "text": "",
         "show_breadcrumbs": true,
         "overlay_opacity": 35,
         "text_alignment": "center",
+        "text_alignment_mobile": "",
+        "content_width": "full",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
         "color_scheme": "sand",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
         "padding_top": 56,
-        "padding_bottom": 56
+        "padding_bottom": 56,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "image_with_text_GHiwjk": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_nRRpk7": {
+          "type": "heading",
+          "settings": {
+            "heading": "Social India Craft",
+            "heading_size": "h2",
+            "heading_tag": "h2"
+          }
+        },
+        "text_nCcJmP": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share the story behind this part of the collection.</p>"
+          }
+        },
+        "button_gVqQVn": {
+          "type": "button",
+          "settings": {
+            "label": "Explore",
+            "link": "",
+            "style": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_nRRpk7",
+        "text_nCcJmP",
+        "button_gVqQVn"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "image_alt": "",
+        "caption": "",
+        "image_ratio": "portrait",
+        "image_position": "right",
+        "media_width": "medium",
+        "text_alignment": "left",
+        "text_alignment_mobile": "",
+        "full_width": false,
+        "content_width": "wide",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "color_scheme": "ivory",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "padding_top_mobile": 52,
+        "padding_bottom_mobile": 52
       }
     },
     "grid": {
@@ -28,14 +99,30 @@
         "columns_desktop": 4,
         "columns_mobile": "2",
         "show_toolbar": true,
+        "content_width": "wide",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "column_gap": 32,
+        "row_gap": 48,
+        "card_image_ratio": "",
+        "card_text_alignment": "",
         "color_scheme": "ivory",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
         "padding_top": 40,
-        "padding_bottom": 72
+        "padding_bottom": 72,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 52
       }
     }
   },
   "order": [
     "banner",
+    "image_with_text_GHiwjk",
     "grid"
   ]
 }
