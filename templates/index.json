@@ -70,7 +70,7 @@
             "image": "shopify://shop_images/19_c38b0068-8f5b-4b04-a737-6f14cf09534b.jpg",
             "image_alt": "",
             "heading": "ANANTA",
-            "text": "<p>Ananta, meaning <em>boundless</em> or <em>infinite</em>, represents the idea of timeless beauty and endless creativity.</p><p><strong>Inspired by the infinite possibilities of Indian artistry.</strong></p><p></p>",
+            "text": "<p>Ananta, meaning <em>boundless</em> or <em>infinite</em>, represents the idea of timeless beauty and endless creativity.</p><p><strong>Inspired by the infinite possibilities of Indian artistry.</strong></p>",
             "link_label": "SHOP NOW",
             "link": "shopify://products/ananta-pure-copper-water-bottle-1-litre"
           }
@@ -82,7 +82,7 @@
             "image_alt": "",
             "heading": "PRANAVA",
             "text": "<p>Pranava  a traditional name associated with the sacred sound \"Om,\"<br/></p><p><strong>Where depth, design and tradition meet.</strong></p><p></p>",
-            "link_label": "",
+            "link_label": "SHOP NOW",
             "link": "shopify://products/pranava-pure-copper-water-bottle-1-litre"
           }
         },
@@ -92,9 +92,9 @@
             "image": "shopify://shop_images/11.jpg",
             "image_alt": "",
             "heading": "AARUNYA",
-            "text": "<p>Aarunya<strong> </strong>brings together vibrant colour and intricate Indian-inspired artistry<br/><br/><strong>Inspired by the warmth of dawn, crafted with Indian artistry.</strong><br/><br/><br/><br/><br/></p>",
-            "link_label": "",
-            "link": ""
+            "text": "<p>Aarunya<strong> </strong>brings together vibrant colour and intricate Indian-inspired artistry<br/><br/><strong>Inspired by the warmth of dawn, crafted with Indian artistry.</strong><br/></p>",
+            "link_label": "SHOP NOW",
+            "link": "shopify://products/aarunya-pure-copper-water-bottle-1-litre"
           }
         },
         "column_x7FeaC": {
@@ -104,8 +104,8 @@
             "image_alt": "",
             "heading": "PADMA",
             "text": "<p><strong>Padma</strong>, meaning <em>lotus</em>, draws inspiration from one of the most recognizable motifs in Indian art and cultural traditions.</p><p><strong>Inspired by the timeless beauty of the lotus.</strong></p>",
-            "link_label": "",
-            "link": ""
+            "link_label": "SHOP NOW",
+            "link": "shopify://products/padma-pure-copper-water-bottle-1-litre-1"
           }
         }
       },
