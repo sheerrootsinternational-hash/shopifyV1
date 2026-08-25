@@ -439,7 +439,7 @@
         "subheading": "<p>The collection was born from our founder's desire to<strong>bring Indian handmade art forms into contemporary living while creating meaningful livelihood opportunities for artisans</strong>.<br/><br/></p>",
         "heading_alignment": "center",
         "heading_alignment_mobile": "",
-        "layout": "grid",
+        "layout": "carousel",
         "columns_tablet": 2,
         "columns_desktop": 3,
         "columns_mobile": "1",
