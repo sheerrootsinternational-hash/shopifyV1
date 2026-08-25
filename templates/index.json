@@ -351,7 +351,7 @@
         "content_width": "narrow",
         "content_width_custom": 1200,
         "padding_horizontal": 40,
-        "color_scheme": "ivory",
+        "color_scheme": "ink",
         "background_color": "",
         "heading_color": "",
         "text_color": "",
@@ -389,7 +389,7 @@
         "content_width": "wide",
         "content_width_custom": 1200,
         "padding_horizontal": 40,
-        "color_scheme": "ink",
+        "color_scheme": "sand",
         "background_color": "",
         "heading_color": "",
         "text_color": "",
@@ -408,44 +408,34 @@
         "column_Uqapjx": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/5_46255da9-47ec-465e-a69d-e233933cfdc6.jpg",
             "image_alt": "",
-            "heading": "Heritage",
-            "text": "<p>Traditions carried forward through generations.</p>",
-            "link_label": "",
-            "link": ""
+            "heading": "DOR",
+            "text": "<p>Dor is a beautifully <strong>handcrafted crochet bottle cover </strong>made by an Indian woman artisan, it brings together functionality, simplicity and traditional crochet artistry.<br/><br/></p>",
+            "link_label": "SHOP NOW",
+            "link": "shopify://products/dor-handcrafted-crochet-bottle-cover"
           }
         },
         "column_4aWewb": {
           "type": "column",
           "settings": {
             "image_alt": "",
-            "heading": "Heritage",
-            "text": "<p>Traditions carried forward through generations.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_Gwwabe": {
-          "type": "column",
-          "settings": {
-            "image_alt": "",
-            "heading": "Heritage",
-            "text": "<p>Traditions carried forward through generations.</p>",
-            "link_label": "",
-            "link": ""
+            "heading": "SAAJ",
+            "text": "<p>Saaj is a beautifully handcrafted crochet bottle which combines traditional crochet craftsmanship with a playful detachable charm.<br/></p><p><br/></p>",
+            "link_label": "SHOP NOW",
+            "link": "shopify://products/saaj-handcrafted-crochet-bottle-cover-copy"
           }
         }
       },
       "block_order": [
         "column_Uqapjx",
-        "column_4aWewb",
-        "column_Gwwabe"
+        "column_4aWewb"
       ],
       "name": "Multi-column",
       "settings": {
         "eyebrow": "",
-        "heading": "You are choosing",
-        "subheading": "<p><a href=\"/collections/crochet-collection\" title=\"CROCHET COLLECTION & TEXTILE CRAFTS\">/collections/crochet-collection</a></p>",
+        "heading": "CROCHET COLLECTION",
+        "subheading": "<p>The collection was born from our founder's desire to<strong>bring Indian handmade art forms into contemporary living while creating meaningful livelihood opportunities for artisans</strong>.<br/><br/></p>",
         "heading_alignment": "center",
         "heading_alignment_mobile": "",
         "layout": "grid",
@@ -456,7 +446,7 @@
         "text_alignment_mobile": "",
         "image_ratio": "square",
         "show_dividers": false,
-        "content_width": "wide",
+        "content_width": "full",
         "content_width_custom": 1200,
         "padding_horizontal": 40,
         "column_gap": 32,
@@ -466,10 +456,10 @@
         "carousel_loop": false,
         "autoplay": false,
         "autoplay_interval": 5,
-        "color_scheme": "ivory",
+        "color_scheme": "ink",
         "background_color": "",
         "heading_color": "",
-        "text_color": "",
+        "text_color": "#E4D6D6",
         "accent_color": "",
         "heading_size": 100,
         "body_size": 100,
