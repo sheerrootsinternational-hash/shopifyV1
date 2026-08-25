@@ -280,37 +280,77 @@
                 </details>
               {%- endif -%}
 
-            {%- when 'share' -%}
-              <div class="product__share" {{ block.shopify_attributes }}>
-                <span class="field__label">{{ 'products.product.share' | t }}</span>
-                <ul class="pill-list" role="list">
-                  <li>
-                    <a
-                      class="pill"
-                      href="https://www.facebook.com/sharer.php?u={{ shop.url }}{{ product.url }}"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {{- 'general.social.facebook' | t -}}
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      class="pill"
-                      href="https://pinterest.com/pin/create/button/?url={{ shop.url }}{{ product.url }}&media={{ product.featured_media | image_url: width: 1200 }}&description={{ product.title | url_encode }}"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {{- 'general.social.pinterest' | t -}}
-                    </a>
-                  </li>
-                  <li>
-                    <a class="pill" href="mailto:?subject={{ product.title | url_encode }}&body={{ shop.url }}{{ product.url }}">
-                      {{- 'general.social.email' | t -}}
-                    </a>
-                  </li>
-                </ul>
-              </div>
+      {%- when 'share' -%}
+        <div class="product__share" {{ block.shopify_attributes }}>
+          <span class="field__label">{{ 'products.product.share' | t }}</span>
+          {%- assign product_share_url = shop.url | append: product.url -%}
+          {%- assign product_share_text = product.title | append: ' - ' | append: product_share_url -%}
+          <ul class="pill-list" role="list">
+
+          {%- comment -%} Facebook {%- endcomment -%}
+            <li>
+              <a
+                class="pill"
+                href="https://www.facebook.com/sharer/sharer.php?u={{ product_share_url | url_encode }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Share {{ product.title | escape }} on Facebook"
+              >
+                Facebook
+              </a>
+            </li>
+
+            {%- comment -%} WhatsApp {%- endcomment -%}
+            <li>
+              <a
+                class="pill"
+                href="https://wa.me/?text={{ product_share_text | url_encode }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Share {{ product.title | escape }} on WhatsApp"
+              >
+                WhatsApp
+              </a>
+            </li>
+
+            {%- comment -%} Instagram profile {%- endcomment -%}
+            <li>
+              <a
+                class="pill"
+                href="https://www.instagram.com/sheerroots_india/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Sheer Roots on Instagram"
+              >
+                Instagram
+              </a>
+            </li>
+
+            {%- comment -%} Pinterest {%- endcomment -%}
+            <li>
+              <a
+                class="pill"
+                href="https://pinterest.com/pin/create/button/?url={{ product_share_url | url_encode }}&media={{ product.featured_media | image_url: width: 1200 | url_encode }}&description={{ product.title | url_encode }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Save {{ product.title | escape }} on Pinterest"
+              >
+                Pinterest
+              </a>
+            </li>
+
+            {%- comment -%} Email {%- endcomment -%}
+            <li>
+              <a
+                class="pill"
+                href="mailto:?subject={{ product.title | url_encode }}&body={{ product_share_url | url_encode }}"
+                aria-label="Share {{ product.title | escape }} by email"
+              >
+                Email
+              </a>
+            </li>
+          </ul>
+        </div>
           {%- endcase -%}
         {%- endfor -%}
       </div>
