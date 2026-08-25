@@ -125,7 +125,7 @@
         "image_ratio": "portrait",
         "image_position": "right",
         "media_width": "medium",
-        "text_alignment": "left",
+        "text_alignment": "center",
         "text_alignment_mobile": "",
         "full_width": false,
         "content_width": "wide",
