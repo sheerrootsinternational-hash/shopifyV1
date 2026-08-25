@@ -60,8 +60,8 @@
             "image_alt": "",
             "heading": "KAMALA",
             "text": "<p>Kamala draws inspiration from the timeless beauty associated with the lotus and the graceful character of Indian artistic traditions.</p><p><strong>A celebration of colour, beauty and Indian-inspired artistry.</strong></p>",
-            "link_label": "",
-            "link": ""
+            "link_label": "SHOP NOW",
+            "link": "shopify://products/kamala-pure-copper-water-bottle-1-litre"
           }
         },
         "column_PAxWGg": {
@@ -70,9 +70,9 @@
             "image": "shopify://shop_images/19_c38b0068-8f5b-4b04-a737-6f14cf09534b.jpg",
             "image_alt": "",
             "heading": "ANANTA",
-            "text": "<p>Ananta, meaning <em>boundless</em> or <em>infinite</em>, represents the idea of timeless beauty and endless creativity.</p><p><strong>Inspired by the infinite possibilities of Indian artistry.</strong></p>",
-            "link_label": "",
-            "link": ""
+            "text": "<p>Ananta, meaning <em>boundless</em> or <em>infinite</em>, represents the idea of timeless beauty and endless creativity.</p><p><strong>Inspired by the infinite possibilities of Indian artistry.</strong></p><p></p>",
+            "link_label": "SHOP NOW",
+            "link": "shopify://products/ananta-pure-copper-water-bottle-1-litre"
           }
         },
         "column_g6W6FY": {
@@ -81,9 +81,9 @@
             "image": "shopify://shop_images/28_0c3167e9-0f29-4eff-8ee3-e0e736ba5b49.jpg",
             "image_alt": "",
             "heading": "PRANAVA",
-            "text": "<p>Pranava  a traditional name associated with the sacred sound \"Om,\"<br/></p><p><strong>Where depth, design and tradition meet.</strong></p>",
+            "text": "<p>Pranava  a traditional name associated with the sacred sound \"Om,\"<br/></p><p><strong>Where depth, design and tradition meet.</strong></p><p></p>",
             "link_label": "",
-            "link": ""
+            "link": "shopify://products/pranava-pure-copper-water-bottle-1-litre"
           }
         },
         "column_3iRr4t": {
@@ -402,6 +402,83 @@
         "padding_bottom_mobile": 52
       }
     },
+    "multicolumn_6aLYnA": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_Uqapjx": {
+          "type": "column",
+          "settings": {
+            "image_alt": "",
+            "heading": "Heritage",
+            "text": "<p>Traditions carried forward through generations.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_4aWewb": {
+          "type": "column",
+          "settings": {
+            "image_alt": "",
+            "heading": "Heritage",
+            "text": "<p>Traditions carried forward through generations.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_Gwwabe": {
+          "type": "column",
+          "settings": {
+            "image_alt": "",
+            "heading": "Heritage",
+            "text": "<p>Traditions carried forward through generations.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_Uqapjx",
+        "column_4aWewb",
+        "column_Gwwabe"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "eyebrow": "",
+        "heading": "You are choosing",
+        "subheading": "<p><a href=\"/collections/crochet-collection\" title=\"CROCHET COLLECTION & TEXTILE CRAFTS\">/collections/crochet-collection</a></p>",
+        "heading_alignment": "center",
+        "heading_alignment_mobile": "",
+        "layout": "grid",
+        "columns_tablet": 2,
+        "columns_desktop": 3,
+        "columns_mobile": "1",
+        "text_alignment": "center",
+        "text_alignment_mobile": "",
+        "image_ratio": "square",
+        "show_dividers": false,
+        "content_width": "wide",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "column_gap": 32,
+        "row_gap": 48,
+        "show_arrows": true,
+        "show_dots": true,
+        "carousel_loop": false,
+        "autoplay": false,
+        "autoplay_interval": 5,
+        "color_scheme": "ivory",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "padding_top_mobile": 52,
+        "padding_bottom_mobile": 52
+      }
+    },
     "social": {
       "type": "social-follow",
       "settings": {
@@ -436,6 +513,7 @@
     "values",
     "quote",
     "video",
+    "multicolumn_6aLYnA",
     "social"
   ]
 }
