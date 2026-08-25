@@ -16,7 +16,8 @@
         "show_description": true,
         "text": "",
         "show_breadcrumbs": true,
-        "overlay_opacity": 35,
+        "desktop_image": "shopify://shop_images/13_2ce0726c-ad60-488f-aa92-e64c7703874a.jpg",
+        "overlay_opacity": 0,
         "text_alignment": "center",
         "text_alignment_mobile": "",
         "content_width": "full",
@@ -24,8 +25,8 @@
         "padding_horizontal": 40,
         "color_scheme": "sand",
         "background_color": "",
-        "heading_color": "",
-        "text_color": "",
+        "heading_color": "#F3EAEA",
+        "text_color": "#CF1414",
         "accent_color": "",
         "heading_size": 100,
         "body_size": 100,
@@ -38,52 +39,60 @@
     "image_with_text_GHiwjk": {
       "type": "image-with-text",
       "blocks": {
+        "eyebrow_RMVH3x": {
+          "type": "eyebrow",
+          "settings": {
+            "text": "Social India Craft"
+          }
+        },
         "heading_nRRpk7": {
           "type": "heading",
           "settings": {
-            "heading": "Social India Craft",
+            "heading": "Crochet bottle covers",
             "heading_size": "h2",
-            "heading_tag": "h2"
+            "heading_tag": "h3"
           }
         },
         "text_nCcJmP": {
           "type": "text",
           "settings": {
-            "text": "<p>Share the story behind this part of the collection.</p>"
+            "text": "<h4><strong>Threads of Craft. Stories of the Hands That Create.</strong></h4><p>The <strong>Crochet Collection by Social India Craft </strong>celebrates the beauty of handmade artistry and the timeless skill of crochet.</p><p>Each creation is carefully handcrafted by <strong>Indian women artisans</strong>, transforming simple threads into thoughtful, functional pieces for everyday life. Every stitch reflects patience, creativity and the individuality of the hands that made it.</p><p>The collection was born from our founder's desire to <strong>bring Indian handmade art forms into contemporary living while creating meaningful livelihood opportunities for artisans</strong>.</p><p>From everyday essentials to thoughtful accessories, each piece is designed to carry the warmth of handmade craftsmanship while remaining practical and beautiful.</p><p><strong>Every stitch carries a story.</strong></p><p><strong>Every creation supports a craft.</strong></p><p><strong>Every purchase helps carry that story forward.</strong></p>"
           }
         },
         "button_gVqQVn": {
           "type": "button",
           "settings": {
             "label": "Explore",
-            "link": "",
+            "link": "shopify://collections/crochet-collection",
             "style": "secondary"
           }
         }
       },
       "block_order": [
+        "eyebrow_RMVH3x",
         "heading_nRRpk7",
         "text_nCcJmP",
         "button_gVqQVn"
       ],
       "name": "Image with text",
       "settings": {
+        "desktop_image": "shopify://shop_images/16_8d7578ef-c5f8-4d22-943f-f4b86013357d.jpg",
         "image_alt": "",
         "caption": "",
         "image_ratio": "portrait",
         "image_position": "right",
         "media_width": "medium",
-        "text_alignment": "left",
+        "text_alignment": "center",
         "text_alignment_mobile": "",
         "full_width": false,
-        "content_width": "wide",
+        "content_width": "full",
         "content_width_custom": 1200,
         "padding_horizontal": 40,
-        "color_scheme": "ivory",
+        "color_scheme": "ink",
         "background_color": "",
-        "heading_color": "",
-        "text_color": "",
-        "accent_color": "",
+        "heading_color": "#EEEEEE",
+        "text_color": "#F3EAEA",
+        "accent_color": "#CF1414",
         "heading_size": 100,
         "body_size": 100,
         "padding_top": 72,
@@ -114,7 +123,7 @@
         "heading_size": 100,
         "body_size": 100,
         "padding_top": 40,
-        "padding_bottom": 72,
+        "padding_bottom": 40,
         "padding_top_mobile": 28,
         "padding_bottom_mobile": 52
       }
