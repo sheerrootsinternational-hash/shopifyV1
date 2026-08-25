@@ -85,14 +85,34 @@
     }
 
     /**
-     * One dot per slide. Built here rather than in Liquid so the count always
-     * matches the slides actually rendered.
+     * How many distinct scroll positions the track actually has.
+     *
+     * One dot per slide would be wrong whenever several slides are visible at
+     * once: with five cards and four visible there is only one slide's worth
+     * of scrolling, so dots three to five would all do the same thing and the
+     * active dot could never move past the second. Pages are derived from the
+     * real scrollable distance instead, and recomputed on resize because the
+     * visible count changes per breakpoint.
      */
+    pageCount() {
+      const step = this.slideStep();
+      const maxScroll = this.track.scrollWidth - this.track.clientWidth;
+      if (maxScroll <= 4 || step <= 0) return 1;
+      return Math.max(1, Math.round(maxScroll / step) + 1);
+    }
+
     buildDots() {
       if (!this.dots) return;
 
+      const pages = this.pageCount();
+      if (this.dotButtons && this.dotButtons.length === pages) return;
+
       this.dots.innerHTML = '';
-      this.dotButtons = this.slides.map((slide, index) => {
+      const step = this.slideStep();
+      const maxScroll = this.track.scrollWidth - this.track.clientWidth;
+
+      this.dotButtons = [];
+      for (let index = 0; index < pages; index += 1) {
         const dot = document.createElement('button');
         dot.type = 'button';
         dot.className = 'carousel__dot';
@@ -100,20 +120,20 @@
         dot.addEventListener('click', () => {
           this.stop();
           this.track.scrollTo({
-            left: slide.offsetLeft - this.track.offsetLeft,
+            left: Math.min(index * step, maxScroll),
             behavior: SR.prefersReducedMotion() ? 'auto' : 'smooth'
           });
         });
         this.dots.appendChild(dot);
-        return dot;
-      });
+        this.dotButtons.push(dot);
+      }
     }
 
-    /** Marks the dot for the left-most fully visible slide. */
+    /** Marks the dot for the current scroll position. */
     updateDots() {
       if (!this.dotButtons || !this.dotButtons.length) return;
       const step = this.slideStep();
-      const current = Math.round(this.track.scrollLeft / step);
+      const current = Math.min(Math.round(this.track.scrollLeft / step), this.dotButtons.length - 1);
       this.dotButtons.forEach((dot, index) => {
         const active = index === current;
         dot.classList.toggle('is-active', active);
@@ -149,6 +169,8 @@
       if (this.prevButton) this.prevButton.disabled = atStart && !this.loop;
       if (this.nextButton) this.nextButton.disabled = atEnd && !this.loop && !this.playing;
 
+      // The number of pages changes with the breakpoint, so rebuild if needed.
+      this.buildDots();
       this.updateDots();
     }
 

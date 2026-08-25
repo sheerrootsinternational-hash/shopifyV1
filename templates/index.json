@@ -125,7 +125,7 @@
         "heading_alignment_mobile": "",
         "layout": "carousel",
         "columns_tablet": 2,
-        "columns_desktop": 5,
+        "columns_desktop": 4,
         "columns_mobile": "1",
         "text_alignment": "center",
         "text_alignment_mobile": "",

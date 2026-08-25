@@ -356,3 +356,55 @@
   background-color: var(--bg);
   color: var(--fg);
 }
+
+/* Read more --------------------------------------------------------------
+   The server always renders the full description; this only limits how much
+   of it is visible. The clip is applied by JavaScript (.is-clipped), so with
+   scripting off the whole description simply shows.
+   ------------------------------------------------------------------------ */
+
+.product__description-heading {
+  margin-bottom: 1.2rem;
+  font-size: calc(1.4rem * var(--heading-scale));
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.read-more {
+  display: block;
+}
+
+.read-more__content {
+  color: var(--fg-muted);
+}
+
+.read-more.is-clipped .read-more__content {
+  max-height: var(--read-more-height, 200px);
+  overflow: hidden;
+  /* Fades the cut edge so it reads as "there is more" rather than a crop. */
+  -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+}
+
+.read-more__toggle {
+  margin-top: 1.2rem;
+}
+
+/* Long words, URLs and wide tables inside merchant rich text must not push
+   the product column sideways on a phone. */
+.read-more__content,
+.product__description .rte {
+  overflow-wrap: break-word;
+}
+
+.read-more__content img,
+.product__description img {
+  height: auto;
+  max-width: 100%;
+}
+
+.read-more__content table,
+.product__description table {
+  display: block;
+  overflow-x: auto;
+}

@@ -61,6 +61,7 @@
       }
       window.removeEventListener('resize', this.onResize);
       window.clearTimeout(this.scrollDebounce);
+      window.clearTimeout(this.settleTimer);
 
       // Stop any video that was playing in a removed gallery.
       this.querySelectorAll('video').forEach((video) => video.pause());
@@ -75,6 +76,16 @@
 
       const slide = this.slides[clamped];
       const behavior = settings.animate === false || SR.prefersReducedMotion() ? 'auto' : 'smooth';
+
+      // A smooth scroll fires many scroll events on its way. Without this
+      // guard the scroll handler would recompute the index from an
+      // intermediate position and fight the selection — visible as the active
+      // thumbnail snapping back when the animation is throttled or interrupted.
+      this.programmaticScroll = true;
+      window.clearTimeout(this.settleTimer);
+      this.settleTimer = window.setTimeout(() => {
+        this.programmaticScroll = false;
+      }, behavior === 'auto' ? 60 : 700);
 
       this.track.scrollTo({ left: slide.offsetLeft - this.track.offsetLeft, behavior: behavior });
 
@@ -147,6 +158,7 @@
 
     /** Swiping updates the active thumbnail without fighting the scroll. */
     onScroll() {
+      if (this.programmaticScroll) return;
       window.clearTimeout(this.scrollDebounce);
       this.scrollDebounce = window.setTimeout(() => {
         const width = this.track.clientWidth || 1;
