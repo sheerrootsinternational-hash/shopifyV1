@@ -71,13 +71,13 @@
         "padding_horizontal": 40,
         "color_scheme": "ink",
         "background_color": "",
-        "heading_color": "#cf1414",
-        "text_color": "",
+        "heading_color": "#EEEEEE",
+        "text_color": "#F0CFCF",
         "accent_color": "#130202",
         "heading_size": 100,
         "body_size": 100,
-        "padding_top": 80,
-        "padding_bottom": 64,
+        "padding_top": 52,
+        "padding_bottom": 52,
         "padding_top_mobile": 52,
         "padding_bottom_mobile": 52
       }
