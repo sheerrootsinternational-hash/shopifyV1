@@ -18,8 +18,9 @@
           "type": "logo",
           "settings": {
             "show_logo": true,
+            "image": "shopify://shop_images/2_4c25cb67-3f45-4d67-96f6-d648ff4fb177.png",
             "image_alt": "",
-            "width": 180,
+            "width": 100,
             "alignment": "",
             "link": ""
           }
@@ -30,7 +31,7 @@
             "heading": "",
             "text": "<h3>Sheer Roots</h3><p><strong>Sheer Roots</strong> is a celebration of India's rich craft heritage, bringing thoughtfully crafted Indian products into contemporary everyday living.</p><p>We work to showcase the skill, creativity and stories of Indian artisans while creating meaningful opportunities for traditional crafts to thrive. Every piece is chosen or created with a deep appreciation for the hands, culture and traditions behind it.</p><p>From timeless crafts to thoughtfully designed everyday products, we believe that what we bring into your home should carry more than beauty — <strong>it should carry a story.</strong></p><p><strong>Rooted in India. Crafted with Purpose.</strong></p>",
             "tagline": "Every piece. A story. India.",
-            "show_social": true,
+            "show_social": false,
             "text_alignment": "",
             "heading_color": "",
             "text_color": ""
@@ -66,22 +67,22 @@
         "show_payment_icons": true,
         "content_width": "wide",
         "content_width_custom": 1200,
-        "padding_horizontal": 40,
+        "padding_horizontal": 28,
         "column_gap": 40,
-        "column_gap_mobile": 32,
+        "column_gap_mobile": 20,
         "text_alignment": "left",
         "text_alignment_mobile": "",
         "color_scheme": "ink",
         "background_color": "",
         "heading_color": "#edf0ef",
         "text_color": "#edf0ef",
-        "accent_color": "#cf1414",
-        "heading_size": 150,
-        "body_size": 100,
+        "accent_color": "#ED0000",
+        "heading_size": 120,
+        "body_size": 95,
         "padding_top": 60,
         "padding_bottom": 40,
-        "padding_top_mobile": 52,
-        "padding_bottom_mobile": 28
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
       }
     }
   },

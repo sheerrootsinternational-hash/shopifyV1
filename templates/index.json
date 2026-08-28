@@ -103,7 +103,7 @@
             "image": "shopify://shop_images/36_844e2412-ff43-499a-ba87-7e68da785100.jpg",
             "image_alt": "",
             "heading": "PADMA",
-            "text": "<p><strong>Padma</strong>, meaning <em>lotus</em>, draws inspiration from one of the most recognizable motifs in Indian art and cultural traditions.</p><p><strong>Inspired by the timeless beauty of the lotus.</strong></p>",
+            "text": "<p>Padma, meaning <em>lotus</em>, draws inspiration from one of the most recognizable motifs in Indian art and cultural traditions.</p><p><strong>Inspired by the timeless beauty of the lotus.</strong></p>",
             "link_label": "SHOP NOW",
             "link": "shopify://products/padma-pure-copper-water-bottle-1-litre-1"
           }
@@ -478,23 +478,23 @@
         "heading": "FOLLOW THE STORY FEEL THE ROOTS.",
         "text": "",
         "handle": "",
-        "show_labels": true,
+        "show_labels": false,
         "text_alignment": "center",
         "text_alignment_mobile": "",
-        "content_width": "wide",
+        "content_width": "narrow",
         "content_width_custom": 1200,
-        "padding_horizontal": 40,
+        "padding_horizontal": 28,
         "color_scheme": "ivory",
         "background_color": "",
         "heading_color": "",
-        "text_color": "",
-        "accent_color": "",
+        "text_color": "#5E3E1E",
+        "accent_color": "#E9D3BE",
         "heading_size": 100,
-        "body_size": 100,
+        "body_size": 95,
         "padding_top": 52,
         "padding_bottom": 52,
-        "padding_top_mobile": 52,
-        "padding_bottom_mobile": 52
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
       }
     }
   },
