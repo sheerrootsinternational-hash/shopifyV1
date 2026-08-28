@@ -56,7 +56,7 @@
         "column_FbYJg6": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/1_4b8c23dd-7c4b-49ed-a9f0-5563903df0c4.jpg",
+            "image": "shopify://shop_images/1_3b29da78-0c71-47a9-9cd9-7e6d9a4da086.jpg",
             "image_alt": "",
             "heading": "KAMALA",
             "text": "<p>Kamala draws inspiration from the timeless beauty associated with the lotus and the graceful character of Indian artistic traditions.</p><p><strong>A celebration of colour, beauty and Indian-inspired artistry.</strong></p>",
@@ -67,7 +67,7 @@
         "column_PAxWGg": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/19_c38b0068-8f5b-4b04-a737-6f14cf09534b.jpg",
+            "image": "shopify://shop_images/19_311d9b32-66d3-4afd-b4b4-e3cf4e36e919.jpg",
             "image_alt": "",
             "heading": "ANANTA",
             "text": "<p>Ananta, meaning <em>boundless</em> or <em>infinite</em>, represents the idea of timeless beauty and endless creativity.</p><p><strong>Inspired by the infinite possibilities of Indian artistry.</strong></p>",
@@ -78,7 +78,7 @@
         "column_g6W6FY": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/28_0c3167e9-0f29-4eff-8ee3-e0e736ba5b49.jpg",
+            "image": "shopify://shop_images/28_f81ec79b-4e07-45aa-8a13-d61e182fa115.jpg",
             "image_alt": "",
             "heading": "PRANAVA",
             "text": "<p>Pranava  a traditional name associated with the sacred sound \"Om,\"<br/></p><p><strong>Where depth, design and tradition meet.</strong></p><p></p>",
@@ -89,7 +89,7 @@
         "column_3iRr4t": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/11.jpg",
+            "image": "shopify://shop_images/11_7c795744-984b-45f2-989b-84721f2dd3a5.jpg",
             "image_alt": "",
             "heading": "AARUNYA",
             "text": "<p>Aarunya<strong> </strong>brings together vibrant colour and intricate Indian-inspired artistry<br/><br/><strong>Inspired by the warmth of dawn, crafted with Indian artistry.</strong><br/></p>",
@@ -100,7 +100,7 @@
         "column_x7FeaC": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/36.jpg",
+            "image": "shopify://shop_images/36_844e2412-ff43-499a-ba87-7e68da785100.jpg",
             "image_alt": "",
             "heading": "PADMA",
             "text": "<p><strong>Padma</strong>, meaning <em>lotus</em>, draws inspiration from one of the most recognizable motifs in Indian art and cultural traditions.</p><p><strong>Inspired by the timeless beauty of the lotus.</strong></p>",
@@ -120,37 +120,37 @@
       "settings": {
         "eyebrow": "",
         "heading": "Mandala collection",
-        "subheading": "<p><strong>Rooted in Indian artistry. Designed for today.</strong></p>",
+        "subheading": "<p>Rooted in Indian artistry. Designed for today.</p>",
         "heading_alignment": "center",
         "heading_alignment_mobile": "",
         "layout": "carousel",
         "columns_tablet": 2,
         "columns_desktop": 4,
-        "columns_mobile": "1",
+        "columns_mobile": "2",
         "text_alignment": "center",
         "text_alignment_mobile": "",
-        "image_ratio": "square",
+        "image_ratio": "adapt",
         "show_dividers": false,
-        "content_width": "wide",
+        "content_width": "full",
         "content_width_custom": 1200,
-        "padding_horizontal": 40,
-        "column_gap": 32,
-        "row_gap": 48,
+        "padding_horizontal": 28,
+        "column_gap": 44,
+        "row_gap": 24,
         "show_arrows": true,
         "show_dots": true,
-        "carousel_loop": false,
-        "autoplay": false,
+        "carousel_loop": true,
+        "autoplay": true,
         "autoplay_interval": 5,
         "color_scheme": "ivory",
         "background_color": "",
-        "heading_color": "",
-        "text_color": "",
-        "accent_color": "",
+        "heading_color": "#5E3E1E",
+        "text_color": "#6F6357",
+        "accent_color": "#E9D3BE",
         "heading_size": 100,
-        "body_size": 100,
+        "body_size": 95,
         "padding_top": 20,
         "padding_bottom": 20,
-        "padding_top_mobile": 20,
+        "padding_top_mobile": 36,
         "padding_bottom_mobile": 20
       }
     },
@@ -162,7 +162,7 @@
           "settings": {
             "image": "shopify://shop_images/4_59e1a9ee-a5ad-469b-8975-6406c4b9f8be.png",
             "image_alt": "",
-            "width": 160
+            "width": 80
           }
         },
         "heading": {
@@ -188,9 +188,9 @@
         "button": {
           "type": "button",
           "settings": {
-            "label": "Discover Social India Craft",
+            "label": "Social India Craft",
             "link": "shopify://pages/social-india-craft",
-            "style": "secondary"
+            "style": "primary"
           }
         }
       },
@@ -203,9 +203,10 @@
       ],
       "settings": {
         "desktop_image": "shopify://shop_images/42.jpg",
-        "image_alt": "",
+        "mobile_image": "shopify://shop_images/CROCHET_COLLECTION_aad48884-ca25-4f2f-8ef4-c704769fe2f8.png",
+        "image_alt": "Sheer Roots",
         "caption": "",
-        "image_ratio": "portrait",
+        "image_ratio": "square",
         "image_position": "right",
         "media_width": "medium",
         "text_alignment": "left",
@@ -217,10 +218,10 @@
         "color_scheme": "ink",
         "background_color": "",
         "heading_color": "",
-        "text_color": "",
-        "accent_color": "",
-        "heading_size": 100,
-        "body_size": 100,
+        "text_color": "#F1F1F1",
+        "accent_color": "#E9D3BE",
+        "heading_size": 85,
+        "body_size": 80,
         "padding_top": 60,
         "padding_bottom": 72,
         "padding_top_mobile": 52,
@@ -299,7 +300,7 @@
         "subheading": "<p>When you choose a piece from Sheer Roots or Social India Craft, you are choosing more than an object.</p>",
         "heading_alignment": "center",
         "heading_alignment_mobile": "center",
-        "layout": "grid",
+        "layout": "carousel",
         "columns_tablet": 2,
         "columns_desktop": 5,
         "columns_mobile": "1",
@@ -320,7 +321,7 @@
         "color_scheme": "sand",
         "background_color": "",
         "heading_color": "#130202",
-        "text_color": "#cf1414",
+        "text_color": "#6F6357",
         "accent_color": "#cbe315",
         "heading_size": 100,
         "body_size": 100,
@@ -355,49 +356,11 @@
         "background_color": "",
         "heading_color": "",
         "text_color": "",
-        "accent_color": "#cbe315",
+        "accent_color": "#E9D3BE",
         "heading_size": 100,
         "body_size": 100,
         "padding_top": 52,
         "padding_bottom": 52,
-        "padding_top_mobile": 52,
-        "padding_bottom_mobile": 52
-      }
-    },
-    "video": {
-      "type": "video-banner",
-      "settings": {
-        "video": "shopify://files/videos/Unboxing .mp4",
-        "video_url": "",
-        "video_alt": "",
-        "playback": "click",
-        "loop": false,
-        "show_controls": true,
-        "muted": true,
-        "video_height_desktop": 0,
-        "video_height_mobile": 0,
-        "video_ratio": "wide",
-        "eyebrow": "",
-        "heading": "Made by hand.                                       Rooted in India.                                        Made to be cherished.",
-        "subheading": "",
-        "heading_alignment": "center",
-        "heading_alignment_mobile": "",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "secondary",
-        "full_width": false,
-        "content_width": "wide",
-        "content_width_custom": 1200,
-        "padding_horizontal": 40,
-        "color_scheme": "sand",
-        "background_color": "",
-        "heading_color": "",
-        "text_color": "",
-        "accent_color": "",
-        "heading_size": 100,
-        "body_size": 100,
-        "padding_top": 60,
-        "padding_bottom": 60,
         "padding_top_mobile": 52,
         "padding_bottom_mobile": 52
       }
@@ -460,7 +423,7 @@
         "color_scheme": "ink",
         "background_color": "",
         "heading_color": "",
-        "text_color": "#E4D6D6",
+        "text_color": "#e4d6d6",
         "accent_color": "",
         "heading_size": 100,
         "body_size": 100,
@@ -468,6 +431,44 @@
         "padding_bottom": 32,
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40
+      }
+    },
+    "video": {
+      "type": "video-banner",
+      "settings": {
+        "video": "shopify://files/videos/Unboxing .mp4",
+        "video_url": "",
+        "video_alt": "",
+        "playback": "click",
+        "loop": false,
+        "show_controls": true,
+        "muted": true,
+        "video_height_desktop": 0,
+        "video_height_mobile": 0,
+        "video_ratio": "wide",
+        "eyebrow": "",
+        "heading": "Made by hand.                                       Rooted in India.                                        Made to be cherished.",
+        "subheading": "",
+        "heading_alignment": "center",
+        "heading_alignment_mobile": "",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "secondary",
+        "full_width": false,
+        "content_width": "wide",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "color_scheme": "sand",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mobile": 52,
+        "padding_bottom_mobile": 52
       }
     },
     "social": {
@@ -503,8 +504,8 @@
     "sic-intro",
     "values",
     "quote",
-    "video",
     "multicolumn_6aLYnA",
+    "video",
     "social"
   ]
 }

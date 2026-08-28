@@ -11,16 +11,16 @@
   "current": {
     "logo": "shopify://shop_images/SHEER_ROOTS_1.png",
     "logo_width": 230,
-    "logo_width_mobile": 140,
+    "logo_width_mobile": 80,
     "logo_footer": "shopify://shop_images/2_4c25cb67-3f45-4d67-96f6-d648ff4fb177.png",
     "sic_logo": "shopify://shop_images/3_e6383f7b-2e75-478f-b488-c26102683cd5.png",
     "favicon": "shopify://shop_images/sheer-roots-logo-transparent-background_42b2bf24-7650-4b6d-b04e-cb62aada4605.png",
-    "type_heading_font": "assistant_n6",
-    "heading_scale": 100,
+    "type_heading_font": "montserrat_n6",
+    "heading_scale": 85,
     "heading_uppercase": true,
-    "heading_letter_spacing": 4,
+    "heading_letter_spacing": 5,
     "type_body_font": "assistant_n4",
-    "base_font_size": 16,
+    "base_font_size": 14,
     "body_scale": 100,
     "color_background": "#fbf7f2",
     "color_text": "#1f1b16",
@@ -28,7 +28,7 @@
     "color_background_alt": "#f1e7da",
     "color_ink": "#221e19",
     "color_on_ink": "#f6efe6",
-    "color_accent": "#a85e2b",
+    "color_accent": "#6F6357",
     "color_border": "#e2d6c6",
     "color_button": "#1f1b16",
     "color_button_text": "#fbf7f2",
@@ -65,7 +65,7 @@
     "blocks": {
       "776302416715791028": {
         "type": "shopify://apps/bucks/blocks/app-embed/4f0a9b06-9da4-4a49-b378-2de9d23a3af3",
-        "disabled": true,
+        "disabled": false,
         "settings": {}
       }
     }
