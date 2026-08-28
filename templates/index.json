@@ -143,15 +143,15 @@
         "autoplay_interval": 5,
         "color_scheme": "ivory",
         "background_color": "",
-        "heading_color": "#5E3E1E",
-        "text_color": "#6F6357",
-        "accent_color": "#E9D3BE",
+        "heading_color": "#5e3e1e",
+        "text_color": "#6f6357",
+        "accent_color": "#e9d3be",
         "heading_size": 100,
         "body_size": 95,
         "padding_top": 20,
         "padding_bottom": 20,
-        "padding_top_mobile": 36,
-        "padding_bottom_mobile": 20
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
       }
     },
     "sic-intro": {
@@ -189,8 +189,8 @@
           "type": "button",
           "settings": {
             "label": "Social India Craft",
-            "link": "shopify://pages/social-india-craft",
-            "style": "primary"
+            "link": "shopify://pages/mandala-collection",
+            "style": "secondary"
           }
         }
       },
@@ -214,18 +214,18 @@
         "full_width": false,
         "content_width": "wide",
         "content_width_custom": 1200,
-        "padding_horizontal": 40,
+        "padding_horizontal": 28,
         "color_scheme": "ink",
         "background_color": "",
         "heading_color": "",
-        "text_color": "#F1F1F1",
-        "accent_color": "#E9D3BE",
-        "heading_size": 85,
-        "body_size": 80,
+        "text_color": "#f1f1f1",
+        "accent_color": "#e9d3be",
+        "heading_size": 100,
+        "body_size": 95,
         "padding_top": 60,
         "padding_bottom": 72,
-        "padding_top_mobile": 52,
-        "padding_bottom_mobile": 52
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
       }
     },
     "values": {
@@ -297,7 +297,7 @@
       "settings": {
         "eyebrow": "",
         "heading": "You are choosing",
-        "subheading": "<p>When you choose a piece from Sheer Roots or Social India Craft, you are choosing more than an object.</p>",
+        "subheading": "<p></p><p>When you choose a piece from Sheer Roots or Social India Craft, you are choosing more than an object.</p>",
         "heading_alignment": "center",
         "heading_alignment_mobile": "center",
         "layout": "carousel",
@@ -306,29 +306,29 @@
         "columns_mobile": "1",
         "text_alignment": "center",
         "text_alignment_mobile": "",
-        "image_ratio": "portrait",
-        "show_dividers": true,
+        "image_ratio": "square",
+        "show_dividers": false,
         "content_width": "full",
         "content_width_custom": 1200,
-        "padding_horizontal": 40,
+        "padding_horizontal": 28,
         "column_gap": 32,
-        "row_gap": 48,
+        "row_gap": 28,
         "show_arrows": true,
         "show_dots": true,
-        "carousel_loop": false,
-        "autoplay": false,
+        "carousel_loop": true,
+        "autoplay": true,
         "autoplay_interval": 5,
         "color_scheme": "sand",
         "background_color": "",
-        "heading_color": "#130202",
+        "heading_color": "#5E3E1E",
         "text_color": "#6F6357",
-        "accent_color": "#cbe315",
+        "accent_color": "#5E3E1E",
         "heading_size": 100,
-        "body_size": 100,
+        "body_size": 95,
         "padding_top": 32,
         "padding_bottom": 4,
-        "padding_top_mobile": 52,
-        "padding_bottom_mobile": 52
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
       }
     },
     "quote": {
@@ -361,8 +361,8 @@
         "body_size": 100,
         "padding_top": 52,
         "padding_bottom": 52,
-        "padding_top_mobile": 52,
-        "padding_bottom_mobile": 52
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
       }
     },
     "multicolumn_6aLYnA": {
@@ -371,7 +371,7 @@
         "column_Uqapjx": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/5_46255da9-47ec-465e-a69d-e233933cfdc6.jpg",
+            "image": "shopify://shop_images/2_977f4726-d36d-45dd-b8b4-90914b970fea.jpg",
             "image_alt": "",
             "heading": "DOR",
             "text": "<p>Dor is a beautifully <strong>handcrafted crochet bottle cover </strong>made by an Indian woman artisan, it brings together functionality, simplicity and traditional crochet artistry.<br/><br/></p>",
@@ -382,7 +382,7 @@
         "column_4aWewb": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/14_9b3e7167-27a2-453a-8764-8f23a8af07ef.jpg",
+            "image": "shopify://shop_images/12_63f103bd-01f3-422e-a987-88a90a090fe0.jpg",
             "image_alt": "",
             "heading": "SAAJ",
             "text": "<p>Saaj is a beautifully handcrafted crochet bottle which combines traditional crochet craftsmanship with a playful detachable charm.<br/></p><p><br/></p>",
@@ -399,38 +399,38 @@
       "settings": {
         "eyebrow": "",
         "heading": "CROCHET COLLECTION",
-        "subheading": "<p>The collection was born from our founder's desire to<strong>bring Indian handmade art forms into contemporary living while creating meaningful livelihood opportunities for artisans</strong>.<br/><br/></p>",
+        "subheading": "<p></p><p>The collection was born from our founder's desire to bring <br/><strong>Indian handmade art forms into contemporary living while creating meaningful livelihood opportunities for artisans</strong>.</p>",
         "heading_alignment": "center",
         "heading_alignment_mobile": "",
         "layout": "carousel",
         "columns_tablet": 2,
         "columns_desktop": 3,
-        "columns_mobile": "1",
+        "columns_mobile": "2",
         "text_alignment": "center",
         "text_alignment_mobile": "",
-        "image_ratio": "square",
+        "image_ratio": "adapt",
         "show_dividers": false,
         "content_width": "full",
         "content_width_custom": 1200,
-        "padding_horizontal": 40,
-        "column_gap": 32,
-        "row_gap": 48,
+        "padding_horizontal": 28,
+        "column_gap": 44,
+        "row_gap": 24,
         "show_arrows": true,
         "show_dots": true,
-        "carousel_loop": false,
+        "carousel_loop": true,
         "autoplay": false,
         "autoplay_interval": 5,
         "color_scheme": "ink",
         "background_color": "",
         "heading_color": "",
-        "text_color": "#e4d6d6",
-        "accent_color": "",
+        "text_color": "",
+        "accent_color": "#E9D3BE",
         "heading_size": 100,
-        "body_size": 100,
+        "body_size": 95,
         "padding_top": 44,
         "padding_bottom": 32,
-        "padding_top_mobile": 40,
-        "padding_bottom_mobile": 40
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
       }
     },
     "video": {
@@ -438,17 +438,17 @@
       "settings": {
         "video": "shopify://files/videos/Unboxing .mp4",
         "video_url": "",
-        "video_alt": "",
+        "video_alt": "Sheer Roots Packaging",
         "playback": "click",
-        "loop": false,
+        "loop": true,
         "show_controls": true,
         "muted": true,
         "video_height_desktop": 0,
         "video_height_mobile": 0,
         "video_ratio": "wide",
         "eyebrow": "",
-        "heading": "Made by hand.                                       Rooted in India.                                        Made to be cherished.",
-        "subheading": "",
+        "heading": "",
+        "subheading": "<h2><em>Made by hand. <br/>Rooted in India. <br/>Made to be cherished.</em></h2>",
         "heading_alignment": "center",
         "heading_alignment_mobile": "",
         "button_label": "",
@@ -457,25 +457,25 @@
         "full_width": false,
         "content_width": "wide",
         "content_width_custom": 1200,
-        "padding_horizontal": 40,
+        "padding_horizontal": 28,
         "color_scheme": "sand",
         "background_color": "",
         "heading_color": "",
-        "text_color": "",
+        "text_color": "#5E3E1E",
         "accent_color": "",
-        "heading_size": 100,
+        "heading_size": 90,
         "body_size": 100,
         "padding_top": 60,
         "padding_bottom": 60,
-        "padding_top_mobile": 52,
-        "padding_bottom_mobile": 52
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
       }
     },
     "social": {
       "type": "social-follow",
       "settings": {
         "eyebrow": "",
-        "heading": "FOLLOW THE STORY. FEEL THE ROOTS.",
+        "heading": "FOLLOW THE STORY FEEL THE ROOTS.",
         "text": "",
         "handle": "",
         "show_labels": true,
