@@ -29,7 +29,7 @@
           "type": "brand",
           "settings": {
             "heading": "",
-            "text": "<h3>Sheer Roots</h3><p><strong>Sheer Roots</strong> is a celebration of India's rich craft heritage, bringing thoughtfully crafted Indian products into contemporary everyday living.</p><p>We work to showcase the skill, creativity and stories of Indian artisans while creating meaningful opportunities for traditional crafts to thrive. Every piece is chosen or created with a deep appreciation for the hands, culture and traditions behind it.</p><p>From timeless crafts to thoughtfully designed everyday products, we believe that what we bring into your home should carry more than beauty — <strong>it should carry a story.</strong></p><p><strong>Rooted in India. Crafted with Purpose.</strong></p>",
+            "text": "<h3>Sheer Roots</h3><p><strong>Sheer Roots</strong> is a celebration of India's rich craft heritage, bringing thoughtfully crafted Indian products into contemporary everyday living.</p><p>We work to showcase the skill, creativity and stories of Indian artisans while creating meaningful opportunities for traditional crafts to thrive. Every piece is chosen or created with a deep appreciation for the hands, culture and traditions behind it.</p><p>From timeless crafts to thoughtfully designed everyday products, we believe that what we bring into your home should carry more than beauty — \"<em><strong>it should carry a story\".</strong></em></p><p><strong>Rooted in India. Crafted with Purpose.</strong></p>",
             "tagline": "Every piece. A story. India.",
             "show_social": true,
             "text_alignment": "",
@@ -49,9 +49,9 @@
           "type": "contact",
           "settings": {
             "heading": "Contact us",
-            "address": "",
-            "phone": "",
-            "email": "",
+            "address": "Sector 3, Gurgaon, 122011",
+            "phone": "+91 8448809111",
+            "email": "info@sheerroot.in",
             "text_alignment": ""
           }
         }
