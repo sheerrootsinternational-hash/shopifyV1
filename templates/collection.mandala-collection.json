@@ -13,10 +13,10 @@
       "type": "collection-banner",
       "settings": {
         "heading": "",
-        "show_description": true,
+        "show_description": false,
         "text": "",
-        "show_breadcrumbs": true,
-        "desktop_image": "shopify://shop_images/MANDALA.png",
+        "show_breadcrumbs": false,
+        "desktop_image": "shopify://shop_images/Social_India_Craft.jpg",
         "overlay_opacity": 15,
         "text_alignment": "center",
         "text_alignment_mobile": "",
@@ -25,7 +25,7 @@
         "padding_horizontal": 40,
         "color_scheme": "ink",
         "background_color": "",
-        "heading_color": "",
+        "heading_color": "#000000",
         "text_color": "",
         "accent_color": "",
         "heading_size": 100,
@@ -34,6 +34,33 @@
         "padding_bottom": 56,
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40
+      }
+    },
+    "grid": {
+      "type": "main-collection",
+      "settings": {
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "show_toolbar": true,
+        "content_width": "wide",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "column_gap": 32,
+        "row_gap": 48,
+        "card_image_ratio": "",
+        "card_text_alignment": "",
+        "color_scheme": "ivory",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
+        "padding_top": 36,
+        "padding_bottom": 40,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 52
       }
     },
     "rich_text_NNPhQr": {
@@ -133,8 +160,8 @@
         "padding_horizontal": 40,
         "color_scheme": "ink",
         "background_color": "",
-        "heading_color": "#F3EAEA",
-        "text_color": "#F0CFCF",
+        "heading_color": "#f3eaea",
+        "text_color": "#f0cfcf",
         "accent_color": "",
         "heading_size": 100,
         "body_size": 100,
@@ -143,39 +170,12 @@
         "padding_top_mobile": 52,
         "padding_bottom_mobile": 52
       }
-    },
-    "grid": {
-      "type": "main-collection",
-      "settings": {
-        "products_per_page": 24,
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "show_toolbar": true,
-        "content_width": "wide",
-        "content_width_custom": 1200,
-        "padding_horizontal": 40,
-        "column_gap": 32,
-        "row_gap": 48,
-        "card_image_ratio": "",
-        "card_text_alignment": "",
-        "color_scheme": "ivory",
-        "background_color": "",
-        "heading_color": "",
-        "text_color": "",
-        "accent_color": "",
-        "heading_size": 100,
-        "body_size": 100,
-        "padding_top": 36,
-        "padding_bottom": 40,
-        "padding_top_mobile": 28,
-        "padding_bottom_mobile": 52
-      }
     }
   },
   "order": [
     "banner",
+    "grid",
     "rich_text_NNPhQr",
-    "image_with_text_zXxWUn",
-    "grid"
+    "image_with_text_zXxWUn"
   ]
 }
