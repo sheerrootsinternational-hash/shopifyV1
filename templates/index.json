@@ -352,15 +352,15 @@
         "content_width": "narrow",
         "content_width_custom": 1200,
         "padding_horizontal": 40,
-        "color_scheme": "ink",
+        "color_scheme": "ivory",
         "background_color": "",
         "heading_color": "",
         "text_color": "",
         "accent_color": "#e9d3be",
         "heading_size": 100,
         "body_size": 100,
-        "padding_top": 52,
-        "padding_bottom": 52,
+        "padding_top": 4,
+        "padding_bottom": 4,
         "padding_top_mobile": 32,
         "padding_bottom_mobile": 32
       }
@@ -399,7 +399,7 @@
       "settings": {
         "eyebrow": "",
         "heading": "CROCHET COLLECTION",
-        "subheading": "<p></p><p>The collection was born from our founder's desire to bring <br/><strong>Indian handmade art forms into contemporary living while creating meaningful livelihood opportunities for artisans</strong>.</p>",
+        "subheading": "<p>The collection was born from our founder's desire to bring <br/><strong>Indian handmade art forms into contemporary living while creating meaningful livelihood opportunities for artisans</strong>.</p>",
         "heading_alignment": "center",
         "heading_alignment_mobile": "",
         "layout": "carousel",
