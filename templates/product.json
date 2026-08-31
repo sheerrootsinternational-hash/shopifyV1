@@ -85,7 +85,7 @@
       ],
       "settings": {
         "show_breadcrumbs": true,
-        "image_ratio": "square",
+        "image_ratio": "adapt",
         "thumbnail_position": "below",
         "show_thumbnails": true,
         "thumbnail_size": 88,
