@@ -17,7 +17,7 @@
         "text": "",
         "show_breadcrumbs": false,
         "desktop_image": "shopify://shop_images/13_2ce0726c-ad60-488f-aa92-e64c7703874a.jpg",
-        "overlay_opacity": 0,
+        "overlay_opacity": 25,
         "text_alignment": "center",
         "text_alignment_mobile": "",
         "content_width": "full",
@@ -25,15 +25,15 @@
         "padding_horizontal": 40,
         "color_scheme": "sand",
         "background_color": "",
-        "heading_color": "#f3eaea",
-        "text_color": "#cf1414",
-        "accent_color": "",
-        "heading_size": 100,
+        "heading_color": "#E7C3A2",
+        "text_color": "#E9D3BE",
+        "accent_color": "#E9D3BE",
+        "heading_size": 120,
         "body_size": 100,
         "padding_top": 56,
         "padding_bottom": 56,
-        "padding_top_mobile": 40,
-        "padding_bottom_mobile": 40
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
       }
     },
     "grid": {

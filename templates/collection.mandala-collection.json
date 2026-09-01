@@ -17,6 +17,7 @@
         "text": "",
         "show_breadcrumbs": false,
         "desktop_image": "shopify://shop_images/Social_India_Craft.jpg",
+        "mobile_image": "shopify://shop_images/Social_India_Craft.jpg",
         "overlay_opacity": 0,
         "text_alignment": "center",
         "text_alignment_mobile": "",
