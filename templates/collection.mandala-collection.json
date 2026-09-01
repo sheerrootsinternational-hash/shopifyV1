@@ -63,45 +63,41 @@
         "padding_bottom_mobile": 32
       }
     },
-    "rich_text_NNPhQr": {
-      "type": "rich-text",
+    "collapsible_content_aTVKty": {
+      "type": "collapsible-content",
       "blocks": {
-        "heading_Jcp7DY": {
-          "type": "heading",
+        "row_UYzVaM": {
+          "type": "row",
           "settings": {
-            "heading": "More than a product, a living legacy",
-            "heading_size": "h2",
-            "heading_tag": "h2"
-          }
-        },
-        "text_tj7Pti": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>Social India Craft</strong>, a premium artisanal expression of the <strong>Sheer Roots</strong> family, celebrates the beauty of Indian craftsmanshipthrough thoughtfully designed creations for contemporary living.</p><p>Inspired by India's rich artistic heritage and the skills passed down through generations, Social India Craft brings together </p><p><em><strong>traditional Craftsmanship, meaningful Design and Modern Functionality</strong></em><em>.</em></p><p>Our creations are made for those who believe that everyday objects can carry a deeper story—of </p><p><strong>Culture, Craftsmanship, Creativity and The hands that bring them to life</strong>.</p>",
-            "text_size": ""
+            "heading": "Social India Craft",
+            "content": "<p><strong>Social India Craft</strong>, a premium artisanal expression of the <strong>Sheer Roots</strong> family, celebrates the beauty of Indian craftsmanshipthrough thoughtfully designed creations for contemporary living.</p><p>Inspired by India's rich artistic heritage and the skills passed down through generations, Social India Craft brings together </p><p><em><strong>traditional Craftsmanship, meaningful Design and Modern Functionality</strong></em><em>.</em></p><p>Our creations are made for those who believe that everyday objects can carry a deeper story—of </p><p><strong>Culture, Craftsmanship, Creativity and The hands that bring them to life</strong>.</p>",
+            "page": "",
+            "open_by_default": false
           }
         }
       },
       "block_order": [
-        "heading_Jcp7DY",
-        "text_tj7Pti"
+        "row_UYzVaM"
       ],
-      "name": "Rich text",
+      "name": "Collapsible content",
       "settings": {
+        "eyebrow": "",
+        "heading": "More than a product, a living legacy",
+        "text": "",
         "text_alignment": "center",
         "text_alignment_mobile": "",
-        "content_width": "narrow",
+        "content_width": "wide",
         "content_width_custom": 1200,
         "padding_horizontal": 28,
         "color_scheme": "ink",
         "background_color": "",
         "heading_color": "#E9D3BE",
         "text_color": "#E9D3BE",
-        "accent_color": "",
+        "accent_color": "#E9D3BE",
         "heading_size": 100,
         "body_size": 95,
-        "padding_top": 40,
-        "padding_bottom": 40,
+        "padding_top": 64,
+        "padding_bottom": 72,
         "padding_top_mobile": 32,
         "padding_bottom_mobile": 32
       }
@@ -120,7 +116,7 @@
         "text_L8jLnh": {
           "type": "text",
           "settings": {
-            "text": "<h3>Where Indian Artistry Meets Everyday Living  </h3><p>The <strong>Mandala Collection by Social India Craft</strong> is a celebration of colour, symmetry and Indian-inspired artistry.</p><p>Each piece brings together the timeless character of <strong>copper craftsmanship</strong> with intricate mandala-inspired designs, creating a harmonious balance between traditional artistic expression and contemporary aesthetics.</p><p>Inspired by the mandala—an enduring symbol found across Indian art and culture—the collection reflects ideas of <em><strong>balance, harmony, unity and wholeness</strong></em><em>.</em> </p><p>Every design has its own character, while remaining connected to the visual language of the collection.</p><p>Created for modern living, these pieces are more than functional objects. They are thoughtfully designed expressions of <strong>Indian craftsmanship, creativity and cultural inspiration</strong>.</p><p> </p>"
+            "text": "<h3>Where Indian Artistry Meets Everyday Living  </h3><p>The <strong>Mandala Collection by Social India Craft</strong> is a celebration of colour, symmetry and Indian-inspired artistry.</p><p>Each piece brings together the timeless character of <strong>copper craftsmanship</strong> with intricate mandala-inspired designs, creating a harmonious balance between traditional artistic expression and contemporary aesthetics.</p><p>Inspired by the mandala—an enduring symbol found across Indian art and culture—the collection reflects ideas of <em><strong>balance, harmony, unity and wholeness</strong></em><em>.</em> </p><p>Every design has its own character, while remaining connected to the visual language of the collection.</p><p>Created for modern living, these pieces are more than functional objects. They are thoughtfully designed expressions of <strong>Indian craftsmanship, creativity and cultural inspiration</strong>.</p>"
           }
         },
         "button_9a6FC9": {
@@ -169,7 +165,7 @@
   "order": [
     "banner",
     "grid",
-    "rich_text_NNPhQr",
+    "collapsible_content_aTVKty",
     "image_with_text_zXxWUn"
   ]
 }
