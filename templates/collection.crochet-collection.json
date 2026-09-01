@@ -25,8 +25,8 @@
         "padding_horizontal": 40,
         "color_scheme": "sand",
         "background_color": "",
-        "heading_color": "#F3EAEA",
-        "text_color": "#CF1414",
+        "heading_color": "#f3eaea",
+        "text_color": "#cf1414",
         "accent_color": "",
         "heading_size": 100,
         "body_size": 100,
@@ -34,6 +34,33 @@
         "padding_bottom": 56,
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40
+      }
+    },
+    "grid": {
+      "type": "main-collection",
+      "settings": {
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "show_toolbar": true,
+        "content_width": "wide",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "column_gap": 32,
+        "row_gap": 48,
+        "card_image_ratio": "",
+        "card_text_alignment": "",
+        "color_scheme": "ink",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 52
       }
     },
     "image_with_text_GHiwjk": {
@@ -88,11 +115,11 @@
         "content_width": "full",
         "content_width_custom": 1200,
         "padding_horizontal": 40,
-        "color_scheme": "ink",
+        "color_scheme": "sand",
         "background_color": "",
-        "heading_color": "#EEEEEE",
-        "text_color": "#F3EAEA",
-        "accent_color": "#CF1414",
+        "heading_color": "#130202",
+        "text_color": "#130202",
+        "accent_color": "#cf1414",
         "heading_size": 100,
         "body_size": 100,
         "padding_top": 72,
@@ -100,38 +127,11 @@
         "padding_top_mobile": 52,
         "padding_bottom_mobile": 52
       }
-    },
-    "grid": {
-      "type": "main-collection",
-      "settings": {
-        "products_per_page": 24,
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "show_toolbar": true,
-        "content_width": "wide",
-        "content_width_custom": 1200,
-        "padding_horizontal": 40,
-        "column_gap": 32,
-        "row_gap": 48,
-        "card_image_ratio": "",
-        "card_text_alignment": "",
-        "color_scheme": "ivory",
-        "background_color": "",
-        "heading_color": "",
-        "text_color": "",
-        "accent_color": "",
-        "heading_size": 100,
-        "body_size": 100,
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "padding_top_mobile": 28,
-        "padding_bottom_mobile": 52
-      }
     }
   },
   "order": [
     "banner",
-    "image_with_text_GHiwjk",
-    "grid"
+    "grid",
+    "image_with_text_GHiwjk"
   ]
 }
