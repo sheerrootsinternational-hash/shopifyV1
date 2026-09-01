@@ -52,9 +52,9 @@
         "card_text_alignment": "",
         "color_scheme": "sand",
         "background_color": "",
-        "heading_color": "",
-        "text_color": "",
-        "accent_color": "",
+        "heading_color": "#6F6357",
+        "text_color": "#5E3E1E",
+        "accent_color": "#6F6357",
         "heading_size": 100,
         "body_size": 95,
         "padding_top": 36,
@@ -77,7 +77,7 @@
         "text_tj7Pti": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Social India Craft</strong>, a premium artisanal expression of the <strong>Sheer Roots</strong> family, celebrates the beauty of Indian craftsmanshipthrough thoughtfully designed creations for contemporary living.</p><p>Inspired by India's rich artistic heritage and the skills passed down through generations, Social India Craft brings together </p><p><strong>traditional Craftsmanship, meaningful Design and Modern Functionality</strong>.</p><p>Our creations are made for those who believe that everyday objects can carry a deeper story—of </p><p><strong>Culture, Craftsmanship, Creativity and The hands that bring them to life</strong>.</p>",
+            "text": "<p><strong>Social India Craft</strong>, a premium artisanal expression of the <strong>Sheer Roots</strong> family, celebrates the beauty of Indian craftsmanshipthrough thoughtfully designed creations for contemporary living.</p><p>Inspired by India's rich artistic heritage and the skills passed down through generations, Social India Craft brings together </p><p><em><strong>traditional Craftsmanship, meaningful Design and Modern Functionality</strong></em><em>.</em></p><p>Our creations are made for those who believe that everyday objects can carry a deeper story—of </p><p><strong>Culture, Craftsmanship, Creativity and The hands that bring them to life</strong>.</p>",
             "text_size": ""
           }
         }
@@ -92,29 +92,23 @@
         "text_alignment_mobile": "",
         "content_width": "narrow",
         "content_width_custom": 1200,
-        "padding_horizontal": 40,
+        "padding_horizontal": 28,
         "color_scheme": "ink",
         "background_color": "",
-        "heading_color": "",
-        "text_color": "#f0cfcf",
+        "heading_color": "#E9D3BE",
+        "text_color": "#E9D3BE",
         "accent_color": "",
         "heading_size": 100,
-        "body_size": 100,
+        "body_size": 95,
         "padding_top": 40,
         "padding_bottom": 40,
-        "padding_top_mobile": 40,
-        "padding_bottom_mobile": 40
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
       }
     },
     "image_with_text_zXxWUn": {
       "type": "image-with-text",
       "blocks": {
-        "eyebrow_JezMUR": {
-          "type": "eyebrow",
-          "settings": {
-            "text": "Social India Craft"
-          }
-        },
         "heading_VJTynE": {
           "type": "heading",
           "settings": {
@@ -126,7 +120,7 @@
         "text_L8jLnh": {
           "type": "text",
           "settings": {
-            "text": "<h3><strong>Where Indian Artistry Meets Everyday Living</strong></h3><p>The <strong>Mandala Collection by Social India Craft</strong> is a celebration of colour, symmetry and Indian-inspired artistry.</p><p>Each piece brings together the timeless character of <strong>copper craftsmanship</strong> with intricate mandala-inspired designs, creating a harmonious balance between traditional artistic expression and contemporary aesthetics.</p><p>Inspired by the mandala—an enduring symbol found across Indian art and culture—the collection reflects ideas of <strong>balance, harmony, unity and wholeness</strong>. </p><p>Every design has its own character, while remaining connected to the visual language of the collection.</p><p>Created for modern living, these pieces are more than functional objects. They are thoughtfully designed expressions of <strong>Indian craftsmanship, creativity and cultural inspiration</strong>.</p><p> </p>"
+            "text": "<h3>Where Indian Artistry Meets Everyday Living  </h3><p>The <strong>Mandala Collection by Social India Craft</strong> is a celebration of colour, symmetry and Indian-inspired artistry.</p><p>Each piece brings together the timeless character of <strong>copper craftsmanship</strong> with intricate mandala-inspired designs, creating a harmonious balance between traditional artistic expression and contemporary aesthetics.</p><p>Inspired by the mandala—an enduring symbol found across Indian art and culture—the collection reflects ideas of <em><strong>balance, harmony, unity and wholeness</strong></em><em>.</em> </p><p>Every design has its own character, while remaining connected to the visual language of the collection.</p><p>Created for modern living, these pieces are more than functional objects. They are thoughtfully designed expressions of <strong>Indian craftsmanship, creativity and cultural inspiration</strong>.</p><p> </p>"
           }
         },
         "button_9a6FC9": {
@@ -134,22 +128,22 @@
           "settings": {
             "label": "Explore",
             "link": "shopify://collections/mandala-collection",
-            "style": "primary"
+            "style": "secondary"
           }
         }
       },
       "block_order": [
-        "eyebrow_JezMUR",
         "heading_VJTynE",
         "text_L8jLnh",
         "button_9a6FC9"
       ],
       "name": "Image with text",
       "settings": {
-        "desktop_image": "shopify://shop_images/42.jpg",
+        "desktop_image": "shopify://shop_images/CROCHET_COLLECTION_aad48884-ca25-4f2f-8ef4-c704769fe2f8.png",
+        "mobile_image": "shopify://shop_images/CROCHET_COLLECTION_aad48884-ca25-4f2f-8ef4-c704769fe2f8.png",
         "image_alt": "",
         "caption": "",
-        "image_ratio": "portrait",
+        "image_ratio": "adapt",
         "image_position": "right",
         "media_width": "medium",
         "text_alignment": "center",
@@ -160,15 +154,15 @@
         "padding_horizontal": 40,
         "color_scheme": "sand",
         "background_color": "",
-        "heading_color": "#130202",
-        "text_color": "#130202",
-        "accent_color": "#cf1414",
+        "heading_color": "#5E3E1E",
+        "text_color": "#6F6357",
+        "accent_color": "#5E3E1E",
         "heading_size": 100,
-        "body_size": 100,
+        "body_size": 95,
         "padding_top": 40,
         "padding_bottom": 40,
-        "padding_top_mobile": 52,
-        "padding_bottom_mobile": 52
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
       }
     }
   },
