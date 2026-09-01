@@ -25,7 +25,7 @@
         "padding_horizontal": 40,
         "color_scheme": "sand",
         "background_color": "",
-        "heading_color": "#E7C3A2",
+        "heading_color": "#E9D3BE",
         "text_color": "#E9D3BE",
         "accent_color": "#E9D3BE",
         "heading_size": 120,
@@ -79,20 +79,11 @@
           "settings": {
             "text": "<h4><em>Threads of Craft. Stories of the Hands That Create.</em></h4><p>The <strong>Crochet Collection by Social India Craft </strong>celebrates the beauty of handmade artistry and the timeless skill of crochet.</p><p>Each creation is carefully handcrafted by <strong>Indian women artisans</strong>, transforming simple threads into thoughtful, functional pieces for everyday life. Every stitch reflects patience, creativity and the individuality of the hands that made it.</p><p>The collection was born from our founder's desire to <strong>bring Indian handmade art forms into contemporary living while creating meaningful livelihood opportunities for artisans</strong>.</p><p>From everyday essentials to thoughtful accessories, each piece is designed to carry the warmth of handmade craftsmanship while remaining practical and beautiful.</p><p><strong>Every stitch carries a story.</strong></p><p><strong>Every creation supports a craft.</strong></p><p><strong>Every purchase helps carry that story forward.</strong></p>"
           }
-        },
-        "button_gVqQVn": {
-          "type": "button",
-          "settings": {
-            "label": "Explore",
-            "link": "shopify://collections/crochet-collection",
-            "style": "secondary"
-          }
         }
       },
       "block_order": [
         "heading_nRRpk7",
-        "text_nCcJmP",
-        "button_gVqQVn"
+        "text_nCcJmP"
       ],
       "name": "Image with text",
       "settings": {
