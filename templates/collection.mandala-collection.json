@@ -48,7 +48,7 @@
         "padding_horizontal": 28,
         "column_gap": 32,
         "row_gap": 32,
-        "card_image_ratio": "adapt",
+        "card_image_ratio": "portrait",
         "card_text_alignment": "",
         "color_scheme": "sand",
         "background_color": "",
