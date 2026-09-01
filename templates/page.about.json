@@ -13,8 +13,9 @@
       "type": "hero-banner",
       "settings": {
         "desktop_image": "shopify://shop_images/Add_a_subheading_2048_x_1152_px_1546_x_423_px_1546_x_576_px_2560_x_1440_px_2400_x_1200_px_2400_x_1200_px_2400_x_1000_px_eb1ee192-ae3c-4720-b87e-9d49926af2a8.png",
+        "mobile_image": "shopify://shop_images/Add_a_subheading_2048_x_1152_px_1546_x_423_px_1546_x_576_px_2560_x_1440_px_2400_x_1200_px_2400_x_1200_px_2400_x_1000_px_eb1ee192-ae3c-4720-b87e-9d49926af2a8.png",
         "image_alt": "",
-        "height": "medium",
+        "height": "adapt",
         "height_custom": 600,
         "height_mobile": "medium",
         "height_custom_mobile": 420,
@@ -55,7 +56,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<h3><strong>Rooted in India. Crafted with Purpose.  Shared with the World.</strong></h3><p>Welcome to <strong>Sheer Roots</strong>, a celebration of India's diverse heritage, craftsmanship and the timeless traditions that continue to shape the way we create and live.</p><p>We believe that Indian craftsmanship is not simply about making beautiful objects. It is about <strong>knowledge passed through generations, skilled hands, cultural identity and stories waiting to be carried forward</strong>.</p><p>At Sheer Roots, we thoughtfully bring together Indian handicrafts, traditional products, artisanal creations and contemporary interpretations of Indian culture—connecting the richness of our roots with the way the world lives today.</p><p>Our journey is guided by a simple belief:</p><p><strong>Every piece has a story. And every story deserves to be carried forward.</strong></p>",
+            "text": "<h3><em>Rooted in India. Crafted with Purpose.  Shared with the World.</em></h3><p>Welcome to <strong>Sheer Roots</strong>, a celebration of India's diverse heritage, craftsmanship and the timeless traditions that continue to shape the way we create and live.</p><p>We believe that Indian craftsmanship is not simply about making beautiful objects. It is about <strong>knowledge passed through generations, skilled hands, cultural identity and stories waiting to be carried forward</strong>.</p><p>At Sheer Roots, we thoughtfully bring together Indian handicrafts, traditional products, artisanal creations and contemporary interpretations of Indian culture—connecting the richness of our roots with the way the world lives today.</p><p>Our journey is guided by a simple belief:</p><p><strong>Every piece has a story. And every story deserves to be carried forward.</strong></p>",
             "text_size": "subheading"
           }
         }
@@ -68,18 +69,18 @@
         "text_alignment_mobile": "",
         "content_width": "full",
         "content_width_custom": 1200,
-        "padding_horizontal": 40,
+        "padding_horizontal": 28,
         "color_scheme": "ink",
         "background_color": "",
-        "heading_color": "#eeeeee",
-        "text_color": "#f0cfcf",
-        "accent_color": "#130202",
+        "heading_color": "#E9D3BE",
+        "text_color": "#E9D3BE",
+        "accent_color": "#E9D3BE",
         "heading_size": 100,
-        "body_size": 100,
+        "body_size": 95,
         "padding_top": 52,
         "padding_bottom": 52,
-        "padding_top_mobile": 52,
-        "padding_bottom_mobile": 52
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
       }
     },
     "story": {
@@ -89,14 +90,14 @@
           "type": "heading",
           "settings": {
             "heading": "Our story",
-            "heading_size": "h2",
-            "heading_tag": "h2"
+            "heading_size": "h1",
+            "heading_tag": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<h3><strong>A Thought Rooted in India</strong></h3><p>Sheer Roots began with a desire to reconnect everyday living with the richness of Indian craftsmanship.</p><p>India has always been home to extraordinary artisans, traditional techniques and artistic traditions. Yet, in a world increasingly shaped by mass production, many of these skills and stories risk becoming distant from everyday life.</p><p>We wanted to create a platform that could help bridge that gap.</p><p>Our approach is simple—<strong>discover, curate and bring Indian craftsmanship into contemporary spaces</strong>, while respecting the people, skills and traditions behind every creation.</p><p>Through our journey, we aim to work with artisans and craft communities, creating opportunities for their skills to reach new audiences while contributing to meaningful livelihoods.</p><p>From traditional handicrafts to contemporary products inspired by India's cultural vocabulary, Sheer Roots is our way of keeping the connection alive.</p><p><strong>From the hands that create to the homes and lives that receive—Sheer Roots is about creating that connection.</strong></p>"
+            "text": "<h3><em>A Thought Rooted in India</em></h3><p>Sheer Roots began with a desire to reconnect everyday living with the richness of Indian craftsmanship.</p><p>India has always been home to extraordinary artisans, traditional techniques and artistic traditions. Yet, in a world increasingly shaped by mass production, many of these skills and stories risk becoming distant from everyday life.</p><p>We wanted to create a platform that could help bridge that gap.</p><p>Our approach is simple—<strong>discover, curate and bring Indian craftsmanship into contemporary spaces</strong>, while respecting the people, skills and traditions behind every creation.</p><p>Through our journey, we aim to work with artisans and craft communities, creating opportunities for their skills to reach new audiences while contributing to meaningful livelihoods.</p><p>From traditional handicrafts to contemporary products inspired by India's cultural vocabulary, Sheer Roots is our way of keeping the connection alive.</p><p><strong>From the hands that create to the homes and lives that receive—Sheer Roots is about creating that connection.</strong></p>"
           }
         }
       },
@@ -108,7 +109,7 @@
         "desktop_image": "shopify://shop_images/ChatGPT_Image_Aug_16_2026_12_46_13_PM_20f28cad-75cc-4c89-ba04-6723bf7a648b.png",
         "image_alt": "",
         "caption": "",
-        "image_ratio": "portrait",
+        "image_ratio": "adapt",
         "image_position": "left",
         "media_width": "medium",
         "text_alignment": "left",
@@ -116,18 +117,18 @@
         "full_width": false,
         "content_width": "wide",
         "content_width_custom": 1200,
-        "padding_horizontal": 40,
+        "padding_horizontal": 28,
         "color_scheme": "sand",
         "background_color": "",
-        "heading_color": "",
-        "text_color": "",
-        "accent_color": "",
+        "heading_color": "#5E3E1E",
+        "text_color": "#6F6357",
+        "accent_color": "#6F6357",
         "heading_size": 100,
-        "body_size": 100,
+        "body_size": 95,
         "padding_top": 64,
         "padding_bottom": 64,
-        "padding_top_mobile": 52,
-        "padding_bottom_mobile": 52
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
       }
     },
     "vision": {
@@ -138,13 +139,13 @@
           "settings": {
             "heading": "Our vision",
             "heading_size": "h1",
-            "heading_tag": "h3"
+            "heading_tag": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<h3><strong>To Keep India's Craft Alive, Relevant and Connected to the World.</strong></h3><p>Our vision is to see Indian craftsmanship appreciated not only as a tradition of the past, but as a <strong>living part of contemporary life</strong>.</p><p>We aspire to build a thoughtfully curated platform where Indian artisans, traditional techniques and meaningful design can find a place in modern homes, lifestyles and gifting.</p><p>We envision a future where:</p><p><strong>Traditional skills continue to thrive.<br/>Artisans have opportunities to grow.<br/>Indian craftsmanship reaches wider audiences.<br/><br/>And every thoughtfully chosen product carries a sense of heritage and purpose.</strong></p><p>Our ambition is to take the richness of India <strong>from its roots to the world</strong>, while remaining respectful of where every creation begins.</p>"
+            "text": "<h3><em>To Keep India's Craft Alive, Relevant and Connected to the World.</em></h3><p>Our vision is to see Indian craftsmanship appreciated not only as a tradition of the past, but as a <strong>living part of contemporary life</strong>.</p><p>We aspire to build a thoughtfully curated platform where Indian artisans, traditional techniques and meaningful design can find a place in modern homes, lifestyles and gifting.</p><p>We envision a future where:</p><p><strong>Traditional skills continue to thrive.<br/>Artisans have opportunities to grow.<br/>Indian craftsmanship reaches wider audiences.<br/><br/>And every thoughtfully chosen product carries a sense of heritage and purpose.</strong></p><p>Our ambition is to take the richness of India <strong>from its roots to the world</strong>, while remaining respectful of where every creation begins.</p>"
           }
         }
       },
@@ -156,7 +157,7 @@
         "desktop_image": "shopify://shop_images/ChatGPT_Image_Aug_15_2026_10_07_54_PM.png",
         "image_alt": "",
         "caption": "",
-        "image_ratio": "landscape",
+        "image_ratio": "adapt",
         "image_position": "right",
         "media_width": "large",
         "text_alignment": "left",
@@ -164,18 +165,18 @@
         "full_width": false,
         "content_width": "wide",
         "content_width_custom": 1200,
-        "padding_horizontal": 40,
+        "padding_horizontal": 28,
         "color_scheme": "ink",
         "background_color": "",
-        "heading_color": "#eeeeee",
-        "text_color": "#f3eaea",
-        "accent_color": "",
+        "heading_color": "#E9D3BE",
+        "text_color": "#E9D3BE",
+        "accent_color": "#E9D3BE",
         "heading_size": 100,
-        "body_size": 100,
+        "body_size": 95,
         "padding_top": 72,
         "padding_bottom": 64,
-        "padding_top_mobile": 52,
-        "padding_bottom_mobile": 52
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
       }
     },
     "promise": {
@@ -185,14 +186,14 @@
           "type": "heading",
           "settings": {
             "heading": "Our promise",
-            "heading_size": "h2",
-            "heading_tag": "h2"
+            "heading_size": "h1",
+            "heading_tag": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<h4><strong>Thoughtfully Chosen. Meaningfully Created.</strong></h4><p>At Sheer Roots, we promise to approach every product with <strong>care, curiosity and respect</strong>.</p><p>We strive to:</p><p><strong>Celebrate Authenticity</strong><br/>Respect the cultural inspiration, traditional techniques and stories behind the products we bring to you.</p><p><strong>Value Craftsmanship</strong><br/>Recognize the skill, patience and human effort involved in handmade creation.</p><p><strong>Choose with Purpose</strong><br/>Select products not simply because they are beautiful, but because they carry meaning, craftsmanship or cultural value.</p><p><strong>Respect Materials</strong><br/>Pay attention to the materials that become part of our everyday lives and appreciate their natural character and integrity.</p><p><strong>Support Artisan Livelihoods</strong><br/>Wherever possible, create opportunities that help artisans and craft communities sustain their skills and livelihoods.</p><p><strong>Bring Tradition into Today</strong><br/>Present India's rich craft heritage in ways that feel relevant, useful and beautiful in contemporary life.</p>",
+            "text": "<h3><em>Thoughtfully Chosen. Meaningfully Created.</em></h3><p>At Sheer Roots, we promise to approach every product with <strong>care, curiosity and respect</strong>.</p><p>We strive to:</p><p><strong>Celebrate Authenticity</strong><br/>Respect the cultural inspiration, traditional techniques and stories behind the products we bring to you.</p><p><strong>Value Craftsmanship</strong><br/>Recognize the skill, patience and human effort involved in handmade creation.</p><p><strong>Choose with Purpose</strong><br/>Select products not simply because they are beautiful, but because they carry meaning, craftsmanship or cultural value.</p><p><strong>Respect Materials</strong><br/>Pay attention to the materials that become part of our everyday lives and appreciate their natural character and integrity.</p><p><strong>Support Artisan Livelihoods</strong><br/>Wherever possible, create opportunities that help artisans and craft communities sustain their skills and livelihoods.</p><p><strong>Bring Tradition into Today</strong><br/>Present India's rich craft heritage in ways that feel relevant, useful and beautiful in contemporary life.</p>",
             "text_size": ""
           }
         },
@@ -216,20 +217,20 @@
       "settings": {
         "text_alignment": "center",
         "text_alignment_mobile": "",
-        "content_width": "full",
-        "content_width_custom": 1260,
-        "padding_horizontal": 40,
+        "content_width": "wide",
+        "content_width_custom": 1200,
+        "padding_horizontal": 28,
         "color_scheme": "sand",
         "background_color": "",
-        "heading_color": "#cf1414",
-        "text_color": "#130202",
-        "accent_color": "#cf1414",
+        "heading_color": "#5E3E1E",
+        "text_color": "#6F6357",
+        "accent_color": "#5E3E1E",
         "heading_size": 100,
-        "body_size": 100,
+        "body_size": 95,
         "padding_top": 48,
         "padding_bottom": 32,
-        "padding_top_mobile": 52,
-        "padding_bottom_mobile": 52
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
       }
     }
   },
