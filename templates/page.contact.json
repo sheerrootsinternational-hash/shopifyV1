@@ -63,15 +63,15 @@
           "type": "heading",
           "settings": {
             "heading": "Customer Support and General enquiries",
-            "heading_size": "h3",
-            "heading_tag": "h2"
+            "heading_size": "h2",
+            "heading_tag": "h3"
           }
         },
         "text_BAqrBV": {
           "type": "text",
           "settings": {
             "text": "<p>For questions regarding: Orders & order status, Product information, Returns & exchanges, Refunds, Shipping & delivery, Damaged or incorrect products Artisan-made products and craftsmanship</p>",
-            "text_size": ""
+            "text_size": "subheading"
           }
         }
       },
@@ -90,11 +90,11 @@
         "background_color": "",
         "heading_color": "#e9d3be",
         "text_color": "#e9d3be",
-        "accent_color": "",
+        "accent_color": "#E9D3BE",
         "heading_size": 100,
         "body_size": 95,
-        "padding_top": 72,
-        "padding_bottom": 72,
+        "padding_top": 52,
+        "padding_bottom": 52,
         "padding_top_mobile": 32,
         "padding_bottom_mobile": 32
       }
@@ -124,8 +124,8 @@
         "accent_color": "#5e3e1e",
         "heading_size": 100,
         "body_size": 95,
-        "padding_top": 20,
-        "padding_bottom": 20,
+        "padding_top": 32,
+        "padding_bottom": 32,
         "padding_top_mobile": 32,
         "padding_bottom_mobile": 32
       }
@@ -133,11 +133,11 @@
     "form": {
       "type": "contact-form",
       "settings": {
-        "heading": "We’d Love to Hear From You",
+        "heading": "Let’s Connect",
         "text": "",
         "privacy_note": "",
-        "text_alignment": "center",
-        "text_alignment_mobile": "",
+        "text_alignment": "left",
+        "text_alignment_mobile": "center",
         "content_width": "wide",
         "content_width_custom": 1200,
         "padding_horizontal": 28,
@@ -148,8 +148,8 @@
         "accent_color": "#e9d3be",
         "heading_size": 100,
         "body_size": 95,
-        "padding_top": 44,
-        "padding_bottom": 12,
+        "padding_top": 52,
+        "padding_bottom": 52,
         "padding_top_mobile": 32,
         "padding_bottom_mobile": 32
       }
@@ -195,8 +195,8 @@
         "eyebrow": "",
         "heading": "Orders and shipping",
         "text": "",
-        "text_alignment": "center",
-        "text_alignment_mobile": "",
+        "text_alignment": "left",
+        "text_alignment_mobile": "center",
         "content_width": "wide",
         "content_width_custom": 1200,
         "padding_horizontal": 28,
@@ -207,8 +207,8 @@
         "accent_color": "#6f6357",
         "heading_size": 100,
         "body_size": 95,
-        "padding_top": 32,
-        "padding_bottom": 32,
+        "padding_top": 52,
+        "padding_bottom": 52,
         "padding_top_mobile": 32,
         "padding_bottom_mobile": 32
       }
