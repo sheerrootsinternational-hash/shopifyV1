@@ -334,7 +334,7 @@
     "quote": {
       "type": "rich-text",
       "blocks": {
-        "quote": {
+        "quote_VWtLqB": {
           "type": "quote",
           "settings": {
             "quote": "You are not merely acquiring a vessel; you are taking home a living legacy of human resilience, sacred geometry and the quiet artistry of master hands.",
@@ -344,7 +344,7 @@
         }
       },
       "block_order": [
-        "quote"
+        "quote_VWtLqB"
       ],
       "settings": {
         "text_alignment": "center",
@@ -352,15 +352,15 @@
         "content_width": "narrow",
         "content_width_custom": 1200,
         "padding_horizontal": 40,
-        "color_scheme": "ivory",
+        "color_scheme": "sand",
         "background_color": "",
         "heading_color": "",
-        "text_color": "",
-        "accent_color": "#e9d3be",
+        "text_color": "#5E3E1E",
+        "accent_color": "#6F6357",
         "heading_size": 100,
         "body_size": 100,
-        "padding_top": 4,
-        "padding_bottom": 4,
+        "padding_top": 32,
+        "padding_bottom": 32,
         "padding_top_mobile": 32,
         "padding_bottom_mobile": 32
       }
