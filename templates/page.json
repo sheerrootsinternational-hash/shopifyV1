@@ -22,13 +22,13 @@
         "padding_horizontal": 28,
         "color_scheme": "sand",
         "background_color": "",
-        "heading_color": "#5E3E1E",
-        "text_color": "#6F6357",
-        "accent_color": "#5E3E1E",
+        "heading_color": "#5e3e1e",
+        "text_color": "#6f6357",
+        "accent_color": "#5e3e1e",
         "heading_size": 100,
         "body_size": 95,
-        "padding_top": 56,
-        "padding_bottom": 88,
+        "padding_top": 52,
+        "padding_bottom": 52,
         "padding_top_mobile": 32,
         "padding_bottom_mobile": 32
       }
