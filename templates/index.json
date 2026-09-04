@@ -217,8 +217,8 @@
         "padding_horizontal": 28,
         "color_scheme": "ink",
         "background_color": "",
-        "heading_color": "#E7C3A2",
-        "text_color": "#E9D3BE",
+        "heading_color": "#e7c3a2",
+        "text_color": "#e9d3be",
         "accent_color": "#e9d3be",
         "heading_size": 100,
         "body_size": 95,
@@ -341,10 +341,19 @@
             "attribution": "",
             "show_icon": true
           }
+        },
+        "button_4H8qWw": {
+          "type": "button",
+          "settings": {
+            "label": "Explore the Social India Craft Collection on Amazon.",
+            "link": "https://www.amazon.com/dp/B0HGLK9PST",
+            "style": "primary"
+          }
         }
       },
       "block_order": [
-        "quote_VWtLqB"
+        "quote_VWtLqB",
+        "button_4H8qWw"
       ],
       "settings": {
         "text_alignment": "center",
@@ -422,9 +431,9 @@
         "autoplay_interval": 3,
         "color_scheme": "ink",
         "background_color": "",
-        "heading_color": "#E9D3BE",
-        "text_color": "#E9D3BE",
-        "accent_color": "#E9D3BE",
+        "heading_color": "#e9d3be",
+        "text_color": "#e9d3be",
+        "accent_color": "#e9d3be",
         "heading_size": 100,
         "body_size": 95,
         "padding_top": 32,
@@ -488,7 +497,7 @@
         "background_color": "",
         "heading_color": "",
         "text_color": "#5e3e1e",
-        "accent_color": "#6F6357",
+        "accent_color": "#6f6357",
         "heading_size": 100,
         "body_size": 95,
         "padding_top": 32,
