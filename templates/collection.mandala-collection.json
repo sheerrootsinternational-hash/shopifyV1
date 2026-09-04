@@ -53,9 +53,9 @@
         "card_text_alignment": "",
         "color_scheme": "sand",
         "background_color": "",
-        "heading_color": "#5E3E1E",
-        "text_color": "#6F6357",
-        "accent_color": "#5E3E1E",
+        "heading_color": "#5e3e1e",
+        "text_color": "#6f6357",
+        "accent_color": "#5e3e1e",
         "heading_size": 100,
         "body_size": 95,
         "padding_top": 52,
@@ -75,10 +75,20 @@
             "page": "",
             "open_by_default": false
           }
+        },
+        "row_RiBeeg": {
+          "type": "row",
+          "settings": {
+            "heading": "Check Our Collection On Amazon.com",
+            "content": "<p><a href=\"https://www.amazon.com/dp/B0HGLK9PST\" title=\"https://www.amazon.com/dp/B0HGLK9PST\">https://www.amazon.com/dp/B0HGLK9PST</a></p>",
+            "page": "",
+            "open_by_default": false
+          }
         }
       },
       "block_order": [
-        "row_UYzVaM"
+        "row_UYzVaM",
+        "row_RiBeeg"
       ],
       "name": "Collapsible content",
       "settings": {
