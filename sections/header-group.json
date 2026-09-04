@@ -14,6 +14,13 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
+        "announcement_7eBUeM": {
+          "type": "announcement",
+          "settings": {
+            "text": "Explore the Social India Craft Collection on Amazon.",
+            "link": "https://www.amazon.com/dp/B0HGLK9PST"
+          }
+        },
         "announcement_Dd8XRy": {
           "type": "announcement",
           "settings": {
@@ -44,6 +51,7 @@
         }
       },
       "block_order": [
+        "announcement_7eBUeM",
         "announcement_Dd8XRy",
         "message-1",
         "announcement_X6GDwW",
@@ -79,9 +87,9 @@
         "show_account": true,
         "color_scheme": "sand",
         "background_color": "",
-        "heading_color": "#5E3E1E",
-        "text_color": "#5E3E1E",
-        "accent_color": "#6F6357",
+        "heading_color": "#5e3e1e",
+        "text_color": "#5e3e1e",
+        "accent_color": "#6f6357",
         "heading_size": 100,
         "body_size": 95,
         "padding_top": 32,
