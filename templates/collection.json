@@ -20,9 +20,9 @@
         "height_mobile": "medium",
         "height_custom_mobile": 420,
         "image_focal_point": "center",
-        "overlay_opacity": 25,
+        "overlay_opacity": 20,
         "eyebrow": "",
-        "heading": "Every piece. A story. India.",
+        "heading": "Corporate Gifting",
         "heading_is_page_title": false,
         "text": "",
         "button_label": "",
@@ -40,7 +40,7 @@
         "color_scheme": "ink",
         "background_color": "",
         "heading_color": "",
-        "text_color": "",
+        "text_color": "#EEEEEE",
         "accent_color": "",
         "heading_size": 100,
         "body_size": 100,
@@ -95,6 +95,7 @@
     },
     "banner": {
       "type": "collection-banner",
+      "disabled": true,
       "settings": {
         "heading": "",
         "show_description": true,
@@ -117,6 +118,256 @@
         "padding_bottom": 56,
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40
+      }
+    },
+    "rich_text_FBa8r6": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_3eTpfn": {
+          "type": "heading",
+          "settings": {
+            "heading": "Simple, elegant and timeless.",
+            "heading_size": "h2",
+            "heading_tag": "h1"
+          }
+        },
+        "text_GtMUWg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our 1-litre pure copper bottles make a refined corporate gift, combining everyday utility with the natural character of copper and the distinctive design language of&nbsp;</p><p><strong>Social India Craft</strong>.</p>",
+            "text_size": "subheading"
+          }
+        }
+      },
+      "block_order": [
+        "heading_3eTpfn",
+        "text_GtMUWg"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "",
+        "content_width": "narrow",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "color_scheme": "ink",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
+        "padding_top": 52,
+        "padding_bottom": 52,
+        "padding_top_mobile": 52,
+        "padding_bottom_mobile": 52
+      }
+    },
+    "video_banner_KDNfca": {
+      "type": "video-banner",
+      "name": "Video banner",
+      "settings": {
+        "video": "shopify://files/videos/Unboxing .mp4",
+        "video_alt": "",
+        "playback": "click",
+        "loop": false,
+        "show_controls": true,
+        "muted": true,
+        "video_height_desktop": 0,
+        "video_height_mobile": 0,
+        "video_ratio": "wide",
+        "eyebrow": "",
+        "heading": "Single Bottle Packaging",
+        "subheading": "",
+        "heading_alignment": "center",
+        "heading_alignment_mobile": "",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "secondary",
+        "full_width": false,
+        "content_width": "wide",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "color_scheme": "sand",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
+        "padding_top": 52,
+        "padding_bottom": 52,
+        "padding_top_mobile": 52,
+        "padding_bottom_mobile": 52
+      }
+    },
+    "rich_text_QqRDTi": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_MM6bmN": {
+          "type": "heading",
+          "settings": {
+            "heading": "Copper, Crochet & the Art of Gifting",
+            "heading_size": "h2",
+            "heading_tag": "h1"
+          }
+        },
+        "text_XAY4VQ": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Copper Bottles with Handcrafted Covers</h3><p></p><p>A beautiful meeting of <strong>traditional craft and contemporary gifting</strong>.&nbsp;</p><p>Our 1-litre pure copper bottles are paired with handcrafted crochet covers, creating a gift that is <strong>useful, distinctive and unmistakably Indian</strong>. Thoughtfully designed for festive celebrations, employee appreciation, client gifting and special occasions.</p><h3>Copper Bottles with Ganesh & Diya Holders</h3><p></p><p>A meaningful expression of <strong>Indian tradition, craftsmanship and festive spirit</strong>.</p><p>Our pure copper bottles are paired with handcrafted <strong>Ganesh and Diya crochet holders</strong>, bringing together utility and the warmth of Indian celebrations. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A thoughtful choice for&nbsp;</p><p><strong>festive gifting, client appreciation and meaningful corporate occasions</strong>.</p>",
+            "text_size": "subheading"
+          }
+        }
+      },
+      "block_order": [
+        "heading_MM6bmN",
+        "text_XAY4VQ"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "",
+        "content_width": "narrow",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "color_scheme": "ink",
+        "background_color": "",
+        "heading_color": "#CF1414",
+        "text_color": "#EEEEEE",
+        "accent_color": "#CF1414",
+        "heading_size": 100,
+        "body_size": 100,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "padding_top_mobile": 52,
+        "padding_bottom_mobile": 52
+      }
+    },
+    "multicolumn_wDHaNx": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_bEkTaQ": {
+          "type": "column",
+          "settings": {
+            "image_alt": "",
+            "heading": "Festive Gifting",
+            "text": "<p>Celebrate Diwali and special occasions with meaningful Indian-inspired gifts.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_GRipDt": {
+          "type": "column",
+          "settings": {
+            "image_alt": "",
+            "heading": "Heritage",
+            "text": "<p>Traditions carried forward through generations.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_rBGGNj": {
+          "type": "column",
+          "settings": {
+            "image_alt": "",
+            "heading": "Heritage",
+            "text": "<p>Traditions carried forward through generations.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_k79Tkd": {
+          "type": "column",
+          "settings": {
+            "image_alt": "",
+            "heading": "Heritage",
+            "text": "<p>Traditions carried forward through generations.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_bEkTaQ",
+        "column_GRipDt",
+        "column_rBGGNj",
+        "column_k79Tkd"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "eyebrow": "",
+        "heading": "You are choosing",
+        "subheading": "",
+        "heading_alignment": "center",
+        "heading_alignment_mobile": "",
+        "layout": "grid",
+        "columns_tablet": 2,
+        "columns_desktop": 3,
+        "columns_mobile": "1",
+        "text_alignment": "center",
+        "text_alignment_mobile": "",
+        "image_ratio": "square",
+        "show_dividers": false,
+        "content_width": "wide",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "column_gap": 32,
+        "row_gap": 48,
+        "show_arrows": true,
+        "show_dots": true,
+        "carousel_loop": false,
+        "autoplay": false,
+        "autoplay_interval": 5,
+        "color_scheme": "ivory",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "padding_top_mobile": 52,
+        "padding_bottom_mobile": 52
+      }
+    },
+    "video_banner_pAPMb8": {
+      "type": "video-banner",
+      "disabled": true,
+      "name": "Video banner",
+      "settings": {
+        "video_alt": "",
+        "playback": "click",
+        "loop": false,
+        "show_controls": true,
+        "muted": true,
+        "video_height_desktop": 0,
+        "video_height_mobile": 0,
+        "video_ratio": "wide",
+        "eyebrow": "",
+        "heading": "See it in the making",
+        "subheading": "",
+        "heading_alignment": "center",
+        "heading_alignment_mobile": "",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "secondary",
+        "full_width": false,
+        "content_width": "wide",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "color_scheme": "sand",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "padding_top_mobile": 52,
+        "padding_bottom_mobile": 52
       }
     },
     "grid": {
@@ -151,6 +402,11 @@
     "hero_banner_JdWEpM",
     "rich_text_cxFNKN",
     "banner",
+    "rich_text_FBa8r6",
+    "video_banner_KDNfca",
+    "rich_text_QqRDTi",
+    "multicolumn_wDHaNx",
+    "video_banner_pAPMb8",
     "grid"
   ]
 }

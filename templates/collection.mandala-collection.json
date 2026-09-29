@@ -20,9 +20,9 @@
         "height_mobile": "medium",
         "height_custom_mobile": 420,
         "image_focal_point": "center",
-        "overlay_opacity": 25,
+        "overlay_opacity": 20,
         "eyebrow": "",
-        "heading": "Every piece. A story. India.",
+        "heading": "Mandala Collection",
         "heading_is_page_title": false,
         "text": "",
         "button_label": "",
@@ -40,7 +40,7 @@
         "color_scheme": "ink",
         "background_color": "",
         "heading_color": "",
-        "text_color": "",
+        "text_color": "#130202",
         "accent_color": "",
         "heading_size": 100,
         "body_size": 100,
@@ -52,6 +52,7 @@
     },
     "banner": {
       "type": "collection-banner",
+      "disabled": true,
       "settings": {
         "heading": "",
         "show_description": false,
