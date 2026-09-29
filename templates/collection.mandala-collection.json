@@ -9,6 +9,47 @@
  */
 {
   "sections": {
+    "hero_banner_3LmceX": {
+      "type": "hero-banner",
+      "name": "Hero banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/Social_India_Craft.jpg",
+        "image_alt": "",
+        "height": "large",
+        "height_custom": 600,
+        "height_mobile": "medium",
+        "height_custom_mobile": 420,
+        "image_focal_point": "center",
+        "overlay_opacity": 25,
+        "eyebrow": "",
+        "heading": "Every piece. A story. India.",
+        "heading_is_page_title": false,
+        "text": "",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "button_label_2": "",
+        "button_link_2": "",
+        "text_position": "middle-center",
+        "text_alignment": "center",
+        "text_alignment_mobile": "",
+        "text_style": "plain",
+        "content_width": "full",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "color_scheme": "ink",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "padding_top_mobile": 44,
+        "padding_bottom_mobile": 44
+      }
+    },
     "banner": {
       "type": "collection-banner",
       "settings": {
@@ -174,6 +215,7 @@
     }
   },
   "order": [
+    "hero_banner_3LmceX",
     "banner",
     "grid",
     "collapsible_content_aTVKty",
