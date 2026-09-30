@@ -301,10 +301,19 @@
             "attribution": "",
             "show_icon": true
           }
+        },
+        "button_9T9wPc": {
+          "type": "button",
+          "settings": {
+            "label": "Let’s Create Your Perfect Gift",
+            "link": "https://wa.me/message/25BSCHJDVT36N1",
+            "style": "primary"
+          }
         }
       },
       "block_order": [
-        "quote_fzULjG"
+        "quote_fzULjG",
+        "button_9T9wPc"
       ],
       "name": "Pull quote",
       "settings": {
@@ -430,8 +439,8 @@
         "button_6MLaCR": {
           "type": "button",
           "settings": {
-            "label": "Let’s Create Your Perfect Gift",
-            "link": "",
+            "label": "TALK TO OUR GIFTING TEAM",
+            "link": "https://wa.me/message/25BSCHJDVT36N1",
             "style": "secondary"
           }
         }
@@ -483,7 +492,7 @@
         "video_height_mobile": 0,
         "video_ratio": "wide",
         "eyebrow": "",
-        "heading": "Single Bottle Packaging",
+        "heading": "Packaging",
         "subheading": "",
         "heading_alignment": "center",
         "heading_alignment_mobile": "",
