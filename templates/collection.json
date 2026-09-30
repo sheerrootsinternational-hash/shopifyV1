@@ -64,7 +64,7 @@
         "text_L33ynR": {
           "type": "text",
           "settings": {
-            "text": "<p>A corporate gift is a simple way to express appreciation,celebrate &nbsp; &nbsp;relationships and create a lasting impression.</p><h5><strong>Sheer Roots</strong></h5><p>We curate distinctive Indian products that bring together <strong>craft, design and everyday purpose</strong> —thoughtfully presented for modern corporate gifting.</p><h5><strong>Gifting with a Story</strong></h5><p>From festive celebrations and employee appreciation to client and &nbsp;business partner gifting, our collections are designed to feel personal and memorable.</p><h4><strong>Our gifting options include:</strong></h4><h6>Premium Indian-inspired products</h6><h6>Curated gift sets</h6><h6>Elegant packaging</h6><h6>Personalised cards and messages</h6><h6>Corporate branding options</h6><h6>Bulk orders for teams, clients and events</h6>",
+            "text": "<p>A corporate gift is a simple way to express appreciation,celebrate &nbsp; &nbsp;relationships and create a lasting impression.</p><h5><strong>Sheer Roots</strong></h5><p>We curate distinctive Indian products that bring together <strong>craft, design and everyday purpose</strong> —thoughtfully presented for modern corporate gifting.</p><h5><strong>Gifting with a Story</strong></h5><p>From festive celebrations and employee appreciation to client and &nbsp;business partner gifting, our collections are designed to feel personal and memorable.</p>",
             "text_size": "subheading"
           }
         }
@@ -80,10 +80,10 @@
         "content_width": "narrow",
         "content_width_custom": 1200,
         "padding_horizontal": 40,
-        "color_scheme": "sand",
+        "color_scheme": "ink",
         "background_color": "",
         "heading_color": "",
-        "text_color": "#130202",
+        "text_color": "#F3EAEA",
         "accent_color": "#CF1414",
         "heading_size": 100,
         "body_size": 100,
@@ -120,6 +120,34 @@
         "padding_bottom_mobile": 40
       }
     },
+    "grid": {
+      "type": "main-collection",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "show_toolbar": true,
+        "content_width": "wide",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "column_gap": 32,
+        "row_gap": 48,
+        "card_image_ratio": "",
+        "card_text_alignment": "",
+        "color_scheme": "ivory",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
+        "padding_top": 40,
+        "padding_bottom": 72,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 52
+      }
+    },
     "rich_text_FBa8r6": {
       "type": "rich-text",
       "blocks": {
@@ -131,16 +159,24 @@
             "heading_tag": "h1"
           }
         },
+        "text_fxAUYn": {
+          "type": "text",
+          "settings": {
+            "text": "<h4><strong>Our gifting options include</strong></h4><p>Premium Indian-inspired products</p><p>Curated gift sets</p><p>Elegant packaging</p><p>Personalised cards and messages</p><p>Corporate branding options</p><p>Bulk orders for teams, clients and events<br/></p>",
+            "text_size": ""
+          }
+        },
         "text_GtMUWg": {
           "type": "text",
           "settings": {
-            "text": "<p>Our 1-litre pure copper bottles make a refined corporate gift, combining everyday utility with the natural character of copper and the distinctive design language of&nbsp;</p><p><strong>Social India Craft</strong>.</p>",
+            "text": "",
             "text_size": "subheading"
           }
         }
       },
       "block_order": [
         "heading_3eTpfn",
+        "text_fxAUYn",
         "text_GtMUWg"
       ],
       "name": "Rich text",
@@ -150,7 +186,233 @@
         "content_width": "narrow",
         "content_width_custom": 1200,
         "padding_horizontal": 40,
+        "color_scheme": "sand",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32
+      }
+    },
+    "multicolumn_wDHaNx": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_bEkTaQ": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/festival-of-lights-candle-arrangement.jpg",
+            "image_alt": "",
+            "heading": "Festive Gifting",
+            "text": "<p><strong>Celebrate Diwali and special occasions with meaningful Indian-inspired gifts.</strong></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_GRipDt": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/holiday-gift-wrapping.jpg",
+            "image_alt": "",
+            "heading": "Employee Gifting",
+            "text": "<p><strong>Show appreciation with something thoughtful and useful.</strong></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_rBGGNj": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/gift-box.jpg",
+            "image_alt": "",
+            "heading": "Client & Partner Gifting",
+            "text": "<p><strong>Mark valuable relationships with a gift that reflects care and quality.</strong></p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_k79Tkd": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/santa-fixes-the-bow-on-a-gift.jpg",
+            "image_alt": "",
+            "heading": "Welcome & Milestone Gifting",
+            "text": "<p><strong>Make new beginnings, achievements and special moments memorable</strong></p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_bEkTaQ",
+        "column_GRipDt",
+        "column_rBGGNj",
+        "column_k79Tkd"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "eyebrow": "",
+        "heading": "",
+        "subheading": "",
+        "heading_alignment": "center",
+        "heading_alignment_mobile": "",
+        "layout": "carousel",
+        "columns_tablet": 2,
+        "columns_desktop": 3,
+        "columns_mobile": "1",
+        "text_alignment": "center",
+        "text_alignment_mobile": "",
+        "image_ratio": "square",
+        "show_dividers": false,
+        "content_width": "wide",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "column_gap": 32,
+        "row_gap": 48,
+        "show_arrows": true,
+        "show_dots": true,
+        "carousel_loop": false,
+        "autoplay": false,
+        "autoplay_interval": 5,
         "color_scheme": "ink",
+        "background_color": "",
+        "heading_color": "#F3EAEA",
+        "text_color": "#CF1414",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
+        "padding_top": 32,
+        "padding_bottom": 12,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 12
+      }
+    },
+    "hero_banner_qYcEpD": {
+      "type": "hero-banner",
+      "name": "Hero banner",
+      "settings": {
+        "desktop_image": "shopify://shop_images/MANDALA.png",
+        "image_alt": "",
+        "height": "custom",
+        "height_custom": 240,
+        "height_mobile": "medium",
+        "height_custom_mobile": 420,
+        "image_focal_point": "center",
+        "overlay_opacity": 25,
+        "eyebrow": "",
+        "heading": "Every piece. A story. India.",
+        "heading_is_page_title": false,
+        "text": "",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "button_label_2": "",
+        "button_link_2": "",
+        "text_position": "middle-center",
+        "text_alignment": "center",
+        "text_alignment_mobile": "",
+        "text_style": "plain",
+        "content_width": "full",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "color_scheme": "ink",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "",
+        "accent_color": "",
+        "heading_size": 100,
+        "body_size": 100,
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "padding_top_mobile": 44,
+        "padding_bottom_mobile": 44
+      }
+    },
+    "rich_text_QqRDTi": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_MM6bmN": {
+          "type": "heading",
+          "settings": {
+            "heading": "Copper, Crochet & the Art of Gifting",
+            "heading_size": "h2",
+            "heading_tag": "h1"
+          }
+        },
+        "text_XAY4VQ": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Copper Bottle</h3><p>Our 1-litre pure copper bottles make a refined corporate gift, combining everyday utility with the natural character of copper and the distinctive design language of &nbsp;<strong>Social India Craft</strong>.</p><h3>Copper Bottles with Handcrafted Covers</h3><p>A beautiful meeting of <strong>traditional craft and contemporary gifting</strong>.&nbsp;</p><p>Our 1-litre pure copper bottles are paired with handcrafted crochet covers, creating a gift that is <strong>useful, distinctive and unmistakably Indian</strong>. Thoughtfully designed for festive celebrations, employee appreciation, client gifting and special occasions.</p><h3>Copper Bottles with Ganesh & Diya Holders</h3><p></p><p>A meaningful expression of <strong>Indian tradition, craftsmanship and festive spirit</strong>.</p><p>Our pure copper bottles are paired with handcrafted <strong>Ganesh and Diya crochet holders</strong>, bringing together utility and the warmth of Indian celebrations. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A thoughtful choice for&nbsp;</p><p><strong>festive gifting, client appreciation and meaningful corporate occasions</strong>.</p>",
+            "text_size": "subheading"
+          }
+        }
+      },
+      "block_order": [
+        "heading_MM6bmN",
+        "text_XAY4VQ"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "",
+        "content_width": "narrow",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "color_scheme": "sand",
+        "background_color": "",
+        "heading_color": "#CF1414",
+        "text_color": "",
+        "accent_color": "#CF1414",
+        "heading_size": 100,
+        "body_size": 100,
+        "padding_top": 52,
+        "padding_bottom": 52,
+        "padding_top_mobile": 52,
+        "padding_bottom_mobile": 52
+      }
+    },
+    "image_with_text_kHr3pA": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_YLxQwf": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why Sheer Roots?",
+            "heading_size": "h1",
+            "heading_tag": "h1"
+          }
+        },
+        "text_xEBXy3": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Rooted in India</strong><br/>Inspired by India's craft, colours and cultural traditions.</p><p><strong>Thoughtfully Curated</strong><br/>Products selected for their design, quality and gifting appeal.</p><p><strong>Beautifully Presented</strong><br/>Because the presentation is part of the experience.</p><p><strong>Meaningful by Nature</strong><br/>Gifts chosen to be used, appreciated and remembered.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_YLxQwf",
+        "text_xEBXy3"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "desktop_image": "shopify://shop_images/12_6bf79654-5c3b-4bc9-a069-f8d9ba6bc91e.jpg",
+        "mobile_image": "shopify://shop_images/12_6bf79654-5c3b-4bc9-a069-f8d9ba6bc91e.jpg",
+        "image_alt": "",
+        "caption": "",
+        "image_ratio": "portrait",
+        "image_position": "right",
+        "media_width": "medium",
+        "text_alignment": "center",
+        "text_alignment_mobile": "",
+        "full_width": false,
+        "content_width": "wide",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "color_scheme": "ivory",
         "background_color": "",
         "heading_color": "",
         "text_color": "",
@@ -201,137 +463,6 @@
         "padding_bottom_mobile": 52
       }
     },
-    "rich_text_QqRDTi": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_MM6bmN": {
-          "type": "heading",
-          "settings": {
-            "heading": "Copper, Crochet & the Art of Gifting",
-            "heading_size": "h2",
-            "heading_tag": "h1"
-          }
-        },
-        "text_XAY4VQ": {
-          "type": "text",
-          "settings": {
-            "text": "<h3>Copper Bottles with Handcrafted Covers</h3><p></p><p>A beautiful meeting of <strong>traditional craft and contemporary gifting</strong>.&nbsp;</p><p>Our 1-litre pure copper bottles are paired with handcrafted crochet covers, creating a gift that is <strong>useful, distinctive and unmistakably Indian</strong>. Thoughtfully designed for festive celebrations, employee appreciation, client gifting and special occasions.</p><h3>Copper Bottles with Ganesh & Diya Holders</h3><p></p><p>A meaningful expression of <strong>Indian tradition, craftsmanship and festive spirit</strong>.</p><p>Our pure copper bottles are paired with handcrafted <strong>Ganesh and Diya crochet holders</strong>, bringing together utility and the warmth of Indian celebrations. &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; A thoughtful choice for&nbsp;</p><p><strong>festive gifting, client appreciation and meaningful corporate occasions</strong>.</p>",
-            "text_size": "subheading"
-          }
-        }
-      },
-      "block_order": [
-        "heading_MM6bmN",
-        "text_XAY4VQ"
-      ],
-      "name": "Rich text",
-      "settings": {
-        "text_alignment": "center",
-        "text_alignment_mobile": "",
-        "content_width": "narrow",
-        "content_width_custom": 1200,
-        "padding_horizontal": 40,
-        "color_scheme": "ink",
-        "background_color": "",
-        "heading_color": "#CF1414",
-        "text_color": "#EEEEEE",
-        "accent_color": "#CF1414",
-        "heading_size": 100,
-        "body_size": 100,
-        "padding_top": 72,
-        "padding_bottom": 72,
-        "padding_top_mobile": 52,
-        "padding_bottom_mobile": 52
-      }
-    },
-    "multicolumn_wDHaNx": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_bEkTaQ": {
-          "type": "column",
-          "settings": {
-            "image_alt": "",
-            "heading": "Festive Gifting",
-            "text": "<p>Celebrate Diwali and special occasions with meaningful Indian-inspired gifts.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_GRipDt": {
-          "type": "column",
-          "settings": {
-            "image_alt": "",
-            "heading": "Heritage",
-            "text": "<p>Traditions carried forward through generations.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_rBGGNj": {
-          "type": "column",
-          "settings": {
-            "image_alt": "",
-            "heading": "Heritage",
-            "text": "<p>Traditions carried forward through generations.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_k79Tkd": {
-          "type": "column",
-          "settings": {
-            "image_alt": "",
-            "heading": "Heritage",
-            "text": "<p>Traditions carried forward through generations.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_bEkTaQ",
-        "column_GRipDt",
-        "column_rBGGNj",
-        "column_k79Tkd"
-      ],
-      "name": "Multi-column",
-      "settings": {
-        "eyebrow": "",
-        "heading": "You are choosing",
-        "subheading": "",
-        "heading_alignment": "center",
-        "heading_alignment_mobile": "",
-        "layout": "grid",
-        "columns_tablet": 2,
-        "columns_desktop": 3,
-        "columns_mobile": "1",
-        "text_alignment": "center",
-        "text_alignment_mobile": "",
-        "image_ratio": "square",
-        "show_dividers": false,
-        "content_width": "wide",
-        "content_width_custom": 1200,
-        "padding_horizontal": 40,
-        "column_gap": 32,
-        "row_gap": 48,
-        "show_arrows": true,
-        "show_dots": true,
-        "carousel_loop": false,
-        "autoplay": false,
-        "autoplay_interval": 5,
-        "color_scheme": "ivory",
-        "background_color": "",
-        "heading_color": "",
-        "text_color": "",
-        "accent_color": "",
-        "heading_size": 100,
-        "body_size": 100,
-        "padding_top": 72,
-        "padding_bottom": 72,
-        "padding_top_mobile": 52,
-        "padding_bottom_mobile": 52
-      }
-    },
     "video_banner_pAPMb8": {
       "type": "video-banner",
       "disabled": true,
@@ -370,30 +501,63 @@
         "padding_bottom_mobile": 52
       }
     },
-    "grid": {
-      "type": "main-collection",
+    "contact_form_mApPif": {
+      "type": "contact-form",
+      "name": "Contact form",
       "settings": {
-        "products_per_page": 24,
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "show_toolbar": true,
-        "content_width": "wide",
+        "heading": "Made Around Your Requirements",
+        "text": "<p>Whether you need a few thoughtfully chosen gifts or a larger corporate order, we can curate the experience around your:</p><p><strong>Quantity • Budget • Occasion • Branding • Packaging</strong></p><p>Personalized cards, curated combinations and selected branding options can be arranged based on order requirements.</p>",
+        "privacy_note": "<p><strong>Create a Gift Worth Remembering</strong></p><p>Tell us your requirement and we'll help you put together a thoughtful corporate gifting collection.</p><p><strong>REQUEST CORPORATE CATALOGUE</strong></p><p><em>For bulk orders and </em>customized<em> requirements, please contact us for available options and pricing.</em></p><p><strong>Your Brand. Your Message. A Little Piece of India.</strong></p>",
+        "text_alignment": "center",
+        "text_alignment_mobile": "",
+        "content_width": "narrow",
         "content_width_custom": 1200,
         "padding_horizontal": 40,
-        "column_gap": 32,
-        "row_gap": 48,
-        "card_image_ratio": "",
-        "card_text_alignment": "",
-        "color_scheme": "ivory",
+        "color_scheme": "ink",
+        "background_color": "",
+        "heading_color": "",
+        "text_color": "#EEEEEE",
+        "accent_color": "#CF1414",
+        "heading_size": 100,
+        "body_size": 100,
+        "padding_top": 52,
+        "padding_bottom": 52,
+        "padding_top_mobile": 52,
+        "padding_bottom_mobile": 60
+      }
+    },
+    "rich_text_MtGKRb": {
+      "type": "rich-text",
+      "blocks": {
+        "quote_fzULjG": {
+          "type": "quote",
+          "settings": {
+            "quote": "Your Brand. Your Message. Your Design . A Little Piece of India.",
+            "attribution": "",
+            "show_icon": true
+          }
+        }
+      },
+      "block_order": [
+        "quote_fzULjG"
+      ],
+      "name": "Pull quote",
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "",
+        "content_width": "narrow",
+        "content_width_custom": 1200,
+        "padding_horizontal": 40,
+        "color_scheme": "sand",
         "background_color": "",
         "heading_color": "",
         "text_color": "",
         "accent_color": "",
         "heading_size": 100,
         "body_size": 100,
-        "padding_top": 40,
+        "padding_top": 72,
         "padding_bottom": 72,
-        "padding_top_mobile": 28,
+        "padding_top_mobile": 52,
         "padding_bottom_mobile": 52
       }
     }
@@ -402,11 +566,15 @@
     "hero_banner_JdWEpM",
     "rich_text_cxFNKN",
     "banner",
+    "grid",
     "rich_text_FBa8r6",
-    "video_banner_KDNfca",
-    "rich_text_QqRDTi",
     "multicolumn_wDHaNx",
+    "rich_text_MtGKRb",
+    "hero_banner_qYcEpD",
+    "rich_text_QqRDTi",
+    "image_with_text_kHr3pA",
+    "video_banner_KDNfca",
     "video_banner_pAPMb8",
-    "grid"
+    "contact_form_mApPif"
   ]
 }
