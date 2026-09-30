@@ -441,7 +441,7 @@
           "settings": {
             "label": "TALK TO OUR GIFTING TEAM",
             "link": "https://wa.me/message/25BSCHJDVT36N1",
-            "style": "secondary"
+            "style": "primary"
           }
         }
       },
@@ -465,11 +465,11 @@
         "content_width": "wide",
         "content_width_custom": 1200,
         "padding_horizontal": 40,
-        "color_scheme": "ivory",
+        "color_scheme": "ink",
         "background_color": "",
         "heading_color": "",
-        "text_color": "",
-        "accent_color": "",
+        "text_color": "#F3EAEA",
+        "accent_color": "#CF1414",
         "heading_size": 100,
         "body_size": 100,
         "padding_top": 52,
@@ -566,10 +566,10 @@
         "content_width": "narrow",
         "content_width_custom": 1200,
         "padding_horizontal": 40,
-        "color_scheme": "ink",
+        "color_scheme": "sand",
         "background_color": "",
-        "heading_color": "",
-        "text_color": "#EEEEEE",
+        "heading_color": "#130202",
+        "text_color": "#130202",
         "accent_color": "#CF1414",
         "heading_size": 100,
         "body_size": 100,
