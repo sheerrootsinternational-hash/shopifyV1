@@ -426,11 +426,20 @@
           "settings": {
             "text": "<p><strong>Rooted in India</strong><br/>Inspired by India's craft, colours and cultural traditions.</p><p><strong>Thoughtfully Curated</strong><br/>Products selected for their design, quality and gifting appeal.</p><p><strong>Beautifully Presented</strong><br/>Because the presentation is part of the experience.</p><p><strong>Meaningful by Nature</strong><br/>Gifts chosen to be used, appreciated and remembered.</p>"
           }
+        },
+        "button_6MLaCR": {
+          "type": "button",
+          "settings": {
+            "label": "Let’s Create Your Perfect Gift",
+            "link": "",
+            "style": "secondary"
+          }
         }
       },
       "block_order": [
         "heading_YLxQwf",
-        "text_xEBXy3"
+        "text_xEBXy3",
+        "button_6MLaCR"
       ],
       "name": "Image with text",
       "settings": {
