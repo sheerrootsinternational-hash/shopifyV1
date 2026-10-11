@@ -50,6 +50,12 @@
             "show_dynamic_checkout": true
           }
         },
+        "text_RDBzdn": {
+          "type": "text",
+          "settings": {
+            "text": "<p>🇮🇳 <strong>For orders within India, please WhatsApp us at +91 8448809111 for assistance with ordering and delivery.</strong></p>"
+          }
+        },
         "collapsible_row_E4pCjz": {
           "type": "collapsible_row",
           "settings": {
@@ -79,6 +85,7 @@
         "variant_picker",
         "quantity",
         "buy_buttons",
+        "text_RDBzdn",
         "collapsible_row_E4pCjz",
         "collapsible_row_HmytjY",
         "share"
@@ -98,8 +105,8 @@
         "color_scheme": "sand",
         "background_color": "",
         "heading_color": "#5e3e1e",
-        "text_color": "#6F6357",
-        "accent_color": "#5E3E1E",
+        "text_color": "#6f6357",
+        "accent_color": "#5e3e1e",
         "heading_size": 100,
         "body_size": 95,
         "padding_top": 40,
